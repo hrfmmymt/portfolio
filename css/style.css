@@ -1,0 +1,215 @@
+html.home,body.home {
+  height: 100%;
+}
+
+body {
+  font-family: "futura", "Trebuchet MS", Arial, sans-serif !important;
+  font-weight: 100;
+  color: #404040;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "futura", "Trebuchet MS", Arial, sans-serif !important;
+  font-weight: 100;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.sectionLv1 {
+  padding: 2%;
+}
+
+/* -----------------------------------------------------------------------------------------------
+
+desc Section  
+
+----------------------------------------------------------------------------------------------- */
+
+section.desc {
+  background: #690;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+section.desc .wrapper {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+section.desc h1 {
+  text-align: center;
+  font-size: 120px;
+  font-weight: 100;
+  margin: -50px 0 20px;
+  color: #fff;
+  -webkit-transform: scale(2);
+  opacity: 0;
+  -webkit-transition: all 500ms ease;
+}
+
+section.desc i.scrollHint {
+  position: absolute;
+  bottom: 10px;
+  font-size: 50px;
+  width: 100%;
+  left: 0;
+  -webkit-animation: scrollHint 1s infinite  normal ease-out;
+  animation: scrollHint 1s infinite  normal ease-out;
+  cursor: pointer;
+}
+@-webkit-keyframes scrollHint {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+@keyframes scrollHint {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+/* -----------------------------------------------------------------------------------------------
+
+career Section  
+
+----------------------------------------------------------------------------------------------- */
+
+section.career,
+section.skills,
+section.etc,
+section.footer {
+  padding: 50px 0;
+  background: #f3f3f3;
+}
+
+section.career h2,
+section.skills h2,
+section.etc h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #F56991;
+  -webkit-transform: scale(2);
+  opacity: 0;
+  -webkit-transition: all 500ms ease;
+}
+
+section.desc.onScreen h1,
+section.career.onScreen h2,
+section.skills.onScreen h2,
+section.etc.onScreen h2 {
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+.timeline {
+  list-style: none;
+  background: #fff;
+}
+.timeline > li {
+  margin-bottom: 60px;
+  border-bottom: 2px solid #f3f3f3;
+  text-align: center;
+}
+
+/* for Desktop */
+@media ( min-width : 640px ){
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 20px;
+  }
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    padding-left: 30px;
+  }
+  .timeline-content h3 {
+    margin-top: 2%;
+  }
+  .timeline-content:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #6fc173;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}
+
+/* -----------------------------------------------------------------------------------------------
+
+end Section  
+
+----------------------------------------------------------------------------------------------- */
+
+.content {
+  text-align: center;
+}
+
+.person {
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  overflow: hidden;
+  width: 30%;
+  margin: 0 auto;
+}
+
+img {
+   float: left;
+   padding: 2px;
+   -webkit-box-shadow: 0 0 0px 1px #b0b0b0;
+   box-shadow: 0 0 0px 1px #b0b0b0;
+}
+
+.footer {
+  text-align: center;
+}
