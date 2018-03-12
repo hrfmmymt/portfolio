@@ -1,6 +1,6 @@
 {
-  "name": "preact-sample",
-  "short_name": "preact-sample",
+  "name": "skillsheet",
+  "short_name": "skillsheet",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
