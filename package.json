@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "preact-sample",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "eslint": "eslint src",
+    "stylelint": "stylelint '**/*.css' --config .stylelintrc.yml"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-synacor": "^3.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "if-env": "^1.0.4",
+    "preact-cli": "^2.2.1",
+    "prettier": "^1.11.1",
+    "stylelint": "^9.1.1"
+  },
+  "dependencies": {
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "preact-router": "^2.6.0"
+  }
+}
