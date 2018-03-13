@@ -8,8 +8,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "eslint": "eslint src",
-    "stylelint": "stylelint '**/*.css' --config .stylelintrc.yml"
+    "eslint": "eslint src"
   },
   "prettier": {
     "semi": false,
@@ -23,8 +22,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "if-env": "^1.0.4",
     "preact-cli": "^2.2.1",
-    "prettier": "^1.11.1",
-    "stylelint": "^9.1.1"
+    "prettier": "1.11.1"
   },
   "dependencies": {
     "preact": "^8.2.7",
