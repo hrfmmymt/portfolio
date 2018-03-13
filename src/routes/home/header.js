@@ -1,16 +1,17 @@
 import { h, Component } from 'preact'
+import styles from './header.css'
 
 export default class Header extends Component {
-  constructor(props) {
+  constructor() {
     super()
   }
 
   render(props) {
     return (
-      <header className="header">
-        <h1 className="title" itemProp="name">
+      <header className={styles.wrapper}>
+        <h2 className="title" itemProp="name">
           {props.title}
-        </h1>
+        </h2>
       </header>
     )
   }

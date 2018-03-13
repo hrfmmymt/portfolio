@@ -1,5 +1,88 @@
 {
   "header": {
-    "title": "my app"
+    "title": "title"
+  },
+  "profile": {
+    "title": "profile",
+    "about": {
+      "title": "About me",
+      "description": "I love ウェイ!"
+    },
+    "bio": {
+      "title": "Bio",
+      "list": [
+        {
+          "label": "name",
+          "value": "hrfmmymt"
+        },
+        {
+          "label": "location",
+          "value": "Tokyo, JP"
+        }
+      ]
+    }
+  },
+  "career": {
+    "title": "career",
+    "list": [
+      {
+        "list": [
+          {
+            "job_title": "write about this job on short sentences.",
+            "time": {
+              "from": "Aug 2011",
+              "to": "Apr 2012"
+            },
+            "role": "write role in this job",
+            "description": "write about this job with a long sentence."
+          },
+          {
+            "job_title": "write about this job on short sentences.",
+            "time": {
+              "from": "Apr 2015",
+              "to": " "
+            },
+            "role": "write role in this job",
+            "description": "write about this job with a long sentence."
+          }
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "skills, or",
+    "list": [
+      {
+        "label": "sushi",
+        "value": 5
+      },
+      {
+        "label": "tempra",
+        "value": 5
+      },
+      {
+        "label": "tekkadon",
+        "value": 5
+      },
+      {
+        "label": "udon",
+        "value": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "etc.",
+    "list": [
+      {
+        "label": "Blog",
+        "link": "https://hrfmmymt.tumblr.com/",
+        "icon_class": "globe"
+      },
+      {
+        "label": "GitHub",
+        "link": "https://github.com/hrfmmymt/",
+        "icon_class": "github"
+      }
+    ]
   }
 }

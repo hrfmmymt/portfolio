@@ -1,8 +1,10 @@
 import { h, Component } from 'preact'
+import styles from './profile.css'
 
 export default class Profile extends Component {
   render(props) {
     let bioList = []
+
     if (props.bio && props.bio.list) {
       const bioLabels = props.bio.list.map(item => (
           <li key={item.label}>
@@ -20,27 +22,23 @@ export default class Profile extends Component {
     }
 
     return (
-      <main
-        class="main profile"
-        style={{ backgroundColor: props.background_color || null }}
-      >
-        <div class="main-wrapper">
-          <div class="main-wrapper-text">
-            <h3>{props.title}</h3>
+      <section className={styles.wrapper}>
+        <div>
+          <div>
+            <h2>{props.title}</h2>
           </div>
-          <div class="divider" />
-          <div class="summary">
+          <div>
             {props.about && <h5>{props.about.title}</h5>}
             {props.about && <p>{props.about.description}</p>}
           </div>
           {bioList.length && (
-            <div class="details">
+            <div>
               <h5>{props.bio.title}</h5>
               <ul>{bioList}</ul>
             </div>
           )}
         </div>
-      </main>
+      </section>
     )
   }
 }
