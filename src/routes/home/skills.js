@@ -28,7 +28,7 @@ export default class Skills extends Component {
       <section className={styles.wrapper}>
         <div>
           <div>
-            <h3>{props.title}</h3>
+            <h2>{props.title}</h2>
           </div>
           {props.list && props.list.map(item => <SkillItem {...item} />)}
         </div>
