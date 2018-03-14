@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { Link } from 'preact-router/match'
 import styles from './career.css'
 
 export const formatTime = ({ from, to }) =>
@@ -10,14 +11,10 @@ class ResumeItem extends Component {
 
     return (
       <div>
-        <div>
+        <Link href={`/career/${job_title}`}>
           <strong>{job_title}</strong>
           <p>{timePeriod}</p>
-        </div>
-        <div>
-          <strong>{role}</strong>
-          <p>{description}</p>
-        </div>
+        </Link>
       </div>
     )
   }

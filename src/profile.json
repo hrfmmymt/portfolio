@@ -28,22 +28,22 @@
       {
         "list": [
           {
-            "job_title": "write about this job on short sentences.",
+            "job_title": "job01",
             "time": {
               "from": "Aug 2011",
               "to": "Apr 2012"
             },
             "role": "write role in this job",
-            "description": "write about this job with a long sentence."
+            "description": "this is job01."
           },
           {
-            "job_title": "write about this job on short sentences.",
+            "job_title": "job02",
             "time": {
               "from": "Apr 2015",
               "to": " "
             },
             "role": "write role in this job",
-            "description": "write about this job with a long sentence."
+            "description": "this is job02."
           }
         ]
       }
