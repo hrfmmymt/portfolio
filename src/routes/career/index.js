@@ -1,22 +1,37 @@
 import { h, Component } from 'preact'
 import style from './style'
 
-class Wei extends Component {
+
+class CareerDetailList extends Component {
   render({ list }) {
-
     // console.log(list)
-
     return (
-      <main>
-      </main>
+      <ul>
+        <li>
+        { list && 
+          list.map(item => (
+            { ...item }
+          ))
+        }
+        </li>
+      </ul>
     )
   }
 }
 
 export default class CareerDetail extends Component {
-  // Note: `user` comes from the URL, courtesy of our router
-  render({ job_title, data }, { time, role, description }) {
-    // console.log(data.list)
-    return <div>{data.list && data.list.map(item => <Wei {...item} />)}</div>
+  render(props) {
+    const arr = []
+    arr.push(this.props.location)
+    console.log(arr)
+    return (
+      <main>
+      { arr && 
+        arr.map(item => (
+          <CareerDetailList { ...item } />
+        ))
+      }
+      </main>
+    )
   }
 }

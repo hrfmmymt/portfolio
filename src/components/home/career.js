@@ -2,27 +2,53 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import styles from './career.css'
 
+// util funx
 export const formatTime = ({ from, to }) =>
   [from, to].filter(val => val).join(' - ')
 
 class ResumeItem extends Component {
-  render({ job_title, time, role, description }) {
+  constructor(props) {
+    super(props)
+    this.state = {
+      career: props
+    }
+  }
+
+  render(items) {
+    const {
+      job_title,
+      time,
+      role,
+      description
+    } = this.state.career
+
     const timePeriod = formatTime({ ...time })
 
     return (
-      <div>
-        <Link href={`/career/${job_title}`}>
+      <li>
+        <Link
+          path='/career/'
+          href={`/career/${job_title}`}>
           <strong>{job_title}</strong>
           <p>{timePeriod}</p>
         </Link>
-      </div>
+        <p>{role}</p>
+      </li>
     )
   }
 }
 
 class CareerItem extends Component {
   render({ list }) {
-    return <div>{list && list.map(item => <ResumeItem {...item} />)}</div>
+    return (
+      <ul>
+        { list && 
+          list.map(item => (
+            <ResumeItem { ...item } />
+          ))
+        }
+      </ul>
+    )
   }
 }
 
@@ -32,14 +58,13 @@ export default class Career extends Component {
       <main className={styles.wrapper}>
         <div>
           <div>
-            <h2>{props.title}</h2>
+            <h2>{ props.title }</h2>
           </div>
-          {props.list &&
+          { props.list &&
             props.list.map(item => (
-              <div>
-                <CareerItem {...item} />
-              </div>
-            ))}
+              <CareerItem {...item} />
+            ))
+          }
         </div>
       </main>
     )

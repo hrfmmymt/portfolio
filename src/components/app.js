@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
-import { Router } from 'preact-router'
+import { Router, Route } from 'preact-router'
+
+// import Match from 'preact-router/match'
 
 import Header from './header'
 import Home from '../routes/home'
@@ -17,16 +19,6 @@ export default class App extends Component {
     this.currentUrl = e.url
   }
 
-  state = {
-    profile: require('../profile.json')
-  }
-
-  componentDidMount() {
-    fetch('/profile.json')
-      .then(response => response.json())
-      .then(profile => this.setState({ profile }))
-  }
-
   render() {
     return (
       <div id="app">
@@ -35,7 +27,7 @@ export default class App extends Component {
           <Home path="/" />
           <Profile path="/profile/" user="me" />
           <Profile path="/profile/:user" />
-          <CareerDetail path="/career/:job_title" data={this.state.profile.career} />
+          <Route path="/career/:job_title" />
         </Router>
       </div>
     )
