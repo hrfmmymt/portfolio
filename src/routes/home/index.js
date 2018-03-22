@@ -12,10 +12,14 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('/profile.json')
-      .then(response => response.json())
-      .catch(error => console.error('Error:', error))
-      .then(profile => this.setState({ profile }))
+    fetch('/profile.json', {
+      method : 'GET',
+      headers : new Headers({
+        'Content-type' : 'application/json'
+      })
+    })
+    .then(response => response.json())
+    .then(profile => this.setState({ profile }))
   }
 
   render({}, { profile }) {

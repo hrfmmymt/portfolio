@@ -8,6 +8,7 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
+    "deploy": "npm run build && netlify deploy -p build",
     "eslint": "eslint src"
   },
   "prettier": {
@@ -21,13 +22,14 @@
     "eslint-config-synacor": "^3.0.0",
     "eslint-plugin-prettier": "^2.6.0",
     "if-env": "^1.0.4",
+    "json-server": "^0.12.1",
+    "netlify-cli": "^1.2.2",
     "preact-cli": "^2.2.1",
     "prettier": "1.11.1"
   },
   "dependencies": {
     "preact": "^8.2.7",
     "preact-compat": "^3.18.0",
-    "preact-router": "^2.6.0",
-    "simplehttp2server": "^2.0.0"
+    "preact-router": "^2.6.0"
   }
 }
