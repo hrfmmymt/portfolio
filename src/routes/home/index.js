@@ -7,20 +7,24 @@ import Skills from '../../components/home/skills'
 import Footer from '../../components/home/footer'
 
 export default class Home extends Component {
-  state = {
-    profile: require('../../profile.json')
+  constructor(props) {
+    super(props)
+    this.state = {
+      // profile: []
+      profile: require('../../assets/profile.json')
+    }
   }
+  // state = {
+  //   profile: require('../../assets/profile.json')
+  //   // profile: []
+  // }
 
-  componentDidMount() {
-    fetch('/profile.json', {
-      method : 'GET',
-      headers : new Headers({
-        'Content-type' : 'application/json'
-      })
-    })
-    .then(response => response.json())
-    .then(profile => this.setState({ profile }))
-  }
+  // componentDidMount() {
+  //   fetch('./assets/profile.json')
+  //   .then(response => response.json())
+  //   .catch(error => console.error(error))
+  //   .then(profile => this.setState({ profile }))
+  // }
 
   render({}, { profile }) {
     return (
