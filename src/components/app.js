@@ -1,8 +1,6 @@
 import { h, Component } from 'preact'
 import { Router, Route } from 'preact-router'
 
-// import Match from 'preact-router/match'
-
 import Header from './header'
 import Home from '../routes/home'
 import Profile from '../routes/profile'
@@ -27,7 +25,7 @@ export default class App extends Component {
           <Home path="/" />
           <Profile path="/profile/" user="me" />
           <Profile path="/profile/:user" />
-          <Route path="/career/:job_title" />
+          <CareerDetail path="/career/:job_title" />
         </Router>
       </div>
     )

@@ -1,37 +1,37 @@
 import { h, Component } from 'preact'
 import style from './style'
-
+import profile from '../../assets/profile.json'
 
 class CareerDetailList extends Component {
-  render({ list }) {
-    // console.log(list)
+  constructor(props) {
+    super(props)
+    this.state = {
+      career: profile.career.list
+    }
+  }
+
+  render(item) {
+
+    const thisJob = this.state.career[0].list.filter(el => {
+      return el.job_title === item.job_title
+    })
+    console.log('thisJob', thisJob[0])
     return (
-      <ul>
-        <li>
-        { list && 
-          list.map(item => (
-            { ...item }
-          ))
-        }
-        </li>
-      </ul>
+      <main>
+        <h2>{thisJob[0].job_title}</h2>
+        <p>{thisJob[0].description}</p>
+        <p>{thisJob[0].role}</p>
+      </main>
     )
   }
 }
 
 export default class CareerDetail extends Component {
   render(props) {
-    const arr = []
-    arr.push(this.props.location)
-    console.log(arr)
+    console.log(props)
+    const job_title = props.job_title
     return (
-      <main>
-      { arr && 
-        arr.map(item => (
-          <CareerDetailList { ...item } />
-        ))
-      }
-      </main>
+      <CareerDetailList job_title={ job_title } />
     )
   }
 }

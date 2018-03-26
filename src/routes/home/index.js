@@ -10,21 +10,9 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // profile: []
       profile: require('../../assets/profile.json')
     }
   }
-  // state = {
-  //   profile: require('../../assets/profile.json')
-  //   // profile: []
-  // }
-
-  // componentDidMount() {
-  //   fetch('./assets/profile.json')
-  //   .then(response => response.json())
-  //   .catch(error => console.error(error))
-  //   .then(profile => this.setState({ profile }))
-  // }
 
   render({}, { profile }) {
     return (
