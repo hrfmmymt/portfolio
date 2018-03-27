@@ -20,11 +20,8 @@ export default class App extends Component {
   render() {
     return (
       <div id="app">
-        <Header />
-        <Home />
         <Router onChange={this.handleRoute}>
-          <Profile path="/profile/" user="me" />
-          <Profile path="/profile/:user" />
+          <Home path="/" />
           <CareerDetail path="/career/:job_title" />
         </Router>
       </div>
