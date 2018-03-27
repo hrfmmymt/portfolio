@@ -21,8 +21,8 @@ export default class App extends Component {
     return (
       <div id="app">
         <Header />
+        <Home />
         <Router onChange={this.handleRoute}>
-          <Home path="/" />
           <Profile path="/profile/" user="me" />
           <Profile path="/profile/:user" />
           <CareerDetail path="/career/:job_title" />
