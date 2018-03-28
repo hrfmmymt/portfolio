@@ -52,22 +52,25 @@
   "skills": {
     "title": "skills, or",
     "list": [
-      {
-        "label": "sushi",
-        "value": 5
-      },
-      {
-        "label": "tempra",
-        "value": 5
-      },
-      {
-        "label": "tekkadon",
-        "value": 5
-      },
-      {
-        "label": "udon",
-        "value": 4
-      }
+      { "label": "React", "value": 50 },
+      { "label": "Preact", "value": 50 },
+      { "label": "React - Redux", "value": 50 },
+      { "label": "PWA", "value": 40 },
+      { "label": "AMP", "value": 40 },
+      { "label": "A11y", "value": 40 },
+      { "label": "Photoshop", "value": 40 },
+      { "label": "Illustrator", "value": 40 },
+      { "label": "Git", "value": 40 },
+      { "label": "Gulp", "value": 50 },
+      { "label": "webpack", "value": 50 },
+      { "label": "Sketch", "value": 40 },
+      { "label": "JavaScript", "value": 40 },
+      { "label": "CSS", "value": 40 },
+      { "label": "HTML", "value": 40 },
+      { "label": "PHP", "value": 40 },
+      { "label": "Ruby", "value": 40 },
+      { "label": "Express", "value": 40 },
+      { "label": "SublimeText", "value": 40 }
     ]
   },
   "contact": {

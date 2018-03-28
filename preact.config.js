@@ -7,4 +7,6 @@ export default function(config, env, helpers) {
     'css-loader'
   )[0]
   cssLoader.options.localIdentName = '[name]-[local]-[hash:base64:5]'
+
+  const CommonsChunkPlugin = helpers.getPluginsByName(config, 'CommonsChunkPlugin')
 }
