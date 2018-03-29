@@ -73,7 +73,7 @@
       { "label": "SublimeText", "value": 40 }
     ]
   },
-  "contact": {
+  "etc": {
     "title": "etc.",
     "list": [
       {
@@ -84,6 +84,16 @@
       {
         "label": "GitHub",
         "link": "https://github.com/hrfmmymt/",
+        "icon_class": "github"
+      },
+      {
+        "label": "CodePen",
+        "link": "https://codepen.io/hrfmmymt/",
+        "icon_class": "github"
+      },
+      {
+        "label": "JSFIDDLE",
+        "link": "https://jsfiddle.net/user/hrfmmymt/fiddles/",
         "icon_class": "github"
       }
     ]

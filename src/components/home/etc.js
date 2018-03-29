@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
-import styles from './footer.css'
+import styles from './etc.css'
 
-class FooterItem extends Component {
+class EtcItem extends Component {
   render({ label, link }) {
     return (
       <div>
@@ -13,7 +13,7 @@ class FooterItem extends Component {
   }
 }
 
-export default class Footer extends Component {
+export default class Etc extends Component {
   render(props) {
     return (
       <footer className={styles.wrapper}>
@@ -21,7 +21,7 @@ export default class Footer extends Component {
           <div>
             <h2>{props.title}</h2>
           </div>
-          {props.list && props.list.map(item => <FooterItem {...item} />)}
+          {props.list && props.list.map(item => <EtcItem {...item} />)}
         </div>
       </footer>
     )

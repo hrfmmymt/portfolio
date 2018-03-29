@@ -4,7 +4,7 @@ import Header from '../../components/home/header'
 import Profile from '../../components/home/profile'
 import Career from '../../components/home/career'
 import Skills from '../../components/home/skills'
-import Footer from '../../components/home/footer'
+import Etc from '../../components/home/etc'
 
 export default class Home extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class Home extends Component {
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}
         {profile.skills && <Skills {...profile.skills} />}
-        {profile.contact && <Footer {...profile.contact} />}
+        {profile.etc && <Etc {...profile.etc} />}
       </div>
     )
   }

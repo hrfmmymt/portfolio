@@ -45,7 +45,7 @@ class SkillChart extends Component {
   }
 
   render(list) {
-    const data = list.item
+    const data = list.data
 
     return (
       <ResponsiveContainer width="100%" aspect={2}>
@@ -69,6 +69,7 @@ export default class Skills extends Component {
     return (
       <section className={styles.wrapper}>
         <h2>{props.title}</h2>
+        <SkillChart data={props.list} />
       </section>
     )
   }
