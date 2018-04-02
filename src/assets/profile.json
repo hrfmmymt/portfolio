@@ -3,13 +3,13 @@
     "title": "title"
   },
   "profile": {
-    "title": "profile",
+    "title": "# profile",
     "about": {
-      "title": "About me",
-      "description": "I love ウェイ!"
+      "title": "## about",
+      "description": "Japanese Web Designer / Developerなんか書く"
     },
     "bio": {
-      "title": "Bio",
+      "title": "## Bio",
       "list": [
         {
           "label": "name",
