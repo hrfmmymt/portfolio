@@ -6,13 +6,13 @@
     "title": "# profile",
     "about": {
       "title": "## about",
-      "description": "Japanese Web Designer / Developerなんか書く"
+      "description": "Japanese Web [ Developer | Designer ]"
     },
     "bio": {
       "title": "## Bio",
       "list": [
         {
-          "label": "name",
+          "label": "id",
           "value": "hrfmmymt"
         },
         {
@@ -28,22 +28,58 @@
       {
         "list": [
           {
-            "job_title": "job01",
+            "job_title": "スマートフォン用ソーシャルゲーム その1",
             "time": {
-              "from": "Aug 2011",
-              "to": "Apr 2012"
+              "from": "Aug 2012",
+              "to": "Apr 2013"
             },
-            "role": "write role in this job",
-            "description": "this is job01."
+            "role": "- UI デザイン - カードデザイン - アイコン / ボタン等画像作成 - ワークフロードキュメント化",
+            "description": "デザイン・マークアップ担当として上記作業を行いました。アジャイル開発。ネイティブアプリでiOS / Android 対応。アニメーションなどの動きのある部分はUnity 3Dで、動きがなく更新頻度の高い画面はHTMLで構築していました。私は主にHTML側と画像作成に従事しておりました。Unityは要素の配置を変えたり、色を変えるなど極々軽微な作業でのみ使用しました。C#でがつがつ開発などはしておりません。スキルの高い技術者と関わった、私にとって一つの転機となった案件だと思います。"
           },
           {
-            "job_title": "job02",
+            "job_title": "ファイナンシャルプランナー向け業務用 Web アプリ",
             "time": {
-              "from": "Apr 2015",
+              "from": "May 2013",
+              "to": "Dec 2013"
+            },
+            "role": "Web Apps for financial planners.",
+            "description": "SPA 開発案件。久しぶりにスーツを着ました。設計をアジャイルでするのが楽しかった思い出があります。Web フロントエンドの新技術に多く触れ、私自身がフロントエンドに振り切って、何かいい感じにがんばっていこうと決心するに至った、これもまた一つの転機となった案件です。"
+          },
+          {
+            "job_title": "Web サービスいくつか",
+            "time": {
+              "from": "Jan 2014",
+              "to": "Jun 2014"
+            },
+            "role": "write role in this job",
+            "description": "いろいろな Web サービスを作ったり改修したりしました。"
+          },
+          {
+            "job_title": "スマートフォン用ソーシャルゲーム その2",
+            "time": {
+              "from": "Jul 2014",
+              "to": "Sep 2014"
+            },
+            "role": "write role in this job",
+            "description": "可愛いお部屋とアバターを作ってなんかやるブラウザゲーム。テンプレートエンジンに Velocity、jQuery / Angular (v1) で UI を、CreatJS でアニメーションを実装。改修とイベント追加（流用）を行なっていました。"
+          },
+          {
+            "job_title": "広告配信システム管理画面",
+            "time": {
+              "from": "Oct 2014",
+              "to": "Sep 2015"
+            },
+            "role": "write role in this job",
+            "description": "SSP 事業者にて、インターネット広告主向けサービスのいわゆる管理画面の開発を行いました。FW は AngularJS (Angular-Seed) を使用しました。Angular難しいです。"
+          },
+          {
+            "job_title": "航空券予約サイト など",
+            "time": {
+              "from": "Oct 2015",
               "to": " "
             },
             "role": "write role in this job",
-            "description": "this is job02."
+            "description": "新規サービス開発、コードレビュー、既存サービスの改修・リファクタリング、SEO改善、パフォーマンス改善、A / B テストその他関連作業などを行っています。"
           }
         ]
       }
