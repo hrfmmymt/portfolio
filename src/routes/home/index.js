@@ -20,7 +20,6 @@ export default class Home extends Component {
         {profile.header && <Header {...profile.header} />}
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}
-        {profile.skills && <Skills {...profile.skills} />}
         {profile.etc && <Etc {...profile.etc} />}
       </div>
     )

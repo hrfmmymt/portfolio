@@ -25,14 +25,17 @@ class ResumeItem extends Component {
     const timePeriod = formatTime({ ...time })
 
     return (
-      <li>
+      <li className={styles.timelineItem}>
         <Link
           path='/career/'
           href={`/career/${job_title}`}>
-          <strong>{job_title}</strong>
-          <p>{timePeriod}</p>
+          <time className={styles.time}>{timePeriod}</time>
+          <div className={styles.circle}></div>
+          <div className={styles.description}>
+            <h3>{job_title}</h3>
+            <p>{role}</p>
+          </div>
         </Link>
-        <p>{role}</p>
       </li>
     )
   }
@@ -41,7 +44,7 @@ class ResumeItem extends Component {
 class CareerItem extends Component {
   render({ list }) {
     return (
-      <ul>
+      <ul className={styles.timelineList}>
         { list && 
           list.map(item => (
             <ResumeItem { ...item } />
@@ -56,10 +59,8 @@ export default class Career extends Component {
   render(props) {
     return (
       <main className={styles.wrapper}>
-        <div>
-          <div>
-            <h2>{ props.title }</h2>
-          </div>
+        <h2>{ props.title }</h2>
+        <div className={styles.contents}>
           { props.list &&
             props.list.map(item => (
               <CareerItem {...item} />
