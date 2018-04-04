@@ -1,15 +1,16 @@
 {
   "header": {
-    "title": "title"
+    "title": "# title",
+    "subtitle": "subtitle"
   },
   "profile": {
-    "title": "# profile",
+    "title": "## profile",
     "about": {
-      "title": "## about",
+      "title": "### about",
       "description": "Japanese Web [ Developer | Designer ]"
     },
     "bio": {
-      "title": "## Bio",
+      "title": "### Bio",
       "list": [
         {
           "label": "id",
@@ -23,7 +24,7 @@
     }
   },
   "career": {
-    "title": "career",
+    "title": "## career",
     "list": [
       {
         "list": [
@@ -86,7 +87,7 @@
     ]
   },
   "skills": {
-    "title": "skills, or",
+    "title": "## skills, or",
     "list": [
       { "label": "React", "value": 50 },
       { "label": "Preact", "value": 50 },
@@ -110,7 +111,7 @@
     ]
   },
   "etc": {
-    "title": "etc.",
+    "title": "## etc.",
     "list": [
       {
         "label": "Blog",

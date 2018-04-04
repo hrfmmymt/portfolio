@@ -24,20 +24,35 @@ export default class Profile extends Component {
     return (
       <section className={styles.wrapper}>
         <div>
-          <div>
-            <h2>{props.title}</h2>
-          </div>
-          <div>
-            {props.about && <h5>{props.about.title}</h5>}
-            {props.about && <p>{props.about.description}</p>}
-          </div>
-          {bioList.length && (
-            <div>
-              <h5>{props.bio.title}</h5>
-              <ul>{bioList}</ul>
-            </div>
-          )}
+          <h2>{props.title}</h2>
         </div>
+        <picture>
+          <source
+            srcset="https://placeimg.com/1280/480/any"
+            media="(min-width: 997px)"
+            sizes="100vw" />
+          <source
+            srcset="https://placeimg.com/800/480/any"
+            media="(min-width: 672px)"
+            sizes="100vw" />
+          <source
+            srcset="https://placeimg.com/640/480/any"
+            media="(min-width: 0px)"
+            sizes="100vw" />
+          <img
+            src="https://placeimg.com/1280/480/any"
+            alt="my pic" />
+        </picture>
+        <div>
+          {props.about && <h3>{props.about.title}</h3>}
+          {props.about && <p>{props.about.description}</p>}
+        </div>
+        {bioList.length && (
+          <div>
+            <h3>{props.bio.title}</h3>
+            <ul>{bioList}</ul>
+          </div>
+        )}
       </section>
     )
   }

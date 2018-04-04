@@ -9,9 +9,12 @@ export default class Header extends Component {
   render(props) {
     return (
       <header className={styles.wrapper}>
-        <h2 className="title" itemProp="name">
+        <h1 className="title" itemProp="name">
           {props.title}
-        </h2>
+        </h1>
+        <p class="subtitle" itemprop="jobTitle">
+          {props.subtitle}
+        </p>
       </header>
     )
   }
