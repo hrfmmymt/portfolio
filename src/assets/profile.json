@@ -114,24 +114,29 @@
     "title": "## etc.",
     "list": [
       {
+        "label": "hrfmmymt.github.io",
+        "link": "https://hrfmmymt.github.io/",
+        "className": "hrfmmymt"
+      },
+      {
         "label": "Blog",
         "link": "https://hrfmmymt.tumblr.com/",
-        "icon_class": "globe"
+        "className": "blog"
       },
       {
         "label": "GitHub",
         "link": "https://github.com/hrfmmymt/",
-        "icon_class": "github"
+        "className": "github"
       },
       {
         "label": "CodePen",
         "link": "https://codepen.io/hrfmmymt/",
-        "icon_class": "github"
+        "className": "codepen"
       },
       {
         "label": "JSFIDDLE",
         "link": "https://jsfiddle.net/user/hrfmmymt/fiddles/",
-        "icon_class": "github"
+        "className": "jsfiddle"
       }
     ]
   }

@@ -18,7 +18,9 @@ class SkillMap extends Component {
   render({ label, value }) {
     const classes = 'value-' + value
     return (
-      <MapItem className={ classes }>{ label } - { value }</MapItem>
+      <MapItem className={classes}>
+        {label} - {value}
+      </MapItem>
     )
   }
 }
@@ -29,7 +31,7 @@ export default class Skills extends Component {
       <section className={styles.wrapper}>
         <h2>{props.title}</h2>
         <MapWrapper>
-          { props.list && props.list.map(data => <SkillMap {...data} />) }
+          {props.list && props.list.map(data => <SkillMap {...data} />)}
         </MapWrapper>
       </section>
     )

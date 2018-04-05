@@ -12,7 +12,7 @@ export default class Header extends Component {
         <h1 className="title" itemProp="name">
           {props.title}
         </h1>
-        <p class="subtitle" itemprop="jobTitle">
+        <p className="subtitle" itemProp="jobTitle">
           {props.subtitle}
         </p>
       </header>

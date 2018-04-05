@@ -16,7 +16,12 @@ export default class Home extends Component {
 
   render({}, { profile }) {
     return (
-      <div itemScope itemProp="Person" itemType="https://schema.org/Person" className={styles.wrapper}>
+      <div
+        itemScope
+        itemProp="Person"
+        itemType="https://schema.org/Person"
+        className={styles.wrapper}
+      >
         {profile.header && <Header {...profile.header} />}
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}

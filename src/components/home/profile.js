@@ -7,12 +7,12 @@ export default class Profile extends Component {
 
     if (props.bio && props.bio.list) {
       const bioLabels = props.bio.list.map(item => (
-          <li key={item.label}>
+          <dt key={item.label}>
             <strong>{item.label}</strong>
-          </li>
+          </dt>
         )),
         bioValues = props.bio.list.map(item => (
-          <li key={item.value}>{item.value}</li>
+          <dd key={item.value}>{item.value}</dd>
         ))
 
       bioList = bioLabels.reduce((list, item, i) => {
@@ -28,20 +28,21 @@ export default class Profile extends Component {
         </div>
         <picture>
           <source
-            srcset="https://placeimg.com/1280/480/any"
+            srcSet="https://placeimg.com/1280/480/any"
             media="(min-width: 997px)"
-            sizes="100vw" />
+            sizes="100vw"
+          />
           <source
-            srcset="https://placeimg.com/800/480/any"
+            srcSet="https://placeimg.com/800/480/any"
             media="(min-width: 672px)"
-            sizes="100vw" />
+            sizes="100vw"
+          />
           <source
-            srcset="https://placeimg.com/640/480/any"
+            srcSet="https://placeimg.com/640/480/any"
             media="(min-width: 0px)"
-            sizes="100vw" />
-          <img
-            src="https://placeimg.com/1280/480/any"
-            alt="my pic" />
+            sizes="100vw"
+          />
+          <img src="https://placeimg.com/1280/480/any" alt="my pic" />
         </picture>
         <div>
           {props.about && <h3>{props.about.title}</h3>}
@@ -50,7 +51,7 @@ export default class Profile extends Component {
         {bioList.length && (
           <div>
             <h3>{props.bio.title}</h3>
-            <ul>{bioList}</ul>
+            <dl>{bioList}</dl>
           </div>
         )}
       </section>

@@ -7,15 +7,4 @@ export default function(config, env, helpers) {
     'css-loader'
   )[0]
   cssLoader.options.localIdentName = '[name]-[local]-[hash:base64:5]'
-
-  // config.module.entry.push({
-  //   recharts: './node_modules/recharts/umd/Recharts.min.js'
-  // })
-
-  // const {CommonsChunkPlugin} = helpers.getPluginsByName(config, 'CommonsChunkPlugin')
-
-  // CommonsChunkPlugin({
-  //   name: 'recharts',
-  //   async: true
-  // })
 }

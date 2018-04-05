@@ -33,8 +33,6 @@ export default class CareerDetail extends Component {
   render(props) {
     const job_title = props.job_title
 
-    return (
-      <CareerDetailList job_title={ job_title } />
-    )
+    return <CareerDetailList job_title={job_title} />
   }
 }

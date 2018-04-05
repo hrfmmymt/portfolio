@@ -2,13 +2,18 @@ import { h, Component } from 'preact'
 import styles from './etc.css'
 
 class EtcItem extends Component {
-  render({ label, link }) {
+  render({ label, link, className }) {
     return (
-      <div>
-        <a href={link} target="_blank" rel="noopener noreferrer">
+      <li>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.links} ${className}`}
+        >
           {label}
         </a>
-      </div>
+      </li>
     )
   }
 }
@@ -17,12 +22,8 @@ export default class Etc extends Component {
   render(props) {
     return (
       <footer className={styles.wrapper}>
-        <div>
-          <div>
-            <h2>{props.title}</h2>
-          </div>
-          {props.list && props.list.map(item => <EtcItem {...item} />)}
-        </div>
+        <h2>{props.title}</h2>
+        <ul>{props.list && props.list.map(item => <EtcItem {...item} />)}</ul>
       </footer>
     )
   }

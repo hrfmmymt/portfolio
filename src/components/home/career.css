@@ -1,7 +1,8 @@
 .wrapper {
-  padding: 56px 20px;
+  padding: 0 2rem;
   min-height: 100%;
   width: 100%;
+  margin-bottom: 4rem;
 }
 
 .contetns {
@@ -33,9 +34,14 @@
   position: relative;
 }
 
-/* TODO hover */
 .timelineItem a {
   text-decoration: none;
+  color: #000;
+  transition: .2s all;
+}
+
+.timelineItem a:hover > .description {
+  filter: drop-shadow(0 0 3px #222);
 }
 
 .time {
@@ -70,7 +76,7 @@
 
 .description {
   margin: 0 0 15px 25%;
-  background: #efefef;
+  background: #eaeaea;
   /*color: #fff;*/
   padding: 2em;
   font-size: 1.2em;
@@ -78,6 +84,7 @@
   line-height: 1.4;
   position: relative;
   border-radius: 5px;
+  transition: .2s all;
 }
 
 .description::after {
@@ -88,17 +95,17 @@
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: #efefef;
+  border-right-color: #eaeaea;
   border-width: 10px;
   top: 10px;
 }
 
 .timelineItem:nth-child(odd) .description {
-  background-color: #fafafa;
+  background-color: #d0d0d0;
 }
 
 .timelineItem:nth-child(odd) .description::after {
-  border-right-color: #fafafa;
+  border-right-color: #d0d0d0;
 }
 
 .description h3 {
@@ -142,6 +149,6 @@
   }
   .timelineItem:nth-child(odd) .description::after {
     border-right-color: transparent;
-    border-bottom-color: #fafafa;
+    border-bottom-color: #d0d0d0;
   }
 }
