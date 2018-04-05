@@ -23,7 +23,10 @@ export default class Etc extends Component {
     return (
       <footer className={styles.wrapper}>
         <h2>{props.title}</h2>
-        <ul>{props.list && props.list.map(item => <EtcItem {...item} />)}</ul>
+        <ul>
+          {props.list &&
+            props.list.map((item, i) => <EtcItem key={i} {...item} />)}
+        </ul>
       </footer>
     )
   }

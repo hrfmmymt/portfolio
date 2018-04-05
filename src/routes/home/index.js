@@ -3,7 +3,7 @@ import styles from './home'
 import Header from '../../components/home/header'
 import Profile from '../../components/home/profile'
 import Career from '../../components/home/career'
-import Skills from '../../components/home/skills'
+// import Skills from '../../components/home/skills'
 import Etc from '../../components/home/etc'
 
 export default class Home extends Component {

@@ -31,7 +31,8 @@ export default class Skills extends Component {
       <section className={styles.wrapper}>
         <h2>{props.title}</h2>
         <MapWrapper>
-          {props.list && props.list.map(data => <SkillMap {...data} />)}
+          {props.list &&
+            props.list.map((data, i) => <SkillMap key={i} {...data} />)}
         </MapWrapper>
       </section>
     )

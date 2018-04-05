@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import { Router, Route } from 'preact-router'
+import { Router } from 'preact-router'
 
 import Home from '../routes/home'
 import CareerDetail from '../routes/career'

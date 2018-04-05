@@ -10,11 +10,8 @@
     "dev": "preact watch",
     "deploy": "npm run build && netlify deploy -p build",
     "eslint": "eslint src",
-    "fmt": "prettier-eslint --write 'src/**/*.js'"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "fmt:js": "eslint src --quiet --fix",
+    "fmt:css": "prettier --write 'src/**/*.css'"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
@@ -27,8 +24,6 @@
     "netlify-cli": "^1.2.2",
     "preact-cli": "^2.2.1",
     "prettier": "1.11.1",
-    "prettier-eslint": "^8.8.1",
-    "prettier-eslint-cli": "^4.7.1",
     "styled-components": "^3.2.3"
   },
   "dependencies": {
