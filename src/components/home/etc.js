@@ -1,18 +1,18 @@
 import { h, Component } from 'preact'
-import styles from './etc.css'
+import styled from 'styled-components'
 
 class EtcItem extends Component {
   render({ label, link, className }) {
     return (
       <li>
-        <a
+        <Link
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${styles.links} ${className}`}
+          className={className}
         >
           {label}
-        </a>
+        </Link>
       </li>
     )
   }
@@ -21,13 +21,23 @@ class EtcItem extends Component {
 export default class Etc extends Component {
   render(props) {
     return (
-      <footer className={styles.wrapper}>
+      <Wrapper>
         <h2>{props.title}</h2>
         <ul>
           {props.list &&
             props.list.map((item, i) => <EtcItem key={i} {...item} />)}
         </ul>
-      </footer>
+      </Wrapper>
     )
   }
 }
+
+const Wrapper = styled.footer`
+  padding: 0 2rem;
+  min-height: 100%;
+  width: 100%;
+  margin-bottom: 4rem;
+`
+
+const Link = styled.a`
+`

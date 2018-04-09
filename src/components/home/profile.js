@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import styles from './profile.css'
+import styled from 'styled-components'
 
 export default class Profile extends Component {
   render(props) {
@@ -22,10 +22,8 @@ export default class Profile extends Component {
     }
 
     return (
-      <section className={styles.wrapper}>
-        <div>
-          <h2>{props.title}</h2>
-        </div>
+      <Wrapper>
+        <h2>{props.title}</h2>
         <picture>
           <source
             srcSet="https://placeimg.com/1280/480/any"
@@ -54,7 +52,18 @@ export default class Profile extends Component {
             <dl>{bioList}</dl>
           </div>
         )}
-      </section>
+      </Wrapper>
     )
   }
 }
+
+const Wrapper = styled.section`
+  padding: 0 2rem;
+  min-height: 100%;
+  width: 100%;
+  margin-bottom: 4rem;
+
+  & img {
+    width: 100%;
+  }
+`
