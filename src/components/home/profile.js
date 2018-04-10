@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import styled from 'styled-components'
+import Contents from './ui-contents'
 
 export default class Profile extends Component {
   render(props) {
@@ -42,16 +43,18 @@ export default class Profile extends Component {
           />
           <img src="https://placeimg.com/1280/480/any" alt="my pic" />
         </picture>
-        <div>
-          {props.about && <h3>{props.about.title}</h3>}
-          {props.about && <p>{props.about.description}</p>}
-        </div>
-        {bioList.length && (
+        <Contents>
           <div>
-            <h3>{props.bio.title}</h3>
-            <dl>{bioList}</dl>
+            {props.about && <h3>{props.about.title}</h3>}
+            {props.about && <p>{props.about.description}</p>}
           </div>
-        )}
+          {bioList.length && (
+            <div>
+              <h3>{props.bio.title}</h3>
+              <dl>{bioList}</dl>
+            </div>
+          )}
+        </Contents>
       </Wrapper>
     )
   }

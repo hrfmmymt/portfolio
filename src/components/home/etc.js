@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Contents from './ui-contents'
 import styled from 'styled-components'
 
 class EtcItem extends Component {
@@ -23,10 +24,12 @@ export default class Etc extends Component {
     return (
       <Wrapper>
         <h2>{props.title}</h2>
-        <ul>
-          {props.list &&
-            props.list.map((item, i) => <EtcItem key={i} {...item} />)}
-        </ul>
+        <Contents>
+          <ul>
+            {props.list &&
+              props.list.map((item, i) => <EtcItem key={i} {...item} />)}
+          </ul>
+        </Contents>
       </Wrapper>
     )
   }
@@ -39,5 +42,4 @@ const Wrapper = styled.footer`
   margin-bottom: 4rem;
 `
 
-const Link = styled.a`
-`
+const Link = styled.a``

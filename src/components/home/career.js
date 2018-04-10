@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
+import Contents from './ui-contents'
 import styled from 'styled-components'
 import { media } from '../../style-utils'
 
@@ -69,13 +70,6 @@ const Wrapper = styled.main`
   min-height: 100%;
   width: 100%;
   margin-bottom: 4rem;
-`
-
-const Contents = styled.div`
-  width: 90%;
-  max-width: 69em;
-  margin: 0 auto;
-  padding: 0 1.875em 3.125em 1.875em;
 `
 
 const TimelineList = styled.ul`

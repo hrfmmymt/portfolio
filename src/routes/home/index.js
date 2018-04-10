@@ -17,11 +17,7 @@ export default class Home extends Component {
 
   render({}, { profile }) {
     return (
-      <Wrapper
-        itemScope
-        itemProp="Person"
-        itemType="https://schema.org/Person"
-      >
+      <Wrapper itemScope itemProp="Person" itemType="https://schema.org/Person">
         {profile.header && <Header {...profile.header} />}
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}
