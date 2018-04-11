@@ -3,9 +3,9 @@ import { media } from '../../style-utils'
 
 const Contents = styled.div`
   width: 90%;
-  max-width: 69em;
-  margin: 0 auto;
-  padding: 0 1.875em 3.125em 1.875em;
+  max-width: 69rem;
+  margin: 5rem auto;
+  padding: 0 1rem 3rem 1rem;
 
   ${media.tablet`
     width: 100%;

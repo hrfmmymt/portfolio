@@ -100,7 +100,6 @@ const TimelineItem = styled.li`
   position: relative;
 
   & a {
-    text-decoration: none;
     color: #000;
     transition: 0.2s all;
 

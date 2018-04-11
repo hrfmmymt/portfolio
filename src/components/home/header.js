@@ -9,9 +9,9 @@ export default class Header extends Component {
   render(props) {
     return (
       <Wrapper>
-        <h1 className="title" itemProp="name">
+        <Heading className="title" itemProp="name">
           {props.title}
-        </h1>
+        </Heading>
         <p className="subtitle" itemProp="jobTitle">
           {props.subtitle}
         </p>
@@ -26,9 +26,13 @@ const Wrapper = styled.header`
   flex-direction: column;
   min-height: 100%;
   height: 100vh;
-  background: #1ba1ff;
+  background-color: #1ba1ff;
   color: #fff;
   width: 100%;
   margin-bottom: 4rem;
   padding: 2rem;
+`
+
+const Heading = styled.h1`
+  font-family: 'Give You Glory', cursive;
 `

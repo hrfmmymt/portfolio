@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 import styled from 'styled-components'
-import Contents from './ui-contents'
+import { media } from '../../style-utils'
 
 export default class Profile extends Component {
   render(props) {
@@ -9,7 +9,7 @@ export default class Profile extends Component {
     if (props.bio && props.bio.list) {
       const bioLabels = props.bio.list.map(item => (
           <dt key={item.label}>
-            <strong>{item.label}</strong>
+            <h4>#### {item.label}</h4>
           </dt>
         )),
         bioValues = props.bio.list.map(item => (
@@ -44,15 +44,15 @@ export default class Profile extends Component {
           <img src="https://placeimg.com/1280/480/any" alt="my pic" />
         </picture>
         <Contents>
-          <div>
+          <Content>
             {props.about && <h3>{props.about.title}</h3>}
             {props.about && <p>{props.about.description}</p>}
-          </div>
+          </Content>
           {bioList.length && (
-            <div>
+            <Content>
               <h3>{props.bio.title}</h3>
               <dl>{bioList}</dl>
-            </div>
+            </Content>
           )}
         </Contents>
       </Wrapper>
@@ -64,9 +64,24 @@ const Wrapper = styled.section`
   padding: 0 2rem;
   min-height: 100%;
   width: 100%;
-  margin-bottom: 4rem;
 
   & img {
     width: 100%;
   }
+`
+
+const Contents = styled.div`
+  width: 90%;
+  max-width: 69rem;
+  margin: 5rem auto 0;
+  padding: 0 1rem 3rem 1rem;
+
+  ${media.tablet`
+    width: 100%;
+    padding: 0;
+  `};
+`
+
+const Content = styled.div`
+  margin-bottom: 4rem;
 `
