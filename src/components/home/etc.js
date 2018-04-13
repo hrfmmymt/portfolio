@@ -32,7 +32,7 @@ export default class Etc extends Component {
             {props.list &&
               props.list.map((item, i) => <EtcItem key={i} {...item} />)}
           </List>
-          <Copyright />
+          <Copyright name={props.name} />
         </Contents>
       </Wrapper>
     )

@@ -6,15 +6,15 @@ export default class Copyright extends Component {
   render(props) {
     return (
       <Wrapper>
-        © { new Date().getFullYear() }
+        © {`${new Date().getFullYear()} `}
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://hrfmmymt.github.io"
         >
-          {' '}
-          Hirofumi Miyamoto
-        </a>. All rights reserved.
+          {props.name}
+        </a>
+        . All rights reserved.
       </Wrapper>
     )
   }
