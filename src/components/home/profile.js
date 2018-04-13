@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Heading2 from './ui-h2'
 import styled from 'styled-components'
 import { media } from '../../style-utils'
 
@@ -24,7 +25,7 @@ export default class Profile extends Component {
 
     return (
       <Wrapper>
-        <h2>{props.title}</h2>
+        <Heading2>{props.title}</Heading2>
         <picture>
           <source
             srcSet="https://placeimg.com/1280/480/any"
@@ -64,10 +65,15 @@ const Wrapper = styled.section`
   padding: 0 2rem;
   min-height: 100%;
   width: 100%;
+  border-bottom: 1px solid #aaa;
 
   & img {
     width: 100%;
   }
+
+  ${media.tablet`
+    //padding: 2rem 2rem;
+  `};
 `
 
 const Contents = styled.div`
@@ -79,6 +85,7 @@ const Contents = styled.div`
   ${media.tablet`
     width: 100%;
     padding: 0;
+    margin-top: 2rem;
   `};
 `
 

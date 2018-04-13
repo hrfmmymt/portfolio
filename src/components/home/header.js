@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import styled from 'styled-components'
+import { media } from '../../style-utils'
 
 export default class Header extends Component {
   constructor() {
@@ -31,6 +32,10 @@ const Wrapper = styled.header`
   width: 100%;
   margin-bottom: 4rem;
   padding: 2rem;
+
+  ${media.tablet`
+    margin-bottom: 2rem;
+  `};
 `
 
 const Heading = styled.h1`

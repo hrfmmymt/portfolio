@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Heading2 from './ui-h2'
 import styled from 'styled-components'
 import { media } from '../../style-utils'
 
@@ -24,7 +25,7 @@ export default class Etc extends Component {
   render(props) {
     return (
       <Wrapper>
-        <h2>{props.title}</h2>
+        <Heading2>{props.title}</Heading2>
         <Contents>
           <List>
             {props.list &&
@@ -51,7 +52,7 @@ const Wrapper = styled.footer`
   padding: 2rem 2rem 4rem;
   min-height: 100%;
   width: 100%;
-  background-color: #95d3ff;
+  background-color: #b7e1ff;
 `
 
 const Contents = styled.div`

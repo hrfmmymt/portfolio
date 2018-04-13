@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import Contents from './ui-contents'
+import Heading2 from './ui-h2'
 import styled from 'styled-components'
 import { media } from '../../style-utils'
 
@@ -55,7 +56,7 @@ export default class Career extends Component {
   render(props) {
     return (
       <Wrapper>
-        <h2>{props.title}</h2>
+        <Heading2>{props.title}</Heading2>
         <Contents>
           {props.list &&
             props.list.map((item, i) => <CareerItem key={i} {...item} />)}
@@ -66,10 +67,15 @@ export default class Career extends Component {
 }
 
 const Wrapper = styled.main`
-  padding: 0 2rem;
+  padding: 4rem 2rem;
   min-height: 100%;
   width: 100%;
-  margin-bottom: 4rem;
+  border-bottom: 1px solid #aaa;
+  background: #f2f2f2;
+
+  ${media.tablet`
+    padding: 2rem 2rem;
+  `};
 `
 
 const TimelineList = styled.ul`
@@ -79,14 +85,14 @@ const TimelineList = styled.ul`
   position: relative;
 
   &::before {
-    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 10px;
-    background: #000;
+    content: '';
+    width: 4px;
+    background: #1ba1ff;
     left: 20%;
-    margin-left: -10px;
+    margin-left: -6px;
   }
 
   ${media.tablet`
@@ -104,42 +110,26 @@ const TimelineItem = styled.li`
     transition: 0.2s all;
 
     &:hover > .description {
-      filter: drop-shadow(0 0 3px #222);
+      filter: drop-shadow(0 0 3px #1ba1ff);
     }
   }
-
-  &:nth-child(odd) .description {
-    background-color: #d0d0d0;
-  }
-
-  &:nth-child(odd) .description::after {
-    border-right-color: #d0d0d0;
-  }
-
-  ${media.tablet`
-    &:nth-child(odd) .description::after {
-      border-right-color: transparent;
-      border-bottom-color: #d0d0d0;
-    }
-  `};
 `
 
 const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  -webkit-font-smoothing: antialiased;
   position: absolute;
-  color: #fff;
-  background: #000;
-  border-radius: 50%;
-  box-shadow: 0 0 0 8px #666;
-  text-align: center;
-  left: 20%;
   top: 0;
-  margin: 0 0 0 -25px;
+  left: 20%;
+  width: 48px;
+  height: 48px;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  background: #1ba1ff;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 0 0 -28px;
 
   &.isPC::after {
     content: 'PC';
@@ -177,39 +167,73 @@ const Time = styled.time`
 `
 
 const Description = styled.div`
+  position: relative;
   margin: 0 0 15px 25%;
-  background: #eaeaea;
+  border: 1px solid #888;
+  background: #fff;
   padding: 2em;
   font-size: 1.2em;
   font-weight: 300;
   line-height: 1.4;
-  position: relative;
   border-radius: 5px;
   transition: 0.2s all;
 
+  &::before,
   &::after {
+    position: absolute;
+    top: 50%;
     right: 100%;
-    border: solid transparent;
     content: ' ';
     height: 0;
     width: 0;
-    position: absolute;
+    border: solid transparent;
     pointer-events: none;
-    border-right-color: #eaeaea;
-    border-width: 10px;
+  }
+
+  &::after {
     top: 10px;
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 10px;
+  }
+
+  &::before {
+    top: 9px;
+    border-color: rgba(136, 136, 136, 0);
+    border-right-color: #888;
+    border-width: 11px;
   }
 
   ${media.tablet`
     margin: 0 0 30px 0;
     padding: 1em;
 
+    &::before,
     &::after {
+      position: absolute;
+      top: inherit;
       right: auto;
-      left: 20px;
-      border-right-color: transparent;
-      border-bottom-color: #efefef;
-      top: -20px;
+      bottom: 100%;
+      left: 10%;
+      border: solid transparent;
+      content: ' ';
+      height: 0;
+      width: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      border-color: rgba(136, 136, 136, 0);
+      border-bottom-color: #888;
+      border-width: 11px;
+      margin-left: -11px;
+    }
+
+    &::after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #fff;
+      border-width: 10px;
+      margin-left: -10px;
     }
   `} & h3 {
     margin-top: 0;
