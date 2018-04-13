@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import Heading2 from './ui-h2'
+import Copyright from './copyright'
 import styled from 'styled-components'
 import { media } from '../../style-utils'
 
@@ -31,17 +32,7 @@ export default class Etc extends Component {
             {props.list &&
               props.list.map((item, i) => <EtcItem key={i} {...item} />)}
           </List>
-          <p className="copy">
-            © 2018
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://hrfmmymt.github.io"
-            >
-              {' '}
-              Hirofumi Miyamoto
-            </a>. All rights reserved.
-          </p>
+          <Copyright />
         </Contents>
       </Wrapper>
     )
@@ -59,23 +50,16 @@ const Contents = styled.div`
   width: 90%;
   max-width: 69rem;
   margin: 4rem auto 0;
-  padding: 0 1rem 3rem 1rem;
+  padding: 0 1rem;
 
   ${media.tablet`
     width: 100%;
     padding: 0;
-  `} ${media.phone`
-    margin-top: 2rem;
-
-    & .copy {
-      font-size: 90%;
-    }
   `}
 
-  & .copy {
-    text-align: center;
-    margin-top: 4rem;
-  }
+  ${media.phone`
+    margin-top: 2rem;
+  `}
 
   & a {
     color: #0057a7;
@@ -91,9 +75,11 @@ const List = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 0 2rem;
+  margin-bottom: 6rem;
 
   ${media.phone`
     flex-flow: column;
+    margin-bottom: 4rem;
   `};
 `
 
