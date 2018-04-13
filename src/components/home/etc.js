@@ -40,10 +40,14 @@ export default class Etc extends Component {
 }
 
 const Wrapper = styled.footer`
-  padding: 2rem 2rem 4rem;
+  padding: 4rem 2rem;
   min-height: 100%;
   width: 100%;
-  background-color: #b7e1ff;
+  background: #b7e1ff;
+
+  ${media.tablet`
+    padding: 2rem 2rem;
+  `};
 `
 
 const Contents = styled.div`
