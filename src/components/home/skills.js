@@ -104,7 +104,7 @@ const MapItem = styled.div`
   }
 
   &.😇 {
-    font-size: 140%;
+    font-size: 180%;
     height: 10vh;
   }
 `
