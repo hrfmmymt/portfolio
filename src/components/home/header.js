@@ -22,6 +22,8 @@ export default class Header extends Component {
             xmlnsXlink="http://www.w3.org/1999/xlink"
             version="1.1"
           >
+            <title>{props.title}</title>
+            <desc>{props.title}</desc>
             <path id="path">
               <animate
                 attributeName="d"

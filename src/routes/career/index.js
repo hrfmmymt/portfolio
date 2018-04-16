@@ -13,7 +13,7 @@ class CareerDetailList extends Component {
 
   render(item) {
     const thisJob = this.state.career[0].list.filter(el => {
-      return el.job_title === item.job_title
+      return el.path === item.path
     })
 
     return (
@@ -31,9 +31,9 @@ class CareerDetailList extends Component {
 
 export default class CareerDetail extends Component {
   render(props) {
-    const job_title = props.job_title
+    const path = props.path
 
-    return <CareerDetailList job_title={job_title} />
+    return <CareerDetailList path={path} />
   }
 }
 

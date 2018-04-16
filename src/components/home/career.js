@@ -18,7 +18,7 @@ class ResumeItem extends Component {
   }
 
   render() {
-    const { job_title, time, device, role } = this.state.career
+    const { job_title, time, device, path, role } = this.state.career
 
     const timePeriod = formatTime({ ...time })
 
@@ -29,7 +29,7 @@ class ResumeItem extends Component {
 
     return (
       <TimelineItem>
-        <Link path="/career/" href={`/career/${job_title}`}>
+        <Link path="/career/" href={`/career/${path}`}>
           <Time>{timePeriod}</Time>
           <Circle className={devices} />
           <Description className="description">
