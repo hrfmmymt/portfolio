@@ -25,5 +25,5 @@ const Wrapper = styled.p`
 
   ${media.phone`
     font-size: 90%;
-  `}
+  `};
 `

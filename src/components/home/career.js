@@ -55,7 +55,7 @@ class CareerItem extends Component {
 export default class Career extends Component {
   render(props) {
     return (
-      <Wrapper>
+      <Wrapper name="career" id="career">
         <Heading2>{props.title}</Heading2>
         <Contents>
           {props.list &&

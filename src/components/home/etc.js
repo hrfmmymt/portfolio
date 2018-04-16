@@ -25,7 +25,7 @@ class EtcItem extends Component {
 export default class Etc extends Component {
   render(props) {
     return (
-      <Wrapper>
+      <Wrapper name="etc" id="etc">
         <Heading2>{props.title}</Heading2>
         <Contents>
           <List>
@@ -59,9 +59,7 @@ const Contents = styled.div`
   ${media.tablet`
     width: 100%;
     padding: 0;
-  `}
-
-  ${media.phone`
+  `} ${media.phone`
     margin-top: 2rem;
   `}
 

@@ -29,6 +29,7 @@
   "dependencies": {
     "preact": "^8.2.7",
     "preact-compat": "^3.18.0",
-    "preact-router": "^2.6.0"
+    "preact-router": "^2.6.0",
+    "react-scroll": "^1.7.8"
   }
 }

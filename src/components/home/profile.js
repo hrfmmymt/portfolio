@@ -24,7 +24,7 @@ export default class Profile extends Component {
     }
 
     return (
-      <Wrapper>
+      <Wrapper name="profile" id="profile">
         <Heading2>{props.title}</Heading2>
         <picture>
           <source
@@ -62,7 +62,7 @@ export default class Profile extends Component {
 }
 
 const Wrapper = styled.section`
-  padding: 0 2rem;
+  padding: 4rem 2rem;
   min-height: 100%;
   width: 100%;
   border-bottom: 1px solid #aaa;
@@ -72,7 +72,7 @@ const Wrapper = styled.section`
   }
 
   ${media.tablet`
-    //padding: 2rem 2rem;
+    padding: 2rem 2rem;
   `};
 `
 

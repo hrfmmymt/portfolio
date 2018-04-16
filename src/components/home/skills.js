@@ -17,7 +17,7 @@ const shuffleArray = array => {
 class SkillMap extends Component {
   render({ label, value }) {
     let classes, labelDesc
-    switch(value) {
+    switch (value) {
       case 1:
         classes = '😩'
         labelDesc = 'During study'
@@ -33,9 +33,7 @@ class SkillMap extends Component {
     }
 
     return (
-      <MapItem
-        className={classes}
-        aria-label={labelDesc}>
+      <MapItem className={classes} aria-label={labelDesc}>
         {label}
       </MapItem>
     )
@@ -47,7 +45,7 @@ export default class Skills extends Component {
     const shuffledLists = shuffleArray(props.list)
 
     return (
-      <Wrapper>
+      <Wrapper name="skills" id="skills">
         <Heading2>{props.title}</Heading2>
         <MapWrapper>
           {props.list &&
@@ -89,7 +87,7 @@ const MapItem = styled.div`
   justify-content: center;
   align-items: center;
   background: #e4e4e4;
-  margin: .5rem;
+  margin: 0.5rem;
   padding: 1rem;
   cursor: default;
 
