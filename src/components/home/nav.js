@@ -40,7 +40,7 @@ export default class Nav extends Component {
               >
                 profile
               </Link>
-            </li>
+            </li><hr />
             <li>
               <Link
                 to="career"
@@ -52,7 +52,7 @@ export default class Nav extends Component {
               >
                 career
               </Link>
-            </li>
+            </li><hr />
             <li>
               <Link
                 to="skills"
@@ -64,7 +64,7 @@ export default class Nav extends Component {
               >
                 skills, or
               </Link>
-            </li>
+            </li><hr />
             <li>
               <Link
                 to="etc"
@@ -136,6 +136,7 @@ const NavList = styled.nav`
 const List = styled.ul`
   display: flex;
   flex-flow: row;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   width: 100%;
@@ -150,12 +151,21 @@ const List = styled.ul`
     }
   }
 
+  & hr {
+    border: 1px solid #fff;
+    height: 1.2rem;
+  }
+
   ${media.tablet`
     flex-flow: column;
 
     & li {
       margin-left: 0;
       line-height: 5;
+    }
+
+    & hr {
+      display: none;
     }
 
     & a {
