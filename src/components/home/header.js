@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import Nav from './nav'
 import Scroll from 'react-scroll'
 const Link = Scroll.Link
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import { media } from '../../style-utils'
 
 export default class Header extends Component {
@@ -54,6 +54,25 @@ export default class Header extends Component {
     )
   }
 }
+
+injectGlobal`
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+`
 
 const Wrapper = styled.header`
   position: relative;

@@ -18,6 +18,7 @@ export default class App extends Component {
   render() {
     return (
       <div id="app">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans" />
         <Router onChange={this.handleRoute}>
           <Home path="/" />
           <CareerDetail path="/career/:path" />
