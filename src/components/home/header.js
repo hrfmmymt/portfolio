@@ -38,7 +38,7 @@ export default class Header extends Component {
         <p className="subtitle" itemProp="jobTitle">
           {props.subtitle}
         </p>
-        <p>scroll down. 下に行け。</p>
+        <p>scroll down slowly and see.</p>
         <Link
           to="profile"
           smooth={true}
@@ -72,7 +72,27 @@ const Wrapper = styled.header`
   & .arrow-scroll {
     position: absolute;
     bottom: 8%;
-    left: 50%;
+    align-self: center;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    animation: scrollHint 1s normal ease-out infinite;
+
+    @keyframes scrollHint {
+      0% {
+        bottom: 8%;
+      }
+      50% {
+        bottom: 6%;
+      }
+      100% {
+        bottom: 8%;
+      }
+    }
+  }
+
+  & a:focus {
+    outline-color: #fff;
   }
 `
 
@@ -90,17 +110,4 @@ const Arrow = styled.div`
   border-width: 0 0.3rem 0.3rem 0;
   padding: 0.6rem;
   transform: rotate(45deg);
-  animation: scrollHint 1s normal ease-out infinite;
-
-  @keyframes scrollHint {
-    0% {
-      bottom: 8%;
-    }
-    50% {
-      bottom: 6%;
-    }
-    100% {
-      bottom: 8%;
-    }
-  }
 `

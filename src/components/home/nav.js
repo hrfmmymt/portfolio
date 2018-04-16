@@ -140,13 +140,10 @@ const List = styled.ul`
   padding: 0;
   width: 100%;
 
-  & li {
-    margin-left: 2rem;
-  }
-
   & a {
     color: #fff;
     display: block;
+    padding: 1rem;
 
     &:hover {
       text-decoration: underline;
@@ -163,6 +160,7 @@ const List = styled.ul`
 
     & a {
       color: #0057a7;
+      padding: 0;
     }
   `};
 `
