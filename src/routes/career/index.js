@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
-import styled from 'styled-components'
+import style from './style.css'
 import profile from '../../assets/profile.json'
 
 class CareerDetailList extends Component {
@@ -17,14 +17,14 @@ class CareerDetailList extends Component {
     })
 
     return (
-      <Overlay>
-        <Contents>
+      <main className={style.wrapper}>
+        <section className={style.contents}>
           <h2>{thisJob[0].job_title}</h2>
           <p>{thisJob[0].description}</p>
           <p>{thisJob[0].role}</p>
           <Link href="/">閉じる</Link>
-        </Contents>
-      </Overlay>
+        </section>
+      </main>
     )
   }
 }
@@ -36,34 +36,3 @@ export default class CareerDetail extends Component {
     return <CareerDetailList path={path} />
   }
 }
-
-const Overlay = styled.main`
-  position: relative;
-  widows: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-`
-
-const Contents = styled.section`
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  padding: 3%;
-  width: 100vw;
-  height: 100vh;
-  animation-name: animateRight;
-  animation-duration: 0.4s;
-
-  @keyframes animateRight {
-    from {
-      right: -300px;
-      opacity: 0;
-    }
-    to {
-      right: 0;
-      opacity: 1;
-    }
-  }
-`

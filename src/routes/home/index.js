@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import styled from 'styled-components'
 
 import Header from '../../components/home/header'
 import Profile from '../../components/home/profile'
@@ -17,17 +16,13 @@ export default class Home extends Component {
 
   render({}, { profile }) {
     return (
-      <Wrapper itemScope itemProp="Person" itemType="https://schema.org/Person">
+      <div itemScope itemProp="Person" itemType="https://schema.org/Person">
         {profile.header && <Header {...profile.header} />}
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}
         {profile.skills && <Skills {...profile.skills} />}
         {profile.etc && <Etc {...profile.etc} />}
-      </Wrapper>
+      </div>
     )
   }
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-`

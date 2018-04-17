@@ -1,23 +1,22 @@
 import { h, Component } from 'preact'
-import Heading2 from './ui-h2'
 import Copyright from './copyright'
-import styled from 'styled-components'
-import { media } from '../../style-utils'
+import style from './etc.css'
+import H2style from './h2.css'
 
 class EtcItem extends Component {
   render({ label, link, className }) {
     return (
-      <ListItem>
-        <Link
+      <li className={style.listItem}>
+        <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className={className}
+          className={`${style.link} ${style[className]}`}
         >
           <img src={`../../assets/etc/${className}.svg`} alt={label} />
           {label}
-        </Link>
-      </ListItem>
+        </a>
+      </li>
     )
   }
 }
@@ -25,79 +24,16 @@ class EtcItem extends Component {
 export default class Etc extends Component {
   render(props) {
     return (
-      <Wrapper name="etc" id="etc">
-        <Heading2>{props.title}</Heading2>
-        <Contents>
-          <List>
+      <footer name="etc" id="etc" className={style.wrapper}>
+        <h2 className={H2style.headingLevel2}>{props.title}</h2>
+        <div className={style.contents}>
+          <ul className={style.list}>
             {props.list &&
               props.list.map((item, i) => <EtcItem key={i} {...item} />)}
-          </List>
+          </ul>
           <Copyright name={props.name} />
-        </Contents>
-      </Wrapper>
+        </div>
+      </footer>
     )
   }
 }
-
-const Wrapper = styled.footer`
-  padding: 4rem 2rem;
-  min-height: 100%;
-  width: 100%;
-  background: #b7e1ff;
-
-  ${media.tablet`
-    padding: 2rem 2rem;
-  `};
-`
-
-const Contents = styled.div`
-  width: 90%;
-  max-width: 69rem;
-  margin: 4rem auto 0;
-  padding: 0 1rem;
-
-  ${media.tablet`
-    width: 100%;
-    padding: 0;
-  `} ${media.phone`
-    margin-top: 2rem;
-  `}
-
-  & a {
-    color: #0057a7;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`
-
-const List = styled.ul`
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 0 2rem;
-  margin-bottom: 6rem;
-
-  ${media.phone`
-    flex-flow: column;
-    margin-bottom: 4rem;
-  `};
-`
-
-const ListItem = styled.li`
-  ${media.phone`
-    padding: 1rem 0;
-    border-bottom: 1px solid #0057a7;
-  `};
-`
-
-const Link = styled.a`
-  display: block;
-
-  & img {
-    width: 1.6rem;
-    vertical-align: middle;
-    margin-right: 0.5em;
-  }
-`

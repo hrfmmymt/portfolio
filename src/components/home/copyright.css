@@ -1,0 +1,10 @@
+.wrapper {
+  text-align: center;
+}
+
+/* for mobile */
+@media (max-width: 414px) {
+  .wrapper {
+    font-size: 90%;
+  }
+}

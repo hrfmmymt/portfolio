@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import Scroll from 'react-scroll'
 const Link = Scroll.Link
 const Events = Scroll.Events
-import styled from 'styled-components'
-import { media } from '../../style-utils'
+import style from './nav.css'
 
 export default class Nav extends Component {
   state = { open: false }
@@ -22,14 +21,18 @@ export default class Nav extends Component {
 
   render({}, { open }) {
     return (
-      <Wrapper className={open ? 'open' : ''}>
-        <StyledHamburger
+      <div className={open ? `${style.wrapper} ${style.open}` : style.wrapper}>
+        <Hamburger
           open={open}
-          className={open ? 'open' : ''}
+          className={
+            open ? `${style.hamburger} ${style.open}` : style.hamburger
+          }
           onClick={this.toggle}
         />
-        <NavList className={open ? 'open' : ''}>
-          <List>
+        <nav
+          className={open ? `${style.navList} ${style.open}` : style.navList}
+        >
+          <ul className={style.list}>
             <li>
               <Link
                 to="profile"
@@ -40,7 +43,8 @@ export default class Nav extends Component {
               >
                 profile
               </Link>
-            </li><hr />
+            </li>
+            <hr />
             <li>
               <Link
                 to="career"
@@ -52,7 +56,8 @@ export default class Nav extends Component {
               >
                 career
               </Link>
-            </li><hr />
+            </li>
+            <hr />
             <li>
               <Link
                 to="skills"
@@ -64,7 +69,8 @@ export default class Nav extends Component {
               >
                 skills, or
               </Link>
-            </li><hr />
+            </li>
+            <hr />
             <li>
               <Link
                 to="etc"
@@ -78,179 +84,21 @@ export default class Nav extends Component {
                 etc.
               </Link>
             </li>
-          </List>
-        </NavList>
-      </Wrapper>
+          </ul>
+        </nav>
+      </div>
     )
   }
 }
 
 const Hamburger = ({ open, ...props }) => (
-  <button type="button" open={open} {...props}>
-    <div className="ham" />
-    <div className="bur" />
-    <div className="ger" />
+  <button type="button" open={open} {...props} aria-label={open ? "Close menu" : "Open menu"}>
+    <div className={style.ham} />
+    <div className={style.bur} />
+    <div className={style.ger} />
   </button>
 )
 
 Hamburger.propTypes = {
   open: PropTypes.bool.isRequired
 }
-
-const Wrapper = styled.div`
-  align-self: flex-end;
-
-  &.open {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    z-index: 2;
-    text-align: center;
-    transition: all 250ms ease;
-    transform: translateZ(0);
-
-    background: #f2f2f2;
-    height: 100%;
-    overflow: auto;
-    overflow-scrolling: touch;
-  }
-`
-
-const NavList = styled.nav`
-  display: flex;
-  width: 100%;
-
-  ${media.tablet`
-    display: none;
-    position: absolute;
-    top: 5rem;
-
-    &.open {
-      display: block;
-    }
-  `};
-`
-
-const List = styled.ul`
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-
-  & a {
-    color: #fff;
-    display: block;
-    padding: 1rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  & hr {
-    border: 1px solid #fff;
-    height: 1.2rem;
-  }
-
-  ${media.tablet`
-    flex-flow: column;
-
-    & li {
-      margin-left: 0;
-      line-height: 5;
-    }
-
-    & hr {
-      display: none;
-    }
-
-    & a {
-      color: #0057a7;
-      padding: 0;
-    }
-  `};
-`
-
-const StyledHamburger = styled(Hamburger)`
-  display: none;
-
-  ${media.tablet`
-    display: block;
-    position: absolute;
-    box-sizing: initial;
-    right: 0;
-    top: 0;
-    margin: 3px;
-    padding: 18px 15px 12px;
-    transition: opacity 250ms ease;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      transform-origin: center;
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(0);
-    }
-
-    &.open::after {
-      content: 'close';
-      position: absolute;
-      top: 35%;
-      left: -30%;
-      color: #0057a7;
-    }
-
-    &:active::before {
-      animation: pop 200ms forwards cubic-bezier(0.15, 1.05, 0.54, 1.29) 1;
-    }
-
-    @keyframes pop {
-      to {
-        transform: scale(1);
-      }
-    }
-
-    & .ham,
-    & .bur,
-    & .ger {
-      position: relative;
-      width: 20px;
-      height: 3px;
-      border-width: 1px 0;
-      margin: 0 auto 3px;
-      padding: 0;
-      background: #fff;
-      border-radius: 1px;
-      font-size: 1px;
-      transition: all .2s ease;
-      transform-origin: 0 0;
-    }
-
-    &[open] {
-      .ham,
-      .bur,
-      .ger {
-        background: #0057a7;
-      }
-
-      .ham {
-        transform: translate(4px, -1px) rotate(45deg);
-      }
-      .bur {
-        opacity: 0;
-      }
-      .ger {
-        transform: translate(2px, 1px) rotate(-45deg);
-      }
-    }
-  `};
-`

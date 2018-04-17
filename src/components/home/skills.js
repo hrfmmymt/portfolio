@@ -1,7 +1,6 @@
 import { h, Component } from 'preact'
-import Heading2 from './ui-h2'
-import styled from 'styled-components'
-import { media } from '../../style-utils'
+import style from './skills.css'
+import H2style from './h2.css'
 
 const shuffleArray = array => {
   let i = array.length - 1
@@ -33,9 +32,12 @@ class SkillMap extends Component {
     }
 
     return (
-      <MapItem className={classes} aria-label={labelDesc}>
+      <div
+        className={`${style.mapItem} ${style[classes]}`}
+        aria-label={labelDesc}
+      >
         {label}
-      </MapItem>
+      </div>
     )
   }
 }
@@ -45,64 +47,13 @@ export default class Skills extends Component {
     const shuffledLists = shuffleArray(props.list)
 
     return (
-      <Wrapper name="skills" id="skills">
-        <Heading2>{props.title}</Heading2>
-        <MapWrapper>
+      <section name="skills" id="skills" className={style.wrapper}>
+        <h2 className={H2style.headingLevel2}>{props.title}</h2>
+        <div className={style.mapWrapper}>
           {props.list &&
             shuffledLists.map((data, i) => <SkillMap key={i} {...data} />)}
-        </MapWrapper>
-      </Wrapper>
+        </div>
+      </section>
     )
   }
 }
-
-const Wrapper = styled.section`
-  padding: 4rem 2rem;
-  min-height: 100%;
-  width: 100%;
-
-  ${media.tablet`
-    padding: 2rem 2rem;
-  `};
-`
-
-const MapWrapper = styled.div`
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 39rem;
-  margin: 5rem auto 0;
-  padding: 0 1rem 3rem 1rem;
-
-  ${media.tablet`
-    width: 100%;
-    padding: 0;
-    margin-top: 2rem;
-  `};
-`
-
-const MapItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #e4e4e4;
-  margin: 0.5rem;
-  padding: 1rem;
-  cursor: default;
-
-  &.😩 {
-    font-size: 10px;
-    height: 3vh;
-  }
-
-  &.😀 {
-    font-size: 100%;
-    height: 5vh;
-  }
-
-  &.😇 {
-    font-size: 180%;
-    height: 10vh;
-  }
-`

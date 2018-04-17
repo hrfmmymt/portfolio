@@ -1,11 +1,10 @@
 import { h, Component } from 'preact'
-import styled from 'styled-components'
-import { media } from '../../style-utils'
+import style from './copyright.css'
 
 export default class Copyright extends Component {
   render(props) {
     return (
-      <Wrapper>
+      <p className={style.wrapper}>
         © {`${new Date().getFullYear()} `}
         <a
           target="_blank"
@@ -15,15 +14,7 @@ export default class Copyright extends Component {
           {props.name}
         </a>
         . All rights reserved.
-      </Wrapper>
+      </p>
     )
   }
 }
-
-const Wrapper = styled.p`
-  text-align: center;
-
-  ${media.phone`
-    font-size: 90%;
-  `};
-`

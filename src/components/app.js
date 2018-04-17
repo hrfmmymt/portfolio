@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import { Router } from 'preact-router'
+import style from './app.css'
 
 import Home from '../routes/home'
 import CareerDetail from '../routes/career'
@@ -17,8 +18,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div id="app">
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans" />
+      <div id="app" className={style.app}>
+        <link
+          rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans"
+        />
         <Router onChange={this.handleRoute}>
           <Home path="/" />
           <CareerDetail path="/career/:path" />

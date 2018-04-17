@@ -1,7 +1,6 @@
 import { h, Component } from 'preact'
-import Heading2 from './ui-h2'
-import styled from 'styled-components'
-import { media } from '../../style-utils'
+import style from './profile.css'
+import H2style from './h2.css'
 
 export default class Profile extends Component {
   render(props) {
@@ -24,8 +23,8 @@ export default class Profile extends Component {
     }
 
     return (
-      <Wrapper name="profile" id="profile">
-        <Heading2>{props.title}</Heading2>
+      <section name="profile" id="profile" className={style.wrapper}>
+        <h2 className={H2style.headingLevel2}>{props.title}</h2>
         <picture>
           <source
             srcSet="https://placeimg.com/1280/480/any"
@@ -44,51 +43,19 @@ export default class Profile extends Component {
           />
           <img src="https://placeimg.com/1280/480/any" alt="my pic" />
         </picture>
-        <Contents>
-          <Content>
+        <div className={style.contents}>
+          <div className={style.content}>
             {props.about && <h3>{props.about.title}</h3>}
             {props.about && <p>{props.about.description}</p>}
-          </Content>
+          </div>
           {bioList.length && (
-            <Content>
+            <div className={style.content}>
               <h3>{props.bio.title}</h3>
               <dl>{bioList}</dl>
-            </Content>
+            </div>
           )}
-        </Contents>
-      </Wrapper>
+        </div>
+      </section>
     )
   }
 }
-
-const Wrapper = styled.section`
-  padding: 4rem 2rem;
-  min-height: 100%;
-  width: 100%;
-  border-bottom: 1px solid #aaa;
-
-  & img {
-    width: 100%;
-  }
-
-  ${media.tablet`
-    padding: 2rem 2rem;
-  `};
-`
-
-const Contents = styled.div`
-  width: 90%;
-  max-width: 69rem;
-  margin: 5rem auto 0;
-  padding: 0 1rem 3rem 1rem;
-
-  ${media.tablet`
-    width: 100%;
-    padding: 0;
-    margin-top: 2rem;
-  `};
-`
-
-const Content = styled.div`
-  margin-bottom: 4rem;
-`

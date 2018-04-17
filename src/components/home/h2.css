@@ -1,0 +1,11 @@
+.headingLevel2 {
+  margin: 0 0 5rem;
+  padding: 0;
+}
+
+/* for tablet ~ mobile */
+@media (max-width: 768px) {
+  .headingLevel2 {
+    margin: 0 0 2rem;
+  }
+}
