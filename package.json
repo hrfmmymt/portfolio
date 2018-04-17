@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
-    "serve": "preact build && preact serve",
-    "dev": "preact watch",
+    "build": "preact build --template src/template.html",
+    "serve": "npm run build && preact serve",
+    "dev": "preact watch --template src/template.html",
     "deploy": "npm run build && netlify deploy -p build",
     "eslint": "eslint src",
     "fmt:js": "eslint src --quiet --fix",
