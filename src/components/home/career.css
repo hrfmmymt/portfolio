@@ -45,7 +45,7 @@
 }
 
 .timelineItem a:hover > .description {
-  filter: drop-shadow(0 0 3px #1ba1ff);
+  filter: drop-shadow(0 0 3px #005999);
 }
 
 .description {

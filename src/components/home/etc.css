@@ -48,13 +48,6 @@
     width: 100%;
     padding: 0;
   }
-}
-
-/* for mobile */
-@media (max-width: 414px) {
-  .contents {
-    margin-top: 2rem;
-  }
 
   .list {
     flex-flow: column;
@@ -64,5 +57,12 @@
   .listItem {
     padding: 1rem 0;
     border-bottom: 1px solid #0057a7;
+  }
+}
+
+/* for mobile */
+@media (max-width: 414px) {
+  .contents {
+    margin-top: 2rem;
   }
 }

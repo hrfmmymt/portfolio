@@ -92,7 +92,12 @@ export default class Nav extends Component {
 }
 
 const Hamburger = ({ open, ...props }) => (
-  <button type="button" open={open} {...props} aria-label={open ? "Close menu" : "Open menu"}>
+  <button
+    type="button"
+    open={open}
+    {...props}
+    aria-label={open ? 'Close menu' : 'Open menu'}
+  >
     <div className={style.ham} />
     <div className={style.bur} />
     <div className={style.ger} />
