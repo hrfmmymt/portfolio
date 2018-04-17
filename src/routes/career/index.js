@@ -18,12 +18,17 @@ class CareerDetailList extends Component {
 
     return (
       <main className={style.wrapper}>
-        <section className={style.contents}>
-          <h2>{thisJob[0].job_title}</h2>
-          <p>{thisJob[0].description}</p>
-          <p>{thisJob[0].role}</p>
+        <article className={style.contents}>
+          <header className={style.header}>
+            <h1 className={style.title} itemProp="name"># hello world</h1>
+          </header>
+          <section>
+            <h2>{thisJob[0].job_title}</h2>
+            <p>{thisJob[0].description}</p>
+            <p>{thisJob[0].role}</p>
+          </section>
           <Link href="/">閉じる</Link>
-        </section>
+        </article>
       </main>
     )
   }
