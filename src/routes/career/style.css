@@ -1,9 +1,9 @@
-.wrapper {
-  animation-duration: 0.5s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-  animation-name: animateBgColor;
-  overflow-x: hidden;
+.title {
+  font-family: "Give You Glory", cursive;
+}
+
+.titleSvg {
+  width: 100%;
 }
 
 .contents {
@@ -11,10 +11,25 @@
   padding: 3%;
   width: 100vw;
   height: 100vh;
-  animation-duration: 0.25s;
+  animation-duration: 0.8s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
-  animation-name: animateRight;
+  animation-name: animateFade;
+}
+
+/* for tablet ~ mobile */
+@media (max-width: 768px) {
+  .wrapper {
+    overflow-x: hidden;
+    animation-duration: 0.5s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: animateBgColor;
+  }
+
+  .contents {
+    animation-name: animateRight;
+  }
 }
 
 @keyframes animateBgColor {
@@ -27,6 +42,15 @@
   }
 }
 
+@keyframes animateFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes animateRight {
   0% {
