@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import { Link } from 'preact-router/match'
 import style from './style.css'
 import profile from '../../assets/profile.json'
 
@@ -27,7 +26,7 @@ class CareerDetailList extends Component {
             <p>{thisJob[0].description}</p>
             <p>{thisJob[0].role}</p>
           </section>
-          <Link href="/">閉じる</Link>
+          <button type="button" onClick={() => history.back()}>go back</button>
         </article>
       </main>
     )

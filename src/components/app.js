@@ -20,7 +20,7 @@ export default class App extends Component {
     return (
       <div id="app" className={style.app}>
         <Router onChange={this.handleRoute}>
-          <Home path="/" />
+          <Home path="/" default />
           <CareerDetail path="/career/:path" />
         </Router>
       </div>
