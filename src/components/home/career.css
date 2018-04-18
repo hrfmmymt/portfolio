@@ -9,7 +9,6 @@
 .timelineList {
   margin: 30px 0 0 0;
   padding: 0;
-  list-style: none;
   position: relative;
 }
 
@@ -87,12 +86,6 @@
   border-width: 11px;
 }
 
-.description h3 {
-  margin-top: 0;
-  padding: 0 0 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
 .circle {
   display: flex;
   justify-content: center;
@@ -129,6 +122,30 @@
   width: 25%;
   padding-right: 100px;
   position: absolute;
+}
+
+.jobTitle {
+  margin: 0 auto 1rem;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.role {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.tagList {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.tagItem {
+  background-color: #f1f8ff;
+  color: #0366d6;
+  font-size: small;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
 }
 
 /* for tablet ~ mobile */
@@ -191,5 +208,13 @@
     width: 100%;
     position: relative;
     padding: 0 0 20px 0;
+  }
+
+  .jobTitle {
+    margin-bottom: 0.5rem;
+  }
+
+  .tagItem {
+    font-size: 12px;
   }
 }

@@ -16,7 +16,14 @@ class ResumeItem extends Component {
   }
 
   render() {
-    const { job_title, time, device, path, role } = this.state.career
+    const {
+      job_title,
+      time,
+      device,
+      job_id,
+      role,
+      topic_names
+    } = this.state.career
 
     const timePeriod = formatTime({ ...time })
 
@@ -25,14 +32,21 @@ class ResumeItem extends Component {
     if (device.isSP) devices = 'isSP'
     if (device.isPC && device.isSP) devices = 'isPCSP'
 
+    const tagList = topic_names.map((topicName, i) => (
+      <li key={i} className={style.tagItem}>
+        {topicName}
+      </li>
+    ))
+
     return (
       <li className={style.timelineItem}>
-        <Link path="/career/" href={`/career/${path}`}>
+        <Link path="/career/" href={`/career/${job_id}`}>
           <time className={style.time}>{timePeriod}</time>
           <div className={`${style.circle} ${style[devices]}`} />
           <div className={style.description}>
-            <h3>{job_title}</h3>
-            <p>{role}</p>
+            <h3 className={style.jobTitle}>{job_title}</h3>
+            <small className={style.role}>{role}</small>
+            <ul className={style.tagList}>{tagList}</ul>
           </div>
         </Link>
       </li>

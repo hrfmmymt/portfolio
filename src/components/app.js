@@ -21,7 +21,7 @@ export default class App extends Component {
       <div id="app" className={style.app}>
         <Router onChange={this.handleRoute}>
           <Home path="/" default />
-          <CareerDetail path="/career/:path" />
+          <CareerDetail path="/career/:job_id" />
         </Router>
       </div>
     )

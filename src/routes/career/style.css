@@ -16,10 +16,6 @@
   margin: 0;
 }
 
-.titleSvg {
-  width: 100%;
-}
-
 .contents {
   padding: 3%;
   width: 100%;
@@ -28,6 +24,23 @@
   transition-timing-function: ease-in;
   animation-fill-mode: both;
   animation-name: animateFade;
+}
+
+.backButton {
+  background: none;
+  border: 0;
+  color: #005999;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  user-select: none;
+  text-decoration: underline;
+}
+
+.backButton:hover {
+  text-decoration: none;
 }
 
 /* for tablet ~ mobile */
