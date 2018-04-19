@@ -142,6 +142,7 @@
 
 .tagItem {
   background-color: #f1f8ff;
+  border-radius: 5px;
   color: #0366d6;
   font-size: small;
   margin: 0 0.5rem 0.5rem 0;

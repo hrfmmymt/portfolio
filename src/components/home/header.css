@@ -7,10 +7,10 @@
   height: 100vh;
   background: 
     linear-gradient(
-      rgba(0, 89, 153, 0.45), 
+      rgba(0, 89, 153, 0.45),
       rgba(0, 89, 153, 0.45)
     ),
-    url('../../assets/header/header_bg.jpg') no-repeat;
+    url('../../assets/header/header_bg.gif') 50%/cover no-repeat fixed;
   background-size: cover;
   color: #fff;
   width: 100%;
