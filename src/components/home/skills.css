@@ -25,8 +25,9 @@
 }
 
 .mapItem.😩 {
-  font-size: 12px;
+  font-size: 10px;
   height: 3vh;
+  padding: 0.5rem;
 }
 
 .mapItem.😀 {
@@ -37,12 +38,13 @@
 .mapItem.😇 {
   font-size: 180%;
   height: 10vh;
+  padding: 1.1rem;
 }
 
 /* for tablet ~ mobile */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 
   .mapWrapper {
