@@ -216,6 +216,6 @@
   }
 
   .tagItem {
-    font-size: 12px;
+    font-size: initial;
   }
 }

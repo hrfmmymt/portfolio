@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import PropTypes from 'prop-types'
 import Scroll from 'react-scroll'
 const Link = Scroll.Link
-const Events = Scroll.Events
+import { focusTargetElement } from '../../utils'
 import style from './nav.css'
 
 export default class Nav extends Component {
@@ -13,10 +13,7 @@ export default class Nav extends Component {
   close = () => this.setState({ open: false })
 
   componentDidMount() {
-    Events.scrollEvent.register('end', (to, element) => {
-      element.setAttribute('tabindex', '-1')
-      element.focus()
-    })
+    focusTargetElement()
   }
 
   render({}, { open }) {

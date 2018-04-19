@@ -29,7 +29,7 @@ class CareerDetailList extends Component {
           </header>
           <section>
             <h2>{thisJob[0].job_title}</h2>
-            <small>{thisJob[0].role}</small>
+            <p>{thisJob[0].role}</p>
             <p>{thisJob[0].description}</p>
             <ul>{tagList}</ul>
           </section>

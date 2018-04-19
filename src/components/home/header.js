@@ -5,6 +5,8 @@ import Nav from './nav'
 import Scroll from 'react-scroll'
 const Link = Scroll.Link
 
+import { focusTargetElement } from '../../utils'
+
 export default class Header extends Component {
   constructor() {
     super()
@@ -47,6 +49,7 @@ export default class Header extends Component {
           href="#profile"
           className={style.arrowScroll}
           aria-label="Scroll to profile"
+          onClick={focusTargetElement()}
         >
           <div className={style.arrowCircle}>
             <div className={style.arrow} />

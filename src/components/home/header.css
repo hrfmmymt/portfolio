@@ -13,8 +13,17 @@
   padding: 2rem;
 }
 
+.header a:hover {
+  color: #ff00d4;
+}
+
 .header a:focus {
-  outline-color: #fff;
+  outline-color: #ff00d4;
+}
+
+.header *::selection {
+  background-color: #ff00d4;
+  color: #fff;
 }
 
 .title {
