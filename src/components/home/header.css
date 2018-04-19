@@ -5,12 +5,8 @@
   justify-content: flex-start;
   min-height: 100%;
   height: 100vh;
-  background: 
-    linear-gradient(
-      rgba(0, 89, 153, 0.45),
-      rgba(0, 89, 153, 0.45)
-    ),
-    url('../../assets/header/header_bg.gif') 50%/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 89, 153, 0.45), rgba(0, 89, 153, 0.45)),
+    url("../../assets/header/header_bg.gif") 50% / cover no-repeat fixed;
   background-size: cover;
   color: #fff;
   width: 100%;
@@ -31,7 +27,6 @@
 
 .arrowScroll {
   position: absolute;
-  bottom: 8%;
   align-self: center;
   width: 100%;
   padding: 2rem;
@@ -41,22 +36,33 @@
 
 @keyframes scrollHint {
   0% {
-    bottom: 8%;
+    bottom: 4%;
   }
   50% {
-    bottom: 6%;
+    bottom: 2%;
   }
   100% {
-    bottom: 8%;
+    bottom: 4%;
   }
 }
 
-.arrowWrapper {
-  display: inline-block;
+.arrowCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid #fff;
+  border-radius: 100%;
+}
+
+.arrow {
   border: solid #fff;
-  border-width: 0 0.3rem 0.3rem 0;
+  border-width: 0 2px 2px 0;
   padding: 0.6rem;
   transform: rotate(45deg);
+  margin-bottom: 0.8rem;
 }
 
 /* for tablet ~ mobile */
@@ -67,5 +73,12 @@
 
   .arrowScroll {
     padding: 0 0 1rem;
+  }
+}
+
+/* for mobile */
+@media (max-width: 414px) {
+  .title {
+    margin: 0;
   }
 }

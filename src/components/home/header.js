@@ -48,7 +48,9 @@ export default class Header extends Component {
           className={style.arrowScroll}
           aria-label="Scroll to profile"
         >
-          <div className={style.arrowWrapper} />
+          <div className={style.arrowCircle}>
+            <div className={style.arrow} />
+          </div>
         </Link>
       </header>
     )
