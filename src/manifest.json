@@ -1,6 +1,6 @@
 {
-  "name": "skillsheet",
-  "short_name": "skillsheet",
+  "name": "portfolio",
+  "short_name": "portfolio",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
