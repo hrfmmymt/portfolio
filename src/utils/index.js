@@ -7,3 +7,6 @@ export const focusTargetElement = () => {
     element.focus()
   })
 }
+
+export const formatTime = ({ from, to }) =>
+  [from, to].filter(val => val).join(' - ')

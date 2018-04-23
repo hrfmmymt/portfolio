@@ -1,31 +1,14 @@
 import { h, Component } from 'preact'
 import style from './style.css'
 import profile from '../../assets/profile.json'
-
-function imagesLoaded(parentNode) {
-  const imgElements = [...parentNode.querySelectorAll('img')]
-  for (let i = 0; i < imgElements.length; i += 1) {
-    const img = imgElements[i]
-    if (!img.complete) {
-      return false
-    }
-  }
-  return true
-}
+import { formatTime } from '../../utils'
 
 class CareerDetailList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      career: profile.career.list,
-      loading: true
+      career: profile.career.list
     }
-  }
-
-  handleImageChange = () => {
-    this.setState({
-      loading: !imagesLoaded(this.galleryElement)
-    })
   }
 
   goBack = e => {
@@ -48,6 +31,20 @@ class CareerDetailList extends Component {
       </li>
     ))
 
+    let imgList
+    if (thisJob[0].asset_names) {
+      imgList = thisJob[0].asset_names.map((name, i) => (
+        <img
+          key={i}
+          src={`../../assets/careers/${thisJob[0].job_id}/${name}.png`}
+          className={`${style.image} ${thisJob[0].job_id}-${name}`}
+          alt="meaningless image."
+        />
+      ))
+    }
+
+    const timePeriod = formatTime({ ...thisJob[0].time })
+
     return (
       <main className={style.wrapper}>
         <article className={style.contents}>
@@ -56,21 +53,25 @@ class CareerDetailList extends Component {
               # hello world
             </h1>
           </header>
-          <section ref={element => {
-            this.galleryElement = element
-          }}>
+          <section
+            ref={element => {
+              this.galleryElement = element
+            }}
+          >
             <h2>{thisJob[0].job_title}</h2>
             <p>{thisJob[0].role}</p>
-            <img
-              src={`../../assets/careers/${thisJob[0].job_id}.png`}
-              onLoad={this.handleImageChange}
-              onError={this.handleImageChange}
-              className={style.image}
-              alt='meaningless image.'
-            />
-            <small>画像はイメージです。<br />the image is an image. you know what i mean?</small>
+            <time className={style.time}>{timePeriod}</time>
             <p>{thisJob[0].description}</p>
             <ul className={style.tagList}>{tagList}</ul>
+            {thisJob[0].asset_names && (
+              <div>
+                {imgList}
+                <small>
+                  画像はイメージです。<br />the image is an image. you know what
+                  i mean?
+                </small>
+              </div>
+            )}
           </section>
           <a className={style.backButton} onClick={this.goBack} href="">
             go back

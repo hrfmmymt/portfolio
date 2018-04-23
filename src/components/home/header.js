@@ -14,7 +14,7 @@ export default class Header extends Component {
 
   render(props) {
     return (
-      <header className={style.header}>
+      <header className={style.header} title={props.image_title}>
         <Nav />
         <h1 className={style.title} itemProp="name">
           <svg

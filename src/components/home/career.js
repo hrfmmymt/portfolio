@@ -2,10 +2,7 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import style from './career.css'
 import H2style from './h2.css'
-
-// util funx
-export const formatTime = ({ from, to }) =>
-  [from, to].filter(val => val).join(' - ')
+import { formatTime } from '../../utils'
 
 class ResumeItem extends Component {
   constructor(props) {

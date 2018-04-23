@@ -1,7 +1,8 @@
 {
   "header": {
     "title": "# hello, world",
-    "subtitle": "the most incredible finest portfolio site of the world ever."
+    "subtitle": "the most incredible finest portfolio site of the world ever.",
+    "image_title": "this is the image of PDCA cyclone."
   },
   "profile": {
     "title": "## profile",
@@ -41,7 +42,8 @@
             "job_id": "adv",
             "role": "@Adventure, inc.",
             "description": "新規サービス開発、コードレビュー、既存サービスの改修・リファクタリング、SEO改善、パフォーマンス改善、A / B テストその他関連作業などを行っています。",
-            "topic_names": ["React", "React Redux", "React Router", "jQuery", "Vue.js", "webpack", "Gulp", "PHP", "Sass", "Compass"]
+            "topic_names": ["React", "React Redux", "React Router", "jQuery", "Vue.js", "webpack", "Gulp", "PHP", "Sass", "Compass"],
+            "asset_names": ["form_pc", "form_sp", "psi"]
           },
           {
             "job_title": "広告配信システム管理画面",
@@ -55,7 +57,7 @@
             },
             "job_id": "kauli",
             "role": "developing a front-end single page application.",
-            "description": "SSP 事業者にて、インターネット広告主向けサービスのいわゆる管理画面の開発を行いました。FW は AngularJS (Angular-Seed) を使用しました。Angular難しいです。",
+            "description": "SSP 事業者にて、インターネット広告主向けサービスの CRUD 管理画面の開発を行いました。JS フレームワークは Angular (Angular-Seed) を使用しました。これの前の案件から足掛け一年ほど Angular (当時 v1) を扱っていましたが、慣れるという感触がなかったような。。難しかったですね。サーバーサイドはテストドリブンな運用だったので、フロントエンドでも Karma や Protractor などを使った E2E テストの導入も検討しましたが、コストに対する明確なリターンが得られるかといったところに答えを見出せず見送られました。",
             "topic_names": ["Angular ( v1 )", "Less", "Google Chart Tools", "Gulp"]
           },
           {
@@ -70,7 +72,7 @@
             },
             "job_id": "gcrest",
             "role": "developing a front-end mobile web app.",
-            "description": "可愛いお部屋とアバターを作ってなんかやるブラウザゲーム。テンプレートエンジンに Velocity、jQuery / Angular (v1) で UI を、CreatJS でアニメーションを実装。改修とイベント追加（流用）を行なっていました。",
+            "description": "可愛いお部屋とアバターを作ってなんかやるブラウザゲーム。プロジェクトにおけるフロントエンドのスタックとしては、テンプレートエンジンに Velocity、jQuery / Angular (v1) で UI 実装を、キャラクターのアニメーションなどの表現に CreateJS が使用されていました。自分が行なっていたのは、主に Angular 側で、イベント追加・更新や、 CSS / jQuery 修正含む UI 改修などを行なっていました。",
             "topic_names": ["Angular ( v1 )", "jQuery", "Velocity",  "Grunt"]
           },
           {
@@ -85,7 +87,7 @@
             },
             "job_id": "some-web-services",
             "role": "developing a front-end some web services.",
-            "description": "いろいろな Web サービスを作ったり改修したりしました。",
+            "description": "いろいろな Web サービスを作ったり改修したりしました。内訳としては、D3.js を用いた小売業の顧客動向を可視化する SPA 作成、某大手企業の製品サイト改修・更新、クレジットカード会員向けサービスのリニューアル、IT勉強会・セミナーなどのイベント情報検索サービス改修です。",
             "topic_names": ["jQuery", "D3.js",  "Bootstrap", "PHP", "MySQL", "Fireworks"]
           },
           {
@@ -100,8 +102,9 @@
             },
             "job_id": "cap",
             "role": "developing a front-end single page application.",
-            "description": "SPA 開発案件。久しぶりにスーツを着ました。設計をアジャイルでするのが楽しかった思い出があります。Web フロントエンドの新技術に多く触れ、私自身がフロントエンドに振り切って、何かいい感じにがんばっていこうと決心するに至った、これもまた一つの転機となった案件です。",
-            "topic_names": ["Yeoman", "Backbone.js", "CoffeeScript", "Bower",  "Grunt", "Bootstrap", "EJS", "Sass", "Compass"]
+            "description": "SPA 開発案件。よく聞かれるのでフランクに説明すると、「あなたが呼吸をし、結婚し、子どもを産み育て、その身が果てるまで生き抜くのにかかる費用は、、そしてそんなあなたに最適な保険がるんですよ」という営業プランに一役買うツールです。久しぶりにスーツを着ました。設計をアジャイルでするのが楽しかった思い出があります。Web フロントエンドの新技術に多く触れ、私自身がフロントエンドに振り切ってがんばっていこうと決心するに至った、これもまた一つの転機となった案件です。",
+            "topic_names": ["Yeoman", "Backbone.js", "CoffeeScript", "Bower",  "Grunt", "Bootstrap", "EJS", "Sass", "Compass"],
+            "asset_names": ["cap"]
           },
           {
             "job_title": "スマートフォン用ソーシャルゲーム",
