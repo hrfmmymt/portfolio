@@ -4,6 +4,10 @@
   width: 100%;
   border-bottom: 1px solid #aaa;
   background: #f2f2f2;
+  background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)),
+    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .timelineList {
@@ -152,6 +156,8 @@
 @media (max-width: 768px) {
   .wrapper {
     padding: 2rem 1rem;
+    background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)),
+    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;
   }
 
   .contents {

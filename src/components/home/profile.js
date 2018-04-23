@@ -27,21 +27,21 @@ export default class Profile extends Component {
         <h2 className={H2style.headingLevel2}>{props.title}</h2>
         <picture>
           <source
-            srcSet="https://placeimg.com/1280/480/any"
+            srcSet="//placeimg.com/1280/480/any"
             media="(min-width: 997px)"
             sizes="100vw"
           />
           <source
-            srcSet="https://placeimg.com/800/480/any"
+            srcSet="//placeimg.com/800/480/any"
             media="(min-width: 672px)"
             sizes="100vw"
           />
           <source
-            srcSet="https://placeimg.com/640/480/any"
+            srcSet="//placeimg.com/640/480/any"
             media="(min-width: 0px)"
             sizes="100vw"
           />
-          <img src="https://placeimg.com/1280/480/any" alt="my pic" />
+          <img src="//placeimg.com/1280/480/any" alt="my pic" />
         </picture>
         <div className={style.contents}>
           <div className={style.content}>

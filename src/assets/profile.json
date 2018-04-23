@@ -57,7 +57,7 @@
             },
             "job_id": "kauli",
             "role": "developing a front-end single page application.",
-            "description": "SSP 事業者にて、インターネット広告主向けサービスの CRUD 管理画面の開発を行いました。\nJS フレームワークは Angular (Angular-Seed) を使用しました。これの前の案件から足掛け一年ほど Angular (当時 v1) を扱っていましたが、慣れるという感触がなかったような。。難しかったですね。\nサーバーサイドがテストドリブンなデベロップメントだったので、フロントエンドでも Karma や Protractor などを使った E2E テストの導入も検討しましたが、コストに対する明確なリターンが得られるかといったところに答えを見出せず見送られました。",
+            "description": "SSP 事業者にて、インターネット広告主向けサービスの CRUD 管理画面の開発を行いました。\nJS フレームワークは Angular (Angular-Seed) を使用しました。これの前の案件から足掛け一年ほど Angular (当時 v1) を扱っていましたが、慣れるという感触がなかったような。。難しかったですね。\nサーバーサイドがテストドリブンなデベロップメントだったので、フロントエンドでも Karma や Protractor などを使った E2E テストの導入を検討しましたが、コストに対する明確なリターンが得られるかといったところに答えを見出せず見送られました。",
             "topic_names": ["Angular ( v1 )", "Less", "Google Chart Tools", "Gulp"]
           },
           {

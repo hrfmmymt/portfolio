@@ -51,7 +51,7 @@ export default class Header extends Component {
           aria-label="Scroll to profile"
           onClick={focusTargetElement()}
         >
-          <div className={style.arrowCircle}>
+          <div className={style.arrowCircle} role="img" aria-label="down arrow">
             <div className={style.arrow} />
           </div>
         </Link>

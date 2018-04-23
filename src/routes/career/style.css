@@ -26,6 +26,10 @@
   animation-name: animateFade;
 }
 
+.contents h2 {
+  letter-spacing: 1.2px;
+}
+
 .contents h3 {
   font-weight: normal;
 }
@@ -41,7 +45,7 @@
 
 .description p {
   margin: 0;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.1px;
 }
 
 .image {
