@@ -26,6 +26,24 @@
   animation-name: animateFade;
 }
 
+.contents h3 {
+  font-weight: normal;
+}
+
+.time {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.description {
+  line-height: 1.6;
+}
+
+.description p {
+  margin: 0;
+  letter-spacing: 1.6px;
+}
+
 .image {
   width: 100%;
 }

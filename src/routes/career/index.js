@@ -59,9 +59,11 @@ class CareerDetailList extends Component {
             }}
           >
             <h2>{thisJob[0].job_title}</h2>
-            <p>{thisJob[0].role}</p>
+            <h3>{thisJob[0].role}</h3>
             <time className={style.time}>{timePeriod}</time>
-            <p>{thisJob[0].description}</p>
+            <div className={style.description}>
+              {thisJob[0].description.split('\n').map(m => (<p>{m}</p>))}
+            </div>
             <ul className={style.tagList}>{tagList}</ul>
             {thisJob[0].asset_names && (
               <div>
