@@ -64,7 +64,7 @@ class CareerDetailList extends Component {
             <div className={style.description}>
               {thisJob[0].description
                 .split('\n')
-                .map((m, i) => <p key={i}>{m}</p>)}
+                .map((text, i) => <p key={i}>{text}</p>)}
             </div>
             <ul className={style.tagList}>{tagList}</ul>
             {thisJob[0].asset_names && (
