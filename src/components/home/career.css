@@ -4,8 +4,8 @@
   width: 100%;
   border-bottom: 1px solid #aaa;
   background: #f2f2f2;
-  background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)),
-    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;
+  /*background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)),
+    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;*/
   background-size: cover;
   background-position: center;
 }
@@ -47,8 +47,22 @@
   transition: 0.2s all;
 }
 
-.timelineItem a:hover > .description {
+.timelineItem a:hover > .description,
+.timelineItem a:focus > .description {
   filter: drop-shadow(0 0 3px #005999);
+  transform: scale(1.2);
+}
+
+.timelineItem a:hover > .description::before,
+.timelineItem a:hover > .description::after,
+.timelineItem a:focus > .description::before,
+.timelineItem a:focus > .description::after {
+  display: none;
+}
+
+.timelineItem a:hover > .description h3,
+.timelineItem a:focus > .description h3 {
+  margin-left: 1rem;
 }
 
 .description {
@@ -94,6 +108,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 2;
   top: -8px;
   left: 20%;
   width: 56px;
@@ -104,6 +119,48 @@
   border-radius: 50%;
   text-align: center;
   margin: 0 0 0 -32px;
+}
+
+.timelineItem a:hover .circle,
+.timelineItem a:focus .circle {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: bounceIn;
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .circle.isPC::after {
@@ -156,8 +213,8 @@
 @media (max-width: 768px) {
   .wrapper {
     padding: 2rem 1rem;
-    background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)),
-    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;
+    /*background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)),
+    url("../../assets/header/header_bg.gif") 50% / cover no-repeat;*/
   }
 
   .contents {

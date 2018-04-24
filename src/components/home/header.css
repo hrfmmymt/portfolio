@@ -95,6 +95,6 @@
 
   .header {
     background: linear-gradient(rgba(0, 89, 153, 0.45), rgba(0, 89, 153, 0.45)),
-    url("../../assets/header/header_bg-sp.gif") 50% / cover no-repeat;
+      url("../../assets/header/header_bg-sp.gif") 50% / cover no-repeat;
   }
 }
