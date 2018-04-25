@@ -13,11 +13,15 @@
   width: 90%;
   max-width: 69rem;
   margin: 5rem auto 0;
-  padding: 0 1rem 3rem 1rem;
+  padding: 0 1rem;
 }
 
 .content {
   margin-bottom: 4rem;
+}
+
+.content:last-child {
+  margin-bottom: 0;
 }
 
 /* for tablet ~ mobile */
