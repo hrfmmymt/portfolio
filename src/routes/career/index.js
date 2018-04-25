@@ -35,13 +35,15 @@ class CareerDetailList extends Component {
 
     const imgList = thisJob[0].assets
       ? thisJob[0].assets.map((item, i) => (
+        <figure key={i} className={style.imgItem}>
           <img
-            key={i}
             src={`../../assets/careers/${thisJob[0].job_id}/${item.name}.png`}
-            className={`${style.imgItem} ${thisJob[0].job_id}-${item.name}`}
+            className={`${thisJob[0].job_id}-${item.name}`}
             alt={`'${thisJob[0].role}' - img no.${i + 1}`}
-            style={{ width: item.width }}
+            style={{ width: item.thumbnail_width }}
           />
+          <figcaption>{item.caption}</figcaption>
+        </figure>
         ))
       : null
 

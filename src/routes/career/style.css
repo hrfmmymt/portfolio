@@ -51,15 +51,15 @@
   letter-spacing: 1.1px;
 }
 
-.imgWrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.imgItem {
+  margin: 0 2% 2% 0;
 }
 
-.imgItem {
+.imgItem img {
   max-width: 100%;
   max-height: 450px;
+  height: 100%;
+  vertical-align: bottom;
 }
 
 .tagList {

@@ -56,15 +56,18 @@
         "assets": [
           {
             "name": "form_pc",
-            "width": "100%"
+            "thumbnail_width": "",
+            "caption": "PC 版の国内航空券検索"
           },
           {
             "name": "form_sp",
-            "width": ""
+            "thumbnail_width": "",
+            "caption": "SP 版の海外航空券検索"
           },
           {
             "name": "psi",
-            "width": ""
+            "thumbnail_width": "",
+            "caption": ""
           }
         ]
       },
@@ -151,7 +154,7 @@
         "assets": [
           {
             "name": "cap",
-            "width": ""
+            "thumbnail_width": ""
           }
         ]
       },
