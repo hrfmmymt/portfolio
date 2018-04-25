@@ -25,6 +25,8 @@ class CareerDetailList extends Component {
       return el.job_id === item.path
     })
 
+    const jobId = thisJob[0].job_id
+
     const timePeriod = formatTime({ ...thisJob[0].time })
 
     const tagList = thisJob[0].topic_names.map((topicName, i) => (
@@ -34,11 +36,11 @@ class CareerDetailList extends Component {
     ))
 
     const imgList = thisJob[0].assets
-      ? thisJob[0].assets.map((item, i) => (
+      ? thisJob[0].assets.files.map((item, i) => (
         <figure key={i} className={style.imgItem}>
           <img
-            src={`../../assets/careers/${thisJob[0].job_id}/${item.name}.png`}
-            className={`${thisJob[0].job_id}-${item.name}`}
+            src={`${thisJob[0].assets.path}/${jobId}/${item.name}.png`}
+            className={`${jobId}-${item.name}`}
             alt={`'${thisJob[0].role}' - img no.${i + 1}`}
             style={{ width: item.thumbnail_width }}
           />

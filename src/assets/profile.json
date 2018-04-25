@@ -53,23 +53,26 @@
           "Sass",
           "Compass"
         ],
-        "assets": [
-          {
-            "name": "form_pc",
-            "thumbnail_width": "",
-            "caption": "PC 版の国内航空券検索"
-          },
-          {
-            "name": "form_sp",
-            "thumbnail_width": "",
-            "caption": "SP 版の海外航空券検索"
-          },
-          {
-            "name": "psi",
-            "thumbnail_width": "",
-            "caption": ""
-          }
-        ]
+        "assets": {
+          "path": "../../assets/careers",
+          "files": [
+            {
+              "name": "form_pc",
+              "thumbnail_width": "",
+              "caption": "PC 版の国内航空券検索"
+            },
+            {
+              "name": "form_sp",
+              "thumbnail_width": "",
+              "caption": "SP 版の海外航空券検索"
+            },
+            {
+              "name": "psi",
+              "thumbnail_width": "",
+              "caption": ""
+            }
+          ]
+        }
       },
       {
         "job_title": "広告配信システム管理画面",
@@ -151,12 +154,15 @@
           "Sass",
           "Compass"
         ],
-        "assets": [
-          {
-            "name": "cap",
-            "thumbnail_width": ""
-          }
-        ]
+        "assets": {
+          "path": "../../assets/careers",
+          "files": [
+            {
+              "name": "cap",
+              "thumbnail_width": ""
+            }
+          ]
+        }
       },
       {
         "job_title": "スマートフォン用ソーシャルゲーム",
