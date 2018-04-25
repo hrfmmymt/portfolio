@@ -25,25 +25,25 @@ class CareerDetailList extends Component {
       return el.job_id === item.path
     })
 
+    const timePeriod = formatTime({ ...thisJob[0].time })
+
     const tagList = thisJob[0].topic_names.map((topicName, i) => (
       <li key={i} className={style.tagItem}>
         {topicName}
       </li>
     ))
 
-    let imgList
-    if (thisJob[0].asset_names) {
-      imgList = thisJob[0].asset_names.map((name, i) => (
-        <img
-          key={i}
-          src={`../../assets/careers/${thisJob[0].job_id}/${name}.png`}
-          className={`${style.imgItem} ${thisJob[0].job_id}-${name}`}
-          alt={`'${thisJob[0].role}' - img no.${i + 1}`}
-        />
-      ))
-    }
-
-    const timePeriod = formatTime({ ...thisJob[0].time })
+    const imgList = thisJob[0].assets
+      ? thisJob[0].assets.map((item, i) => (
+          <img
+            key={i}
+            src={`../../assets/careers/${thisJob[0].job_id}/${item.name}.png`}
+            className={`${style.imgItem} ${thisJob[0].job_id}-${item.name}`}
+            alt={`'${thisJob[0].role}' - img no.${i + 1}`}
+            style={{ width: item.width }}
+          />
+        ))
+      : null
 
     return (
       <main className={style.wrapper}>
@@ -67,7 +67,7 @@ class CareerDetailList extends Component {
                 .map((text, i) => <p key={i}>{text}</p>)}
             </div>
             <ul className={style.tagList}>{tagList}</ul>
-            {thisJob[0].asset_names && (
+            {imgList && (
               <div className={style.imgWrapper}>
                 {imgList}
                 <small>

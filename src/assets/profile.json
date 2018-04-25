@@ -53,7 +53,20 @@
           "Sass",
           "Compass"
         ],
-        "asset_names": ["form_pc", "form_sp", "psi"]
+        "assets": [
+          {
+            "name": "form_pc",
+            "width": "100%"
+          },
+          {
+            "name": "form_sp",
+            "width": ""
+          },
+          {
+            "name": "psi",
+            "width": ""
+          }
+        ]
       },
       {
         "job_title": "広告配信システム管理画面",
@@ -135,7 +148,12 @@
           "Sass",
           "Compass"
         ],
-        "asset_names": ["cap"]
+        "assets": [
+          {
+            "name": "cap",
+            "width": ""
+          }
+        ]
       },
       {
         "job_title": "スマートフォン用ソーシャルゲーム",
