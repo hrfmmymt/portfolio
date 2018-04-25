@@ -21,7 +21,7 @@ class CareerDetailList extends Component {
   }
 
   render(item) {
-    const thisJob = this.state.career[0].list.filter(el => {
+    const thisJob = this.state.career.filter(el => {
       return el.job_id === item.path
     })
 
@@ -37,8 +37,8 @@ class CareerDetailList extends Component {
         <img
           key={i}
           src={`../../assets/careers/${thisJob[0].job_id}/${name}.png`}
-          className={`${style.image} ${thisJob[0].job_id}-${name}`}
-          alt="meaningless image."
+          className={`${style.imgItem} ${thisJob[0].job_id}-${name}`}
+          alt={`'${thisJob[0].role}' - img no.${i + 1}`}
         />
       ))
     }
@@ -68,7 +68,7 @@ class CareerDetailList extends Component {
             </div>
             <ul className={style.tagList}>{tagList}</ul>
             {thisJob[0].asset_names && (
-              <div>
+              <div className={style.imgWrapper}>
                 {imgList}
                 <small>
                   画像はイメージです。<br />the image is an image. you know what

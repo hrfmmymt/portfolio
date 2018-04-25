@@ -4,7 +4,7 @@ import style from './career.css'
 import H2style from './h2.css'
 import { formatTime } from '../../utils'
 
-class ResumeItem extends Component {
+class CareerItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,7 @@ class ResumeItem extends Component {
     }
   }
 
-  render() {
+  render(list) {
     const {
       job_title,
       time,
@@ -51,24 +51,16 @@ class ResumeItem extends Component {
   }
 }
 
-class CareerItem extends Component {
-  render({ list }) {
-    return (
-      <ul className={style.timelineList}>
-        {list && list.map((item, i) => <ResumeItem key={i} {...item} />)}
-      </ul>
-    )
-  }
-}
-
 export default class Career extends Component {
   render(props) {
     return (
       <main name="career" id="career" className={style.wrapper}>
         <h2 className={H2style.headingLevel2}>{props.title}</h2>
         <div className={style.contents}>
-          {props.list &&
-            props.list.map((item, i) => <CareerItem key={i} {...item} />)}
+          <ul className={style.timelineList}>
+            {props.list &&
+              props.list.map((item, i) => <CareerItem key={i} {...item} />)}
+          </ul>
         </div>
       </main>
     )
