@@ -20,7 +20,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  content: '';
+  content: "";
   width: 4px;
   background: #005999;
   left: 20%;
@@ -68,7 +68,7 @@
   position: absolute;
   top: 50%;
   right: 100%;
-  content: ' ';
+  content: " ";
   height: 0;
   width: 0;
   border: solid transparent;
@@ -169,15 +169,15 @@
 }
 
 .circle.isPC::after {
-  content: 'PC';
+  content: "PC";
 }
 
 .circle.isSP::after {
-  content: 'SP';
+  content: "SP";
 }
 
 .circle.isPCSP::after {
-  content: 'PC\ASP';
+  content: "PC\ASP";
   white-space: pre;
   line-height: 1;
 }
@@ -245,7 +245,7 @@
     bottom: 100%;
     left: 10%;
     border: solid transparent;
-    content: ' ';
+    content: " ";
     height: 0;
     width: 0;
     pointer-events: none;

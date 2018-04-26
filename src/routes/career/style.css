@@ -12,7 +12,7 @@
 
 .title {
   width: 100%;
-  font-family: 'Give You Glory', cursive;
+  font-family: "Give You Glory", cursive;
   margin: 0;
 }
 
@@ -37,6 +37,11 @@
   font-weight: normal;
 }
 
+.contents p {
+  margin: 0;
+  letter-spacing: 1.1px;
+}
+
 .time {
   display: block;
   margin-bottom: 1rem;
@@ -46,19 +51,18 @@
   line-height: 1.6;
 }
 
-.description p {
-  margin: 0;
-  letter-spacing: 1.1px;
+.imgSection {
+  margin-top: 4rem;
 }
 
 .imgItem {
-  margin: 0 2% 2% 0;
+  margin-bottom: 4rem;
 }
 
 .imgItem img {
   max-width: 100%;
-  max-height: 450px;
-  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
   vertical-align: bottom;
 }
 

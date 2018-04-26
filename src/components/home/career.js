@@ -12,7 +12,7 @@ class CareerItem extends Component {
     }
   }
 
-  render(list) {
+  render() {
     const {
       job_title,
       time,

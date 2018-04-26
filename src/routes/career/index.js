@@ -37,15 +37,20 @@ class CareerDetailList extends Component {
 
     const imgList = thisJob[0].assets
       ? thisJob[0].assets.files.map((item, i) => (
-        <figure key={i} className={style.imgItem}>
-          <img
-            src={`${thisJob[0].assets.path}/${jobId}/${item.name}.png`}
-            className={`${jobId}-${item.name}`}
-            alt={`'${thisJob[0].role}' - img no.${i + 1}`}
-            style={{ width: item.thumbnail_width }}
-          />
-          <figcaption>{item.caption}</figcaption>
-        </figure>
+          <figure key={i} className={style.imgItem}>
+            <img
+              src={`${thisJob[0].assets.path}/${jobId}/${item.name}`}
+              className={`${jobId}-${item.name}`}
+              alt={item.alt}
+              style={{ width: item.thumbnail_width }}
+            />
+            <figcaption>
+              {item.caption &&
+                item.caption
+                  .split('\n')
+                  .map((text, i) => <p key={i}>{text}</p>)}
+            </figcaption>
+          </figure>
         ))
       : null
 
@@ -72,7 +77,7 @@ class CareerDetailList extends Component {
             </div>
             <ul className={style.tagList}>{tagList}</ul>
             {imgList && (
-              <div className={style.imgWrapper}>
+              <div className={style.imgSection}>
                 {imgList}
                 <small>
                   画像はイメージです。<br />the image is an image. you know what
