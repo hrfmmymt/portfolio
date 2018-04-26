@@ -37,7 +37,7 @@ class CareerDetailList extends Component {
 
     const imgList = thisJob[0].assets
       ? thisJob[0].assets.files.map((item, i) => (
-          <figure key={i} className={style.imgItem}>
+          <figure key={i} className={style.figureItem}>
             <img
               src={`${thisJob[0].assets.path}/${jobId}/${item.name}`}
               className={`${jobId}-${item.name}`}

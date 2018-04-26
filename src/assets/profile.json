@@ -68,6 +68,20 @@
               "caption":
                 "PageSpeed Insights のスクリーンショット。Web サイトパフォーマンス改善は継続的に取り組んでいます。\nそれとこれはある種のハック情報なんですが、毎日の PageSpped Insights の計測結果を何も言わず突然チャットで自動で定期投稿し始めてみたら、特に布教せずとも他の開発メンバーもサイトパフォーマンスを勝手に気にし出すようになりました。",
               "alt": "画像 PageSpeed Insights のスクリーンショット"
+            },
+            {
+              "name": "styleguide-ov.jpg",
+              "thumbnail_width": "",
+              "caption":
+                "",
+              "alt": "画像 スタイルガイド"
+            },
+            {
+              "name": "styleguide.jpg",
+              "thumbnail_width": "",
+              "caption":
+                "スタイルガイド。",
+              "alt": "画像 スタイルガイド"
             }
           ]
         }
