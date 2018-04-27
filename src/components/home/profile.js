@@ -22,26 +22,24 @@ export default class Profile extends Component {
       }, [])
     }
 
+    const imgDir = '../../assets/profile'
+
     return (
       <section name="profile" id="profile" className={style.wrapper}>
         <h2 className={H2style.headingLevel2}>{props.title}</h2>
         <picture>
           <source
-            srcSet="//placeimg.com/1280/480/any"
-            media="(min-width: 997px)"
+            type="image/webp"
+            srcset={`${imgDir}/profile_l.webp 997w,
+                     ${imgDir}/profile_m.webp 672w`}
             sizes="100vw"
           />
           <source
-            srcSet="//placeimg.com/800/480/any"
-            media="(min-width: 672px)"
+            srcset={`${imgDir}/profile_l.jpg 997w,
+                     ${imgDir}/profie_m.jpg 672w`}
             sizes="100vw"
           />
-          <source
-            srcSet="//placeimg.com/640/480/any"
-            media="(min-width: 0px)"
-            sizes="100vw"
-          />
-          <img src="//placeimg.com/1280/480/any" alt="my pic" />
+          <img src={`${imgDir}/profile_m.jpg`} alt="my pic" />
         </picture>
         <div className={style.contents}>
           <div className={style.content}>
