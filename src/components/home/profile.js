@@ -30,13 +30,13 @@ export default class Profile extends Component {
         <picture>
           <source
             type="image/webp"
-            srcset={`${imgDir}/profile_l.webp 997w,
-                     ${imgDir}/profile_m.webp 672w`}
+            srcset={`${imgDir}/profile_m.webp 672w,
+                     ${imgDir}/profile_l.webp 997w`}
             sizes="100vw"
           />
           <source
-            srcset={`${imgDir}/profile_l.jpg 997w,
-                     ${imgDir}/profie_m.jpg 672w`}
+            srcset={`${imgDir}/profile_m.jpg 672w,
+                     ${imgDir}/profile_l.jpg 997w`}
             sizes="100vw"
           />
           <img src={`${imgDir}/profile_m.jpg`} alt="my pic" />
