@@ -27,12 +27,10 @@
   color: #fff;
 }
 
-.title {
+.header h1 {
   font-family: "Give You Glory", cursive;
-}
-
-.titleSvg {
-  width: 100%;
+  font-size: 2.5rem;
+  letter-spacing: 1.2px;
 }
 
 .arrowScroll {

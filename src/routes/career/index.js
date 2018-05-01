@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import style from './style.css'
 import profile from '../../assets/profile.json'
-import { formatTime } from '../../utils'
+import { formatTime, nl2p } from '../../utils'
 
 class CareerDetailList extends Component {
   constructor(props) {
@@ -44,12 +44,7 @@ class CareerDetailList extends Component {
               alt={item.alt}
               style={{ width: item.thumbnail_width }}
             />
-            <figcaption>
-              {item.caption &&
-                item.caption
-                  .split('\n')
-                  .map((text, i) => <p key={i}>{text}</p>)}
-            </figcaption>
+            <figcaption>{item.caption && nl2p(item.caption)}</figcaption>
           </figure>
         ))
       : null

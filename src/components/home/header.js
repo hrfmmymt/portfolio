@@ -5,43 +5,43 @@ import Nav from './nav'
 import Scroll from 'react-scroll'
 const Link = Scroll.Link
 
-import { focusTargetElement } from '../../utils'
+import { focusTargetElement, nl2p } from '../../utils'
 
 export default class Header extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.state = {
+      header: props,
+      title: '',
+      count: 0
+    }
+  }
+
+  componentWillMount() {
+    this.setTitle()
+  }
+
+  componentDidMount() {
+    this.titleTimer = setInterval(() => this.setTitle(), 200)
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.titleTimer)
+  }
+
+  setTitle() {
+    /* eslint react/no-direct-mutation-state: 0 */
+    this.setState({
+      title: this.state.header.title.substring(0, this.state.count++)
+    })
   }
 
   render(props) {
     return (
       <header className={style.header} title={props.image_title}>
         <Nav />
-        <h1 className={style.title} itemProp="name">
-          <svg
-            className={style.titleSvg}
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            version="1.1"
-          >
-            <title>{props.title}</title>
-            <desc>{props.title}</desc>
-            <path id="path">
-              <animate
-                attributeName="d"
-                values="m0,110 h0;m0,110 h1100"
-                dur="12s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <text fontSize="36" fill="rgb(255,255,255)">
-              <textPath xlinkHref="#path">{props.title}</textPath>
-            </text>
-          </svg>
-        </h1>
-        <p itemProp="jobTitle">{props.subtitle}</p>
-        <p>scroll down slowly and see.</p>
+        <h1>{this.state.title}</h1>
+        <div itemProp="jobTitle">{props.subtitle && nl2p(props.subtitle)}</div>
         <Link
           to="profile"
           smooth={true}
