@@ -8,12 +8,10 @@ export default class Profile extends Component {
 
     if (props.bio && props.bio.list) {
       const bioLabels = props.bio.list.map(item => (
-          <dt key={item.label}>
-            <h4>#### {item.label}</h4>
-          </dt>
+          <h4 key={item.label}>#### {item.label}</h4>
         )),
         bioValues = props.bio.list.map(item => (
-          <dd key={item.value}>{item.value}</dd>
+          <p key={item.value}>{item.value}</p>
         ))
 
       bioList = bioLabels.reduce((list, item, i) => {
@@ -30,16 +28,16 @@ export default class Profile extends Component {
         <picture>
           <source
             type="image/webp"
-            srcSet={`${imgDir}/profile_m.webp 672w,
-                     ${imgDir}/profile_l.webp 997w`}
+            srcSet={`${imgDir}/profile_m_.webp 672w,
+                     ${imgDir}/profile_l_.webp 997w`}
             sizes="100vw"
           />
           <source
-            srcSet={`${imgDir}/profile_m.jpg 672w,
-                     ${imgDir}/profile_l.jpg 997w`}
+            srcSet={`${imgDir}/profile_m_.jpg 672w,
+                     ${imgDir}/profile_l_.jpg 997w`}
             sizes="100vw"
           />
-          <img src={`${imgDir}/profile_m.jpg`} alt="my pic" />
+          <img src={`${imgDir}/profile_m_.jpg`} alt="my pic" />
         </picture>
         <div className={style.contents}>
           <div className={style.content}>
@@ -49,7 +47,7 @@ export default class Profile extends Component {
           {bioList.length && (
             <div className={style.content}>
               <h3>{props.bio.title}</h3>
-              <dl>{bioList}</dl>
+              <div className={style.list}>{bioList}</div>
             </div>
           )}
         </div>

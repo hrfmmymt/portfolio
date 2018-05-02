@@ -24,6 +24,11 @@
   margin-bottom: 0;
 }
 
+.content p,
+.content .list {
+  margin-left: 40px;
+}
+
 /* for tablet ~ mobile */
 @media (max-width: 768px) {
   .wrapper {
