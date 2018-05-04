@@ -48,7 +48,10 @@ export default class Skills extends Component {
 
     return (
       <section name="skills" id="skills" className={style.wrapper}>
-        <h2 className={H2style.headingLevel2}>{props.title}</h2>
+        <h2 className={H2style.headingLevel2}>
+          {props.title}
+          <div className={style.heart}>💗</div>
+        </h2>
         <span>these blocks are large enough to be interested or skilled</span>
         <div className={style.mapWrapper}>
           {props.list &&

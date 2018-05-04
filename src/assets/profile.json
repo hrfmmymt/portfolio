@@ -1,7 +1,8 @@
 {
   "header": {
     "title": "# Hirofumi Miyamoto",
-    "subtitle": "the most incredible finest portfolio site of the world ever.\nscroll down slowly and see.",
+    "subtitle":
+      "the most incredible finest portfolio site of the world ever.\nscroll down slowly and see.",
     "image_title": "this is the image of PDCA cyclone."
   },
   "profile": {
@@ -37,7 +38,7 @@
           "isPC": true,
           "isSP": true
         },
-        "job_id": "adv",
+        "job_id": "201510-",
         "role": "@Adventure, inc.",
         "description":
           "新規サービス開発、コードレビュー、既存サービスの改修・リファクタリング、SEO改善、パフォーマンス改善、A / B テストその他関連作業などを行っています。",
@@ -72,15 +73,13 @@
             {
               "name": "styleguide-ov.jpg",
               "thumbnail_width": "",
-              "caption":
-                "",
+              "caption": "",
               "alt": "画像 スタイルガイド"
             },
             {
               "name": "styleguide.jpg",
               "thumbnail_width": "",
-              "caption":
-                "スタイルガイド。",
+              "caption": "スタイルガイド。",
               "alt": "画像 スタイルガイド"
             }
           ]
@@ -96,7 +95,7 @@
           "isPC": true,
           "isSP": true
         },
-        "job_id": "kauli",
+        "job_id": "201410-201509",
         "role": "developing a front-end single page application.",
         "description":
           "SSP 事業者にて、インターネット広告主向けサービスの CRUD 管理画面の開発を行いました。\nJS フレームワークは Angular (Angular-Seed) を使用しました。これの前の案件から足掛け一年ほど Angular (当時 v1) を扱っていましたが、慣れるという感触がなかったような。。難しかったですね。\nサーバーサイドがテストドリブンなデベロップメントだったので、フロントエンドでも Karma や Protractor などを使った E2E テストの導入を検討しましたが、コストに対する明確なリターンが得られるかといったところに答えを見出せず見送られました。",
@@ -112,7 +111,7 @@
           "isPC": true,
           "isSP": true
         },
-        "job_id": "gcrest",
+        "job_id": "201407-201409",
         "role": "developing a front-end mobile web app.",
         "description":
           "可愛いお部屋とアバターを作ってなんかやるブラウザゲーム。\nプロジェクトにおけるフロントエンドのスタックとしては、テンプレートエンジンに Velocity、jQuery / Angular (v1) で UI 実装を、キャラクターのアニメーションなどの表現に CreateJS が使用されていました。\n自分の担当は主に Angular 側で、イベント追加・更新や、 CSS / jQuery 修正含む UI 改修などを行なっていました。",
@@ -128,7 +127,7 @@
           "isPC": true,
           "isSP": true
         },
-        "job_id": "some-web-services",
+        "job_id": "201401-201406",
         "role": "developing a front-end some web services.",
         "description":
           "いろいろな Web サービスを作ったり改修したりしました。\n内訳としては、D3.js を用いた小売業の顧客動向を可視化する SPA 作成、\n某大手企業の製品サイト改修・更新、\nクレジットカード会員向けサービスのリニューアル、\nIT勉強会・セミナーなどのイベント情報検索サービス改修です。",
@@ -151,7 +150,7 @@
           "isPC": true,
           "isSP": true
         },
-        "job_id": "cap",
+        "job_id": "201305-201312",
         "role": "developing a front-end single page application.",
         "description":
           "SPA 開発案件。\nよく聞かれるのでフランクに説明すると、「あなたが呼吸をし、結婚し、子どもを産み育て、その身が果てるまで生き抜くのにかかる費用は、、そしてそんなあなたに最適な保険がるんですよ」という営業プランに一役買うツールです。\n久しぶりにスーツを着ました。設計をアジャイルでするのが楽しかった思い出があります。Web フロントエンドの新技術に多く触れ、私自身がフロントエンドに振り切ってがんばっていこうと決心するに至った、これもまた一つの転機となった案件です。",
@@ -186,11 +185,27 @@
           "isPC": false,
           "isSP": true
         },
-        "job_id": "aiming",
+        "job_id": "201208-201304",
         "role": "designing mobile app ui.",
         "description":
           "デザイン・マークアップ担当として作業を行いました。\nアジャイル開発。ネイティブアプリでiOS / Android 対応。アニメーションなどの動きのある部分はUnity 3Dで、動きがなく更新頻度の高い画面はHTMLで構築していました。\n私は主にHTML側と画像作成に従事しておりました。Unityは要素の配置を変えたり、色を変えるなど極々軽微な作業でのみ使用しました。C#でがつがつ開発などはしておりません。\nスキルの高い技術者と関わった、私にとって一つの転機となった案件だと思います。",
         "topic_names": ["HTML", "CSS", "Photoshop", "Photoshop JSX", "Unity"]
+      },
+      {
+        "job_title": "小売業向けECサイト保守・運用",
+        "time": {
+          "from": "apr. 2012",
+          "to": "jul. 2012"
+        },
+        "device": {
+          "isPC": true,
+          "isSP": true
+        },
+        "job_id": "201204-201207",
+        "role": "website markup, design.",
+        "description":
+          "主にECサイトのコーディング、商品画像作成、バナー作成、メールマガジン作成を行いました。\nそれ以外にも、Yahoo! ショッピングや楽天市場にも出店しておりそちらの対応も、また店舗運営もしていた事業者だったので接客などを行うこともありました。",
+        "topic_names": ["XHTML", "CSS", "jQuery", "Photoshop"]
       }
     ]
   },

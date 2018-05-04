@@ -8,25 +8,63 @@
 
 .header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-bottom: 1px solid #999;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  padding: 1rem 0 0.5rem 6.2rem;
+}
+
+.backButton {
+  background: none;
+  border: 0;
+  color: #005999;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  user-select: none;
+  text-decoration: underline;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+.backButton:hover {
+  text-decoration: none;
+}
+
+.backButton svg {
+  height: 1.75rem;
+  fill: currentcolor;
 }
 
 .title {
+  display: inline;
   width: 100%;
   font-family: "Give You Glory", cursive;
   margin: 0;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .contents {
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   width: 100%;
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
   animation-name: animateFade;
+  position: absolute;
+  top: 4rem;
 }
 
 .contents section {
-  margin: 8%;
+  margin: 0 8%;
 }
 
 .contents h2 {
@@ -80,25 +118,12 @@
   padding: 0.5rem 1rem;
 }
 
-.backButton {
-  background: none;
-  border: 0;
-  color: #005999;
-  cursor: pointer;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  user-select: none;
-  text-decoration: underline;
-}
-
-.backButton:hover {
-  text-decoration: none;
-}
-
 /* for tablet ~ mobile */
 @media (max-width: 768px) {
+  .header {
+    padding-left: 1rem;
+  }
+
   .wrapper {
     overflow-x: hidden;
     animation-duration: 0.5s;
@@ -108,10 +133,12 @@
   }
 
   .contents {
-    padding: 2rem;
     height: inherit;
     animation-duration: 0.2s;
     animation-name: animateRight;
+    position: inherit;
+    top: 0;
+    margin-top: 5rem;
   }
 
   .contents section {

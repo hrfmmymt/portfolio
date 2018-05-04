@@ -5,6 +5,7 @@
 }
 
 .mapWrapper {
+  position: relative;
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
@@ -39,6 +40,20 @@
   font-size: 180%;
   height: 10vh;
   padding: 1.1rem;
+}
+
+.heart {
+  display: inline-block;
+  margin-left: 1rem;
+  text-align: center;
+  transform-origin: center;
+  animation: heartbeat 0.25s infinite alternate;
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.4);
+  }
 }
 
 /* for tablet ~ mobile */

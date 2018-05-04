@@ -51,12 +51,19 @@ class CareerDetailList extends Component {
 
     return (
       <main className={style.wrapper}>
+        <header className={style.header}>
+          <a className={style.backButton} onClick={this.goBack} href="">
+            <svg viewBox="0 0 24 24">
+              <g>
+                <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a.996.996 0 0 0 1.414 0 1 1 0 0 0 0-1.414L7.414 13H20a1 1 0 1 0 0-2z" />
+              </g>
+            </svg>
+          </a>
+          <h1 className={style.title} itemProp="name">
+            # hello world
+          </h1>
+        </header>
         <article className={style.contents}>
-          <header className={style.header}>
-            <h1 className={style.title} itemProp="name">
-              # hello world
-            </h1>
-          </header>
           <section
             ref={element => {
               this.galleryElement = element
@@ -81,9 +88,6 @@ class CareerDetailList extends Component {
               </div>
             )}
           </section>
-          <a className={style.backButton} onClick={this.goBack} href="">
-            go back
-          </a>
         </article>
       </main>
     )
