@@ -7,7 +7,7 @@ class CareerDetailList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      career: profile.career.list
+      career: profile.career
     }
   }
 
@@ -21,7 +21,7 @@ class CareerDetailList extends Component {
   }
 
   render(item) {
-    const thisJob = this.state.career.filter(el => {
+    const thisJob = this.state.career.list.filter(el => {
       return el.job_id === item.path
     })
 
@@ -60,7 +60,7 @@ class CareerDetailList extends Component {
             </svg>
           </a>
           <h1 className={style.title} itemProp="name">
-            # hello world
+            career
           </h1>
         </header>
         <article className={style.contents}>

@@ -13,9 +13,8 @@
   left: 0;
   background: #fff;
   border-bottom: 1px solid #999;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   z-index: 2;
-  padding: 1rem 0 0.5rem 6.2rem;
+  padding: 1rem 0 0.5rem 8rem;
 }
 
 .backButton {
@@ -31,7 +30,7 @@
   text-decoration: underline;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .backButton:hover {
@@ -46,10 +45,9 @@
 .title {
   display: inline;
   width: 100%;
-  font-family: "Give You Glory", cursive;
+  font-size: 1.5rem;
   margin: 0;
   line-height: 1;
-  vertical-align: middle;
 }
 
 .contents {
@@ -64,7 +62,7 @@
 }
 
 .contents section {
-  margin: 0 8%;
+  margin: 0 6rem;
 }
 
 .contents h2 {
@@ -121,7 +119,12 @@
 /* for tablet ~ mobile */
 @media (max-width: 768px) {
   .header {
+    padding-right: 1rem;
     padding-left: 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 
   .wrapper {
@@ -133,6 +136,7 @@
   }
 
   .contents {
+    padding: 0 1rem 2rem;
     height: inherit;
     animation-duration: 0.2s;
     animation-name: animateRight;
