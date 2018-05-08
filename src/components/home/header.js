@@ -13,7 +13,6 @@ export default class Header extends Component {
   }
 
   render(props) {
-    console.log(props)
     return (
       <header className={style.header} title={props.image_title}>
         <Nav />
