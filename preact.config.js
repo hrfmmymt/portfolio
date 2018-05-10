@@ -5,6 +5,13 @@ export default function(config, env, helpers) {
   postcssLoader.forEach(({ loader }) => delete loader.options)
 
   const options = {}
-
   criticalCssPlugin(config, env, options)
+
+  const htmlWebpackPlugin = helpers.getPluginsByName(
+    config,
+    'HtmlWebpackPlugin'
+  )
+  htmlWebpackPlugin.forEach(
+    ({ plugin }) => (plugin.options.title = '# Hirofumi Miyamoto')
+  )
 }
