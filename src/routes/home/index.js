@@ -17,7 +17,7 @@ export default class Home extends Component {
   render({}, { profile }) {
     return (
       <div itemScope itemProp="Person" itemType="https://schema.org/Person">
-        {profile.header && <Header {...profile.header} />}
+        {profile.header && <Header {...profile} />}
         {profile.profile && <Profile {...profile.profile} />}
         {profile.career && <Career {...profile.career} />}
         {profile.skills && <Skills {...profile.skills} />}

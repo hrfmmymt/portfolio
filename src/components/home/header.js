@@ -14,10 +14,12 @@ export default class Header extends Component {
 
   render(props) {
     return (
-      <header className={style.header} title={props.image_title}>
-        <Nav />
-        <h1>{props.title}</h1>
-        <div itemProp="jobTitle">{props.subtitle && nl2p(props.subtitle)}</div>
+      <header className={style.header} title={props.header.image_title}>
+        <Nav props={props} />
+        <h1>{props.header.title}</h1>
+        <div itemProp="jobTitle">
+          {props.header.subtitle && nl2p(props.header.subtitle)}
+        </div>
         <Link
           to="profile"
           smooth={true}

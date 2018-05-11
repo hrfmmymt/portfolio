@@ -6,6 +6,10 @@ import { focusTargetElement } from '../../utils'
 import style from './nav.css'
 
 export default class Nav extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   state = { open: false }
 
   toggle = () => this.setState({ open: !this.state.open })
@@ -16,7 +20,7 @@ export default class Nav extends Component {
     focusTargetElement()
   }
 
-  render({}, { open }) {
+  render({ props }, { open }) {
     return (
       <div className={open ? `${style.wrapper} ${style.open}` : style.wrapper}>
         <Hamburger
@@ -29,63 +33,54 @@ export default class Nav extends Component {
         <nav
           className={open ? `${style.navList} ${style.open}` : style.navList}
         >
-          <ul className={style.list}>
-            <li>
-              <Link
-                to="profile"
-                smooth={true}
-                duration={300}
-                href="#profile"
-                onClick={this.close}
-              >
-                profile
-              </Link>
-            </li>
-            <hr />
-            <li>
-              <Link
-                to="career"
-                spy={true}
-                smooth={true}
-                duration={300}
-                href="#career"
-                onClick={this.close}
-              >
-                career
-              </Link>
-            </li>
-            <hr />
-            <li>
-              <Link
-                to="skills"
-                spy={true}
-                smooth={true}
-                duration={300}
-                href="#skills"
-                onClick={this.close}
-              >
-                skills, or
-              </Link>
-            </li>
-            <hr />
-            <li>
-              <Link
-                to="etc"
-                spy={true}
-                smooth={true}
-                duration={300}
-                href="#etc"
-                onSetActive={this.handleSetActive}
-                onClick={this.close}
-              >
-                etc.
-              </Link>
-            </li>
-          </ul>
+          <NavList {...props} />
         </nav>
       </div>
     )
   }
+}
+
+class NavList extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      profile: props.profile,
+      career: props.career,
+      skills: props.skills,
+      etc: props.etc
+    }
+  }
+
+  render() {
+    const list = []
+    let key
+    for (key in this.state) {
+      const str = this.state[key].title.replace('## ', '')
+
+      list.push(
+        <li>
+          <Link
+            to={key}
+            smooth={true}
+            duration={300}
+            href={'#' + key}
+            onClick={this.close}
+          >
+            {str}
+          </Link>
+        </li>
+      )
+    }
+
+    return <ul className={style.list}>{list}</ul>
+  }
+}
+
+NavList.propTypes = {
+  profile: PropTypes.string,
+  career: PropTypes.string,
+  skills: PropTypes.string,
+  etc: PropTypes.string
 }
 
 const Hamburger = ({ open, ...props }) => (

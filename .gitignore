@@ -49,3 +49,6 @@ jspm_packages
 # preact
 /build
 .DS_Store
+
+# vim
+*.swp
