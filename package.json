@@ -9,21 +9,26 @@
     "serve": "npm run build && preact serve",
     "dev": "preact watch -p 4567 --template src/template.html",
     "deploy": "npm run build && netlify deploy build -e production",
-    "eslint": "eslint src",
-    "fmt:js": "eslint src --quiet --fix",
-    "fmt:css": "prettier --write 'src/**/*.css'"
+    "eslint": "eslint .",
+    "fmt:js": "eslint . --quiet --fix",
+    "fmt:css": "prettier --write 'src/**/*.css'",
+    "test": "jest --no-cache"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
     "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-synacor": "^3.0.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.4",
+    "jest": "^22.4.3",
     "json-server": "^0.12.1",
     "netlify-cli": "^1.2.2",
     "preact-cli": "^2.2.1",
     "preact-cli-plugin-critical-css": "^0.1.0",
+    "preact-render-spy": "^1.2.2",
     "prettier": "1.11.1"
   },
   "dependencies": {
@@ -31,5 +36,32 @@
     "preact-compat": "^3.18.0",
     "preact-router": "^2.6.0",
     "react-scroll": "^1.7.8"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "<rootDir>/tests/__mocks__/browserMocks.js"
+    ],
+    "testURL": "http://localhost:8080",
+    "transform": {
+      "\\.(js|jsx)$": "./transformPreprocessor.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^./style$": "identity-obj-proxy",
+      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js",
+      "^react$": "preact-compat",
+      "^react-dom$": "preact-compat",
+      "^create-react-class$": "preact-compat/lib/create-react-class",
+      "^react-addons-css-transition-group$": "preact-css-transition-group"
+    }
   }
 }

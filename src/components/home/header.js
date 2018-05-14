@@ -1,4 +1,6 @@
 import { h, Component } from 'preact'
+import PropTypes from 'prop-types'
+
 import style from './header.css'
 
 import Nav from './nav'
@@ -10,15 +12,18 @@ import { focusTargetElement, nl2p } from '../../utils'
 export default class Header extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      header: props.header
+    }
   }
 
   render(props) {
     return (
-      <header className={style.header} title={props.header.image_title}>
+      <header className={style.header} title={this.state.header.image_title}>
         <Nav props={props} />
-        <h1>{props.header.title}</h1>
+        <h1>{this.state.header.title}</h1>
         <div itemProp="jobTitle">
-          {props.header.subtitle && nl2p(props.header.subtitle)}
+          {this.state.header.subtitle && nl2p(this.state.header.subtitle)}
         </div>
         <Link
           to="profile"
@@ -36,4 +41,8 @@ export default class Header extends Component {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  header: PropTypes.object.isRequired
 }
