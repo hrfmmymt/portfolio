@@ -4,6 +4,7 @@ import style from './app.css'
 
 import Home from '../routes/home'
 import CareerDetail from '../routes/career'
+import Credits from '../routes/credits'
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
@@ -22,6 +23,7 @@ export default class App extends Component {
         <Router onChange={this.handleRoute}>
           <Home path="/" default />
           <CareerDetail path="/career/:job_id" />
+          <Credits path="/credits" />
         </Router>
       </div>
     )

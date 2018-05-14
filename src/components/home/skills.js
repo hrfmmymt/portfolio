@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { Link } from 'preact-router/match'
 import style from './skills.css'
 import H2style from './h2.css'
 
@@ -50,7 +51,11 @@ export default class Skills extends Component {
       <section name="skills" id="skills" className={style.wrapper}>
         <h2 className={H2style.headingLevel2}>
           {props.title}
-          <div className={style.heart}>💗</div>
+          <div className={style.heart}>
+            <Link path="/credits/" href={`/credits`}>
+              💗
+            </Link>
+          </div>
         </h2>
         <span>these blocks are large enough to be interested or skilled</span>
         <div className={style.mapWrapper}>

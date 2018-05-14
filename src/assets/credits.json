@@ -1,0 +1,18 @@
+{
+  "title": "credits",
+  "subtitle": "resources used within this site.",
+  "list": [
+    {
+      "label": "developit/preact-cli",
+      "link": "https://github.com/developit/preact-cli"
+    },
+    {
+      "label": "fisshy/react-scroll",
+      "link": "https://github.com/fisshy/react-scroll"
+    },
+    {
+      "label": "matthewlynch/preact-cli-plugin-critical-css",
+      "link": "https://github.com/matthewlynch/preact-cli-plugin-critical-css"
+    }
+  ]
+}
