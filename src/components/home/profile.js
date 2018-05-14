@@ -28,16 +28,16 @@ export default class Profile extends Component {
         <picture>
           <source
             type="image/webp"
-            srcSet={`${imgDir}/profile_m_.webp 672w,
-                     ${imgDir}/profile_l_.webp 997w`}
+            srcSet={`${imgDir}/profile_m.webp 672w,
+                     ${imgDir}/profile_l.webp 997w`}
             sizes="100vw"
           />
           <source
-            srcSet={`${imgDir}/profile_m_.jpg 672w,
-                     ${imgDir}/profile_l_.jpg 997w`}
+            srcSet={`${imgDir}/profile_m.jpg 672w,
+                     ${imgDir}/profile_l.jpg 997w`}
             sizes="100vw"
           />
-          <img src={`${imgDir}/profile_m_.jpg`} alt="my pic" />
+          <img src={`${imgDir}/profile_m.jpg`} alt="my pic" />
         </picture>
         <div className={style.contents}>
           <div className={style.content}>
