@@ -13,6 +13,26 @@
     {
       "label": "matthewlynch/preact-cli-plugin-critical-css",
       "link": "https://github.com/matthewlynch/preact-cli-plugin-critical-css"
+    },
+    {
+      "label": "prettier/prettier",
+      "link": "https://github.com/prettier/prettier"
+    },
+    {
+      "label": "facebook/jest",
+      "link": "https://github.com/facebook/jest"
+    },
+    {
+      "label": "mzgoddard/preact-render-spy",
+      "link": "https://github.com/mzgoddard/preact-render-spy"
+    },
+    {
+      "label": "fokusferit/browserMocks.js",
+      "link": "https://gist.github.com/fokusferit/5507f084b8414af7b03c31f4bffd7536"
+    },
+    {
+      "label": "netlify/netlify-cli",
+      "link": "https://github.com/netlify/netlify-cli"
     }
   ]
 }

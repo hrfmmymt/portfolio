@@ -41,7 +41,7 @@
     "setupFiles": [
       "<rootDir>/tests/__mocks__/browserMocks.js"
     ],
-    "testURL": "http://localhost:8080",
+    "testURL": "http://localhost:4567",
     "transform": {
       "\\.(js|jsx)$": "./transformPreprocessor.js"
     },
