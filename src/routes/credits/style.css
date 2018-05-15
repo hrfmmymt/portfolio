@@ -18,3 +18,8 @@
 .wrapper a:hover {
   text-decoration: underline;
 }
+
+.wrapper a.notLink {
+  cursor: text;
+  text-decoration: none;
+}

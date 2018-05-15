@@ -80,15 +80,18 @@ const stringSplitter = str =>
 
 class CreditsList extends Component {
   render({ label, link }) {
+    console.log(link)
     return (
       <li>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>{stringSplitter(label)}</span>
-        </a>
+        {link === '' ? (
+          <a tabIndex="-1" className={style.notLink}>
+            <span>{stringSplitter(label)}</span>
+          </a>
+        ) : (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <span>{stringSplitter(label)}</span>
+          </a>
+        )}
       </li>
     )
   }
