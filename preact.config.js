@@ -12,6 +12,6 @@ export default function(config, env, helpers) {
     'HtmlWebpackPlugin'
   )
   htmlWebpackPlugin.forEach(
-    ({ plugin }) => (plugin.options.title = '# Hirofumi Miyamoto')
+    ({ plugin }) => (plugin.options.title = '# hirofumi miyamoto')
   )
 }

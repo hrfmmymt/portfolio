@@ -1,6 +1,6 @@
 {
   "title": "credits",
-  "subtitle": "resources used within this site.",
+  "subtitle": "thanks for inspiration, knowledge and support:",
   "list": [
     {
       "label": "developit/preact-cli",
@@ -34,5 +34,6 @@
       "label": "netlify/netlify-cli",
       "link": "https://github.com/netlify/netlify-cli"
     }
-  ]
+  ],
+  "name": "hirofumi miyamoto"
 }
