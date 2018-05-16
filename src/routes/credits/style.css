@@ -4,6 +4,7 @@
   background-color: #0e1e25;
   position: absolute;
   color: #fff;
+  padding: 2rem;
 }
 
 .wrapper *::selection {
@@ -11,15 +12,31 @@
   color: #fff;
 }
 
+.wrapper h2 {
+  margin-top: 0;
+}
+
 .wrapper a {
-  color: #fff;
+  color: #0e1e25;
 }
 
 .wrapper a:hover {
   text-decoration: underline;
+  text-decoration-color: #ff00d4;
 }
 
 .wrapper a.notLink {
   cursor: text;
   text-decoration: none;
+}
+
+.copy a {
+  color: #fff;
+}
+
+/* for mobile */
+@media (max-width: 414px) {
+  .wrapper {
+    padding: 1rem;
+  }
 }

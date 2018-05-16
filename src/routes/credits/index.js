@@ -50,7 +50,7 @@ export default class Credits extends Component {
         >
           {stringSplitter('tomasswood/preact-homepage-generator')}
         </a>
-        <p>
+        <p className={style.copy}>
           © {`${new Date().getFullYear()} `}
           <a
             target="_blank"
@@ -80,7 +80,6 @@ const stringSplitter = str =>
 
 class CreditsList extends Component {
   render({ label, link }) {
-    console.log(link)
     return (
       <li>
         {link === '' ? (
