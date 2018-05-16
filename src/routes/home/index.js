@@ -14,6 +14,10 @@ export default class Home extends Component {
     }
   }
 
+  componentDidMount() {
+    document.body.className = ''
+  }
+
   render({}, { profile }) {
     return (
       <div itemScope itemProp="Person" itemType="https://schema.org/Person">

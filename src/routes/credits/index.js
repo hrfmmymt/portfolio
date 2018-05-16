@@ -32,6 +32,10 @@ export default class Credits extends Component {
     injectStyle(keyframesStyle)
   }
 
+  componentDidMount() {
+    document.body.className = 'credits'
+  }
+
   render({}, { credits }) {
     return (
       <main className={style.wrapper}>
