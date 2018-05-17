@@ -27,7 +27,7 @@
 }
 
 .list a::after {
-  content: "";
+  content: '';
   width: 0;
   margin-left: 1rem;
   border: 1px solid #fff;
@@ -114,7 +114,7 @@
   }
 
   .hamburger::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -127,7 +127,7 @@
   }
 
   .hamburger.open::after {
-    content: "close";
+    content: 'close';
     position: absolute;
     top: 35%;
     left: -30%;

@@ -8,13 +8,16 @@ import style from './nav.css'
 export default class Nav extends Component {
   constructor(props) {
     super(props)
+    this.state = { open: false }
+    this.close = this.close.bind(this)
   }
-
-  state = { open: false }
 
   toggle = () => this.setState({ open: !this.state.open })
 
-  close = () => this.setState({ open: false })
+  close(e) {
+    e.preventDefault()
+    this.setState({ open: false })
+  }
 
   componentDidMount() {
     focusTargetElement()
@@ -33,7 +36,7 @@ export default class Nav extends Component {
         <nav
           className={open ? `${style.navList} ${style.open}` : style.navList}
         >
-          <NavList {...props} />
+          <NavList {...props} close={this.close} />
         </nav>
       </div>
     )
@@ -64,7 +67,7 @@ class NavList extends Component {
             smooth={true}
             duration={300}
             href={'#' + key}
-            onClick={this.close}
+            onClick={this.props.close}
           >
             {str}
           </Link>
