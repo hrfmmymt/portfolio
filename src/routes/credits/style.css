@@ -9,22 +9,35 @@
   color: #fff;
 }
 
-.wrapper h2 {
+.title {
   margin-top: 0;
 }
 
-.wrapper a {
+.link,
+.notLink {
   color: #0e1e25;
 }
 
-.wrapper a:hover {
+.link:hover {
   text-decoration: underline;
   text-decoration-color: #ff00d4;
 }
 
-.wrapper a.notLink {
+.notLink {
   cursor: text;
   text-decoration: none;
+}
+
+.defList {
+  margin: 2rem 0;
+}
+
+.defList dd {
+  margin-left: 0;
+}
+
+.copy {
+  margin-bottom: 0;
 }
 
 .copy a {

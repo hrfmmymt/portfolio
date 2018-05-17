@@ -41,13 +41,14 @@ export default class Credits extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
     document.body.className = 'credits'
   }
 
   render({}, { credits }) {
     return (
       <main className={style.wrapper}>
-        <h2>{credits.title}</h2>
+        <h2 className={style.title}>{credits.title}</h2>
         <p>all words, movies and photos by {credits.name}.</p>
         <p>{credits.subtitle}</p>
         <ul>
@@ -59,19 +60,28 @@ export default class Credits extends Component {
           href="https://github.com/tomasswood/preact-homepage-generator"
           target="_blank"
           rel="noopener noreferrer"
+          className={style.link}
         >
           {stringSplitter('tomasswood/preact-homepage-generator')}
         </a>
-        <ul>
-          {credits.sublist &&
-            credits.sublist.map((item, i) => <CreditsList key={i} {...item} />)}
-        </ul>
+        <dl className={style.defList}>
+          <dt>work soundtracks</dt>
+          <dd>
+            <ul>
+              {credits.sublist &&
+                credits.sublist.map((item, i) => (
+                  <CreditsList key={i} {...item} />
+                ))}
+            </ul>
+          </dd>
+        </dl>
         <p className={style.copy}>
           © {`${new Date().getFullYear()} `}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://hrfmmymt.github.io"
+            className={style.link}
           >
             {credits.name}
           </a>
@@ -91,7 +101,12 @@ class CreditsList extends Component {
             <span>{stringSplitter(label)}</span>
           </a>
         ) : (
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.link}
+          >
             <span>{stringSplitter(label)}</span>
           </a>
         )}
