@@ -33,7 +33,9 @@
     {
       "label": "netlify/netlify-cli",
       "link": "https://github.com/netlify/netlify-cli"
-    },
+    }
+  ],
+  "sublist": [
     {
       "label": "The Velvet Underground/The Velvet Underground & Nico",
       "link": "https://open.spotify.com/album/6MqUvJry4Z87cCWebJmzcu"
@@ -59,10 +61,6 @@
       "link": "https://open.spotify.com/album/5GFkG2A3FxS6c1Uef0AKVm"
     },
     {
-      "label": "arctic monkeys/tranquility base hotel & casino",
-      "link": "https://open.spotify.com/album/7v6FNgLDS8KmaWA1amUtqe"
-    },
-    {
       "label": "jóhann jóhannsson/englabörn & variations",
       "link": "https://open.spotify.com/album/3JvBlIJOsKDpIcgQaT51nf"
     },
@@ -75,12 +73,12 @@
       "link": ""
     },
     {
-      "label": "hide with spread beaver/hurry go round",
-      "link": "https://open.spotify.com/album/4s60xdmNtrStx7HlWKtPtp"
-    },
-    {
       "label": "sunny day service/the CITY",
       "link": "https://open.spotify.com/album/7EexNnMtCiuxkGrv5RwQLT"
+    },
+    {
+      "label": "arctic monkeys/tranquility base hotel & casino",
+      "link": "https://open.spotify.com/album/7v6FNgLDS8KmaWA1amUtqe"
     }
   ],
   "name": "hirofumi miyamoto"

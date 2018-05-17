@@ -1,6 +1,14 @@
 import { h, Component } from 'preact'
 import style from './style.css'
 
+const injectStyle = style => {
+  const styleElement = document.createElement('style')
+  let styleSheet = null
+  document.head.appendChild(styleElement)
+  styleSheet = styleElement.sheet
+  styleSheet.insertRule(style, styleSheet.cssRules.length)
+}
+
 export default class Credits extends Component {
   constructor(props) {
     super(props)
@@ -54,6 +62,10 @@ export default class Credits extends Component {
         >
           {stringSplitter('tomasswood/preact-homepage-generator')}
         </a>
+        <ul>
+          {credits.sublist &&
+            credits.sublist.map((item, i) => <CreditsList key={i} {...item} />)}
+        </ul>
         <p className={style.copy}>
           © {`${new Date().getFullYear()} `}
           <a
@@ -69,18 +81,6 @@ export default class Credits extends Component {
     )
   }
 }
-
-const stringSplitter = str =>
-  str.split('').map((char, index) => (
-    <span
-      key={index}
-      style={`animation: rainbow-color-keyframes 0.6s ${(index + 1) /
-        100 *
-        5}s linear infinite`}
-    >
-      {char}
-    </span>
-  ))
 
 class CreditsList extends Component {
   render({ label, link }) {
@@ -100,10 +100,14 @@ class CreditsList extends Component {
   }
 }
 
-const injectStyle = style => {
-  const styleElement = document.createElement('style')
-  let styleSheet = null
-  document.head.appendChild(styleElement)
-  styleSheet = styleElement.sheet
-  styleSheet.insertRule(style, styleSheet.cssRules.length)
-}
+const stringSplitter = str =>
+  str.split('').map((char, index) => (
+    <span
+      key={index}
+      style={`animation: rainbow-color-keyframes 0.6s ${(index + 1) /
+        100 *
+        5}s linear infinite`}
+    >
+      {char}
+    </span>
+  ))
