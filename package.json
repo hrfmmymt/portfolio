@@ -1,7 +1,8 @@
 {
   "private": true,
   "name": "portfolio",
-  "version": "0.0.0",
+  "author": "hrfmmymt",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
