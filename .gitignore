@@ -53,5 +53,5 @@ jspm_packages
 # vim
 *.swp
 
-# netlify
-.netlify
+# Firebase
+.firebaserc
