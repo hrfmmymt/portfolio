@@ -248,7 +248,12 @@
         "className": "hrfmmymt"
       },
       {
-        "label": "blog",
+        "label": "new-blog",
+        "link": "https://archive.hrfmmymt.com/",
+        "className": "blog"
+      },
+      {
+        "label": "old-blog",
         "link": "https://hrfmmymt.tumblr.com/",
         "className": "blog"
       },
