@@ -28,6 +28,8 @@
     "jest": "^22.4.3",
     "preact-cli": "^2.2.1",
     "preact-cli-plugin-critical-css": "^0.1.0",
+    "preact-cli-sw-precache": "^1.0.3",
+    "preact-cli-workbox-plugin": "^1.0.0",
     "preact-render-spy": "^1.2.2",
     "prettier": "1.11.1"
   },
