@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>404</title>
+  <title>404 | # hirofumi miyamoto</title>
   <style>
     html,
     body {
@@ -92,12 +92,12 @@
             while (o < 0) o++
             o %= 1
 
-            const h = Math.ceil(canvas.height / 8 / scale)
+            const h = Math.ceil(canvas.height / 7 / scale)
             for (let j = -h; j < h; j++) {
               let c = charMap[text[i]] + j - Math.floor(offsets[i].n)
               while (c < 0) c += chars.length
               c %= chars.length
-              const s = 1 - Math.abs(j + o) / (canvas.height / 8 / scale + 1)
+              const s = 1 - Math.abs(j + o) / (canvas.height / 7 / scale + 1)
               ctx.globalAlpha = s
               ctx.font = `700 ${scale * s / 10}rem 'futura', sans-serif`
               ctx.fillText(chars[c], scale * (i * 1.12), (j + o) * scale * 2)
