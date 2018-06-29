@@ -35,7 +35,7 @@
     <link href="assets/icons/icon_512x512.jpg" rel="image_src">
     <link href="assets/icons/icon_192x192.jpg" rel="apple-touch-icon">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans">
+    <link rel="preload" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans" as="style">
     <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
       <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
     <% } %>
