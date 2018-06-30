@@ -34,8 +34,9 @@
     <meta name="twitter:site" content="@hrfmmymt">
     <link href="assets/icons/icon_512x512.jpg" rel="image_src">
     <link href="assets/icons/icon_192x192.jpg" rel="apple-touch-icon">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-    <link rel="preload" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans" as="style">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans">
     <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
       <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
     <% } %>
@@ -51,6 +52,11 @@
     <% } %>
   </head>
   <body>
+    <noscript>
+      <div class="noscript">
+        <p>JavaScript required.</p>
+      </div>
+    </noscript>
     <%= htmlWebpackPlugin.options.ssr({
       url: '/'
     }) %>
