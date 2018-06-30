@@ -22,7 +22,7 @@ export default function(config, env, helpers) {
   )
 
   const precacheConfig = {
-    staticFileGlobsIgnorePatterns: [/404\.html$/]
+    staticFileGlobsIgnorePatterns: [/404\.html$/, /\.DS_Store$/]
   }
   return preactCliSwPrecachePlugin(config, precacheConfig)
 }
