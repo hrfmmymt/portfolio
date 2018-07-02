@@ -52,15 +52,16 @@
     <% } %>
   </head>
   <body>
-    <noscript>
-      <div class="noscript">
-        <p>JavaScript required.</p>
-      </div>
-    </noscript>
+    <div id="skeletonScreen" style="width: 100%; height: 100vh; background-color: #ddd;"></div>
     <%= htmlWebpackPlugin.options.ssr({
       url: '/'
     }) %>
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>window.fetch||document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
+    <script>
+      window.addEventListener("DOMContentLoaded", _ => {
+        document.getElementById("skeletonScreen").style.display = "none";
+      })
+    </script>
   </body>
 </html>
