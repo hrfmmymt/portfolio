@@ -59,8 +59,8 @@
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>window.fetch||document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
     <script>
-      window.addEventListener("DOMContentLoaded", _ => {
-        document.getElementById("skeletonScreen").style.display = "none";
+      window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('skeletonScreen').style.display = 'none'
       })
     </script>
   </body>
