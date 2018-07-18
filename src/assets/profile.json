@@ -271,6 +271,11 @@
         "label": "JSFIDDLE",
         "link": "https://jsfiddle.net/user/hrfmmymt/fiddles/",
         "className": "jsfiddle"
+      },
+      {
+        "label": "LinkedIn",
+        "link": "https://www.linkedin.com/in/hrfmmymt/",
+        "className": "linkedin"
       }
     ],
     "name": "hirofumi miyamoto"
