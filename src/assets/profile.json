@@ -236,7 +236,16 @@
       { "label": "MySQL", "value": 2 },
       { "label": "CircleCI", "value": 2 },
       { "label": "Travis CI", "value": 2 },
-      { "label": "SublimeText", "value": 3 }
+      { "label": "VS Code", "value": 3 },
+      { "label": "Web Performance", "value": 3 },
+      { "label": "GraphQL", "value": 2 },
+      { "label": "Serverless Architectures", "value": 2 },
+      { "label": "SPA", "value": 2 },
+      { "label": "fish shell", "value": 2 },
+      { "label": "Firebase", "value": 2 },
+      { "label": "Web Components", "value": 2 },
+      { "label": "Prettier", "value": 2 },
+      { "label": "Jest", "value": 2 }
     ]
   },
   "etc": {
