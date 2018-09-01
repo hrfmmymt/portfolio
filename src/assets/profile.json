@@ -244,8 +244,7 @@
       { "label": "fish shell", "value": 2 },
       { "label": "Firebase", "value": 2 },
       { "label": "Web Components", "value": 2 },
-      { "label": "Prettier", "value": 2 },
-      { "label": "Jest", "value": 2 }
+      { "label": "Prettier", "value": 2 }
     ]
   },
   "etc": {
