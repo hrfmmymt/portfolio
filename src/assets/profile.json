@@ -81,6 +81,13 @@
               "thumbnail_width": "",
               "caption": "スタイルガイド。",
               "alt": "画像 スタイルガイド"
+            },
+            {
+              "name": "skyticket_hotel.gif",
+              "thumbnail_width": "",
+              "caption":
+                "当サイト開発時点での最新サービスがホテル予約です。\n技術的には React による SPA で PWA ( ServiceWorkers によるオフラインキャッシュと Web App Manifest による Add to Homescreen に対応 ) となっています。\nUI 設計は国内競業サービスよりも https://www.wego.com/ や https://www.treebo.com/ https://www.trivago.com/ あたりを意識しています。\n自分はコーディングより、主に開発環境整備やコードレビューに回ることになりました。",
+              "alt": "アニメーション画像 スカイチケットホテル"
             }
           ]
         }
