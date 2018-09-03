@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import style from './style.css'
 import profile from '../../assets/profile.json'
 import { formatTime, nl2p } from '../../utils'
+import reactStringReplace from 'react-string-replace'
 
 class CareerDetailList extends Component {
   constructor(props) {
@@ -44,7 +45,20 @@ class CareerDetailList extends Component {
               alt={item.alt}
               style={{ width: item.thumbnail_width }}
             />
-            <figcaption>{item.caption && nl2p(item.caption)}</figcaption>
+            <figcaption>
+              <p>
+                {item.caption &&
+                  reactStringReplace(
+                    item.caption,
+                    /(https?:\/\/\S+)/g,
+                    (match, i) => (
+                      <a key={match + i} href={match}>
+                        {match}
+                      </a>
+                    )
+                  )}
+              </p>
+            </figcaption>
           </figure>
         ))
       : null
