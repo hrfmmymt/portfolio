@@ -59,32 +59,28 @@
           "files": [
             {
               "name": "skyticket01.jpg",
-              "thumbnail_width": "",
               "caption": "やっているやつです。",
               "alt": "画像 skyticket"
             },
             {
               "name": "psi.jpg",
-              "thumbnail_width": "",
               "caption":
                 "PageSpeed Insights のスクリーンショット。Web サイトパフォーマンス改善は継続的に取り組んでいます。\nそれとこれはある種のハック情報なんですが、毎日の PageSpeed Insights の計測結果を何も言わず突然チャットで自動で定期投稿し始めてみたら、特に布教せずとも他の開発メンバーもサイトパフォーマンスを勝手に気にし出すようになりました。",
               "alt": "画像 PageSpeed Insights のスクリーンショット"
             },
             {
               "name": "styleguide-ov.jpg",
-              "thumbnail_width": "",
               "caption": "",
               "alt": "画像 スタイルガイド"
             },
             {
               "name": "styleguide.jpg",
-              "thumbnail_width": "",
               "caption": "スタイルガイド。",
               "alt": "画像 スタイルガイド"
             },
             {
               "name": "skyticket_hotel.gif",
-              "thumbnail_width": "",
+              "thumbnail_height": "730",
               "caption":
                 "当サイト開発時点での最新サービスがホテル予約です。技術的には React による SPA で PWA ( ServiceWorkers によるオフラインキャッシュと Web App Manifest による Add to Homescreen に対応 ) となっています。\nUI 設計は国内競業サービスよりも wego ( https://www.wego.com/ ) や treebo ( https://www.treebo.com/ ) trivago ( https://www.trivago.com/ ) あたりを意識しています。\n自分はコーディングより、主に開発環境整備やコードレビューに回ることになりました。",
               "alt": "アニメーション画像 スカイチケットホテル"
@@ -176,8 +172,7 @@
           "path": "../../assets/careers",
           "files": [
             {
-              "name": "cap.png",
-              "thumbnail_width": ""
+              "name": "cap.png"
             }
           ]
         }

@@ -39,11 +39,13 @@ class CareerDetailList extends Component {
     const imgList = thisJob[0].assets
       ? thisJob[0].assets.files.map((item, i) => (
           <figure key={i} className={style.figureItem}>
+          {item}
             <img
               src={`${thisJob[0].assets.path}/${jobId}/${item.name}`}
               className={`${jobId}-${item.name}`}
               alt={item.alt}
-              style={{ width: item.thumbnail_width }}
+              width={item.thumbnail_width !== '' ? item.thumbnail_width : '100%'}
+              height={item.thumbnail_height}
             />
             <figcaption>
               <p>
