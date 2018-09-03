@@ -57,7 +57,8 @@ export default class Skills extends Component {
             </Link>
           </div>
         </h2>
-        <span>these blocks are large enough to be interested or skilled</span>
+        <p>these blocks are large enough to be interested or skilled</p>
+        <p>ブロックの大きさと興味や技術の大きさが比例しています。</p>
         <div className={style.mapWrapper}>
           {props.list &&
             shuffledLists.map((data, i) => <SkillMap key={i} {...data} />)}
