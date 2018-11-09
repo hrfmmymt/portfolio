@@ -16,21 +16,21 @@
     "test": "jest --no-cache"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "babel-jest": "^22.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "copy-webpack-plugin": "^4.5.2",
-    "eslint": "^4.18.2",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint": "^5.8.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-config-synacor": "^3.0.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.4",
-    "jest": "^22.4.3",
+    "jest": "^23.6.0",
     "preact-cli": "^2.2.1",
     "preact-cli-plugin-critical-css": "^0.1.0",
     "preact-cli-sw-precache": "^1.0.3",
     "preact-render-spy": "^1.2.2",
-    "prettier": "1.11.1"
+    "prettier": "1.15.1"
   },
   "dependencies": {
     "preact": "^8.2.7",
