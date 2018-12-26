@@ -1,20 +1,20 @@
-import { h, Component } from "preact";
-import PropTypes from "prop-types";
+import { h, Component } from 'preact'
+import PropTypes from 'prop-types'
 
-import style from "./header.css";
+import style from './header.css'
 
-import Nav from "./nav";
-import Scroll from "react-scroll";
-const Link = Scroll.Link;
+import Nav from './nav'
+import Scroll from 'react-scroll'
+const Link = Scroll.Link
 
-import { focusTargetElement, nl2p } from "../../utils";
+import { focusTargetElement, nl2p } from '../../utils'
 
 export default class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       header: props.header
-    };
+    }
   }
 
   render(props) {
@@ -22,11 +22,26 @@ export default class Header extends Component {
       <header className={style.header} title={this.state.header.image_title}>
         <div className={style.videoWrapper}>
           <div className={style.videoOverlay} />
-          <video poster="../../assets/header/header_bg.jpg" muted autoplay loop>
-            <source src="../../assets/header/header_bg.mp4" type="video/mp4" />
+          <video poster="../../assets/header/header_bg.jpg" muted autoPlay loop>
+            <source
+              src="../../assets/header/header_bg.mp4"
+              type="video/mp4"
+              media="screen and (min-width:481px)"
+            />
             <source
               src="../../assets/header/header_bg.webm"
               type="video/webm"
+              media="screen and (min-width:481px)"
+            />
+            <source
+              src="../../assets/header/header_bg-sp.mp4"
+              type="video/mp4"
+              media="screen and (max-width:480px)"
+            />
+            <source
+              src="../../assets/header/header_bg-sp.webm"
+              type="video/webm"
+              media="screen and (max-width:480px)"
             />
             <p>video要素がサポートされていないブラウザでご覧になっています。</p>
           </video>
@@ -50,10 +65,10 @@ export default class Header extends Component {
           </div>
         </Link>
       </header>
-    );
+    )
   }
 }
 
 Header.propTypes = {
   header: PropTypes.object.isRequired
-};
+}
