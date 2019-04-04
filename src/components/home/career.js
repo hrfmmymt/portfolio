@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import style from './career.css'
 import H2style from './h2.css'
-import { formatTime } from '../../utils'
+import { formatDate } from '../../utils'
 
 class CareerItem extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class CareerItem extends Component {
       topic_names
     } = this.state.career
 
-    const timePeriod = formatTime({ ...time })
+    const employmentPeriod = formatDate({ ...time })
 
     let devices
     if (device.isPC) devices = 'isPC'
@@ -38,7 +38,11 @@ class CareerItem extends Component {
     return (
       <li className={style.timelineItem}>
         <Link path="/career/" href={`/career/${job_id}`}>
-          <time className={style.time}>{timePeriod}</time>
+          <div className={style.time}>
+            <time dateTime={employmentPeriod.from}>{time.from}</time>
+            <span className={style.timeHyphen}>-</span>
+            <time dateTime={employmentPeriod.to}>{time.to}</time>
+          </div>
           <div className={`${style.circle} ${style[devices]}`} />
           <div className={style.description}>
             <h3 className={style.jobTitle}>{job_title}</h3>

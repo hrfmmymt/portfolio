@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import style from './style.css'
 import profile from '../../assets/profile.json'
-import { formatTime, nl2p } from '../../utils'
+import { formatDate } from '../../utils'
 import reactStringReplace from 'react-string-replace'
 
 class CareerDetailList extends Component {
@@ -27,8 +27,10 @@ class CareerDetailList extends Component {
     })
 
     const jobId = thisJob[0].job_id
+    const time = thisJob[0].time
 
-    const timePeriod = formatTime({ ...thisJob[0].time })
+    const employmentPeriod = formatDate({ ...thisJob[0].time })
+    console.log(employmentPeriod)
 
     const tagList = thisJob[0].topic_names.map((topicName, i) => (
       <li key={i} className={style.tagItem}>
@@ -39,12 +41,14 @@ class CareerDetailList extends Component {
     const imgList = thisJob[0].assets
       ? thisJob[0].assets.files.map((item, i) => (
           <figure key={i} className={style.figureItem}>
-          {item}
+            {item}
             <img
               src={`${thisJob[0].assets.path}/${jobId}/${item.name}`}
               className={`${jobId}-${item.name}`}
               alt={item.alt}
-              width={item.thumbnail_width !== '' ? item.thumbnail_width : '100%'}
+              width={
+                item.thumbnail_width !== '' ? item.thumbnail_width : '100%'
+              }
               height={item.thumbnail_height}
             />
             <figcaption>
@@ -87,19 +91,24 @@ class CareerDetailList extends Component {
           >
             <h2>{thisJob[0].job_title}</h2>
             <h3>{thisJob[0].role}</h3>
-            <time className={style.time}>{timePeriod}</time>
+            <div className={style.time}>
+              <time dateTime={employmentPeriod.from}>{time.from}</time>
+              <span className={style.timeHyphen}>-</span>
+              <time dateTime={employmentPeriod.to}>{time.to}</time>
+            </div>
             <div className={style.description}>
-              {thisJob[0].description
-                .split('\n')
-                .map((text, i) => <p key={i}>{text}</p>)}
+              {thisJob[0].description.split('\n').map((text, i) => (
+                <p key={i}>{text}</p>
+              ))}
             </div>
             <ul className={style.tagList}>{tagList}</ul>
             {imgList && (
               <div className={style.imgSection}>
                 {imgList}
                 <small>
-                  画像はイメージです。<br />the image is an image. you know what
-                  i mean?
+                  画像はイメージです。
+                  <br />
+                  the image is an image. you know what i mean?
                 </small>
               </div>
             )}

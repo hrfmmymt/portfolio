@@ -81,8 +81,11 @@
 }
 
 .time {
-  display: block;
   margin-bottom: 1rem;
+}
+
+.timeHyphen {
+  margin: 0 .2em 0;
 }
 
 .description {
