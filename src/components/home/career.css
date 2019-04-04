@@ -188,10 +188,13 @@
 }
 
 .time {
-  display: block;
   width: 25%;
   padding-right: 100px;
   position: absolute;
+}
+
+.timeHyphen {
+  margin: 0 .2rem 0;
 }
 
 .jobTitle {
