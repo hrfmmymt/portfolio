@@ -55,3 +55,4 @@ jspm_packages
 
 # Firebase
 .firebaserc
+.firebase/
