@@ -19,7 +19,7 @@ export default class Header extends Component {
 
   render(props) {
     return (
-      <header className={style.header} title={this.state.header.image_title}>
+      <header className={style.header}>
         <Nav props={props} />
         <h1>{this.state.header.title}</h1>
         <div itemProp="jobTitle">
