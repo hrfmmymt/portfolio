@@ -16,3 +16,12 @@ export const formatDate = ({ from, to }: { from: string; to: string }) => {
     to: toFormatDate,
   };
 };
+
+export const synthesizeString = (key: string, ...args: Array<string>): string => {
+  if (args.length === 0) {
+    return key;
+  }
+
+  // Format with {0}, {1}, ... with variables
+  return args.reduce((acc, v, i) => acc.replace(`{${i}}`, v), key);
+};
