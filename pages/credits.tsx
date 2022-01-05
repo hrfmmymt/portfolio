@@ -113,6 +113,11 @@ const Credits: NextPage = () => {
           background-color: #0e1e25;
           height: 100%;
         }
+        @media (max-width: 414px) {
+          div#__next {
+            height: auto;
+          }
+        }
       `}</style>
     </>
   );

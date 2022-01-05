@@ -46,14 +46,13 @@
   display: none;
 }
 
-/* for tablet ~ mobile */
-@media (max-width: 768px) {
+/* for mobile */
+@media (max-width: 414px) {
   .wrapper.open {
     background: #f2f2f2;
     height: 100%;
     left: 0;
     overflow: auto;
-    /* overflow-scrolling: touch; */
     padding: 0;
     position: fixed;
     text-align: center;
