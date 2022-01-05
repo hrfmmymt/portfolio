@@ -6,7 +6,7 @@ import reactStringReplace from 'react-string-replace';
 import { Heady } from '../components/Heady';
 import { META } from '../constants/meta';
 import styles from '../styles/CareerDetail.module.css';
-import { formatDate } from '../utils';
+import { formatDate, synthesizeString } from '../utils';
 
 import { careerList, CareerList, Files } from './api/career';
 
@@ -81,7 +81,10 @@ const Career: NextPage<CareerList> = (props) => {
 
   return (
     <>
-      <Heady content={META.CAREER_CONTENT} title={`career - ${props.title} | ${META.TITLE}`} />
+      <Heady
+        content={synthesizeString(META.CAREER_CONTENT, props.role)}
+        title={`career - ${props.title} | ${META.TITLE}`}
+      />
       <main className={styles.wrapper}>
         <header className={styles.header}>
           <a className={styles.backButton} href="" onClick={(e) => handleGoBack(router, e)}>
