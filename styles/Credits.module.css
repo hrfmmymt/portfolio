@@ -1,0 +1,44 @@
+.wrapper {
+  color: #fff;
+  padding: 2rem;
+  width: 100%;
+}
+
+.wrapper *::selection {
+  background-color: #ff00d4;
+  color: #fff;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.creditsListItem,
+.creditsListItemLink {
+  color: #0e1e25;
+}
+
+.creditsListItemLink:hover {
+  text-decoration: underline;
+  text-decoration-color: #ff00d4;
+}
+
+.defList {
+  margin: 2rem 0;
+}
+
+.defList dd {
+  margin-left: 0;
+}
+
+.copy {
+  margin-bottom: 0;
+}
+
+.copyLink {
+  color: #fff;
+}
+
+.copyLink:hover {
+  text-decoration: underline;
+}

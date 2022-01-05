@@ -1,0 +1,49 @@
+.section {
+  border-bottom: 1px solid #aaa;
+  min-height: 100%;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.title {
+  letter-spacing: 1.1px;
+  margin: 0 0 5rem;
+  padding: 0;
+}
+
+.section.career {
+  background-color: #f2f2f2;
+}
+
+.section.skills,
+.section.etc {
+  border-bottom: none;
+}
+
+.section.etc {
+  background-color: #e4f4ff;
+}
+
+.heart {
+  animation: heartbeat 0.25s infinite alternate;
+  display: inline-block;
+  margin-left: 1rem;
+  text-align: center;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    margin: 0 0 2rem;
+  }
+}

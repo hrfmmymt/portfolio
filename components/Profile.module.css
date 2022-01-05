@@ -1,0 +1,31 @@
+.list {
+  margin: 5rem auto 0;
+  max-width: 69rem;
+  padding: 0 1rem;
+  width: 90%;
+}
+
+.listItem:first-child {
+  margin-bottom: 4rem;
+}
+
+.description {
+  margin: 5rem auto 0;
+  max-width: 69rem;
+  padding: 0 1rem;
+  width: 90%;
+}
+
+.childListItem,
+.childList,
+.bioList {
+  margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    margin-top: 2rem;
+    padding: 0;
+    width: 100%;
+  }
+}

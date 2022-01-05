@@ -1,69 +1,37 @@
 {
-  "private": true,
-  "name": "portfolio",
   "author": "hrfmmymt",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
+  "name": "portfolio",
+  "private": true,
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --prerenderUrls src/prerender-urls.json --template src/template.html",
-    "serve": "npm run build && preact serve",
-    "dev": "preact watch -p 4567 --template src/template.html",
-    "deploy": "npm run build && firebase deploy",
-    "eslint": "eslint .",
-    "fmt:js": "eslint . --quiet --fix",
-    "fmt:css": "prettier --write 'src/**/*.css'",
-    "test": "jest --no-cache"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "copy-webpack-plugin": "^4.5.2",
-    "eslint": "^5.8.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-config-synacor": "^3.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "identity-obj-proxy": "^3.0.0",
-    "if-env": "^1.0.4",
-    "jest": "^23.6.0",
-    "preact-cli": "^2.2.1",
-    "preact-cli-plugin-critical-css": "^0.1.0",
-    "preact-cli-sw-precache": "^1.0.3",
-    "preact-render-spy": "^1.2.2",
-    "prettier": "1.15.1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "preact": "^8.2.7",
-    "preact-compat": "^3.18.0",
-    "preact-router": "^2.6.0",
-    "react-scroll": "^1.7.8",
-    "react-string-replace": "^0.4.1"
+    "next": "12.0.7",
+    "next-pwa": "^5.4.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
-  "jest": {
-    "verbose": true,
-    "setupFiles": [
-      "<rootDir>/tests/__mocks__/browserMocks.js"
-    ],
-    "testURL": "http://localhost:4567",
-    "transform": {
-      "\\.(js|jsx)$": "./transformPreprocessor.js"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "identity-obj-proxy",
-      "^./style$": "identity-obj-proxy",
-      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js",
-      "^react$": "preact-compat",
-      "^react-dom$": "preact-compat",
-      "^create-react-class$": "preact-compat/lib/create-react-class",
-      "^react-addons-css-transition-group$": "preact-css-transition-group"
-    }
+  "devDependencies": {
+    "@types/node": "17.0.1",
+    "@types/react": "17.0.37",
+    "@types/react-scroll": "^1.8.3",
+    "eslint": "8.5.0",
+    "eslint-config-next": "12.0.7",
+    "prettier": "^2.5.1",
+    "react-scroll": "^1.8.4",
+    "react-string-replace": "^0.4.4",
+    "react-use": "^17.3.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "swr": "^1.1.1",
+    "typescript": "4.5.4"
   }
 }

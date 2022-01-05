@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  justify-content: space-around;
+  margin: 4rem auto 6rem;
+  max-width: 69rem;
+  padding: 0 2rem;
+  width: 90%;
+}
+
+.link,
+.copyrightLink {
+  color: #005999;
+}
+
+.link {
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+}
+
+.copyright {
+  text-align: center;
+}
+
+/* for tablet ~ mobile */
+@media (max-width: 768px) {
+  .list {
+    flex-flow: column;
+    margin-bottom: 4rem;
+    width: 100%;
+  }
+
+  .link {
+    padding: 1rem 0;
+  }
+}
+
+/* for mobile */
+@media (max-width: 414px) {
+  .list {
+    margin-top: 2rem;
+  }
+}
