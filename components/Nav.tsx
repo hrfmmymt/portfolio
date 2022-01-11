@@ -70,6 +70,7 @@ const NavList: React.VFC<NavListProps> = ({ handleClose }) => {
       <Scroll
         className={styles.listItemLink}
         duration={200}
+        href={`#${id}`}
         offset={60}
         smooth={true}
         to={`${id}`}
