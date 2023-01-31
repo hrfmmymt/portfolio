@@ -33,22 +33,96 @@ export type CareerList = {
 
 export const careerList: CareerList[] = [
   {
+    title: '動画配信サービス開発',
+    time: {
+      from: 'oct. 2020',
+      to: 'now',
+    },
+    device: ['PC', 'SP'],
+    id: '202010-',
+    role: 'developing video distribution services at AbemaTV inc.',
+    description:
+      '新規機能開発、コードレビュー、既存サービスの改修・リファクタリング、CI チューニング、パフォーマンス改善その他関連作業などを行っています。',
+    topic_names: [
+      'React',
+      'RxJS',
+      'NodeJS',
+      'PostCSS',
+      'ava',
+      'Jest',
+      'CircleCI',
+      'GitHub Actions',
+      'webpack',
+      'esbuild',
+    ],
+    assets: {
+      path: '/img/career',
+      files: [
+        {
+          name: 'abema_web_desktop.png',
+          caption: 'ABEMA の desktop 版 ( https://abema.tv/ )。',
+          alt: '',
+          height: 986,
+          width: 1713,
+        },
+        {
+          name: 'abema_web_mobile.png',
+          caption: 'ABEMA mobile',
+          alt: '',
+          height: 896,
+          width: 412,
+        },
+        {
+          name: 'fifa_wcup_2022.png',
+          caption:
+            'FIFA ワールドカップ 2022 特設ページ ( https://abema.tv/video/genre/fifaworldcup ) 、試合一覧のタブやカルーセルを新規実装しました。\nワールドカップのページは3月末に削除されますが、プレミアリーグ ( https://abema.tv/video/genre/premierleague ) で流用されています。',
+          alt: '',
+          height: 1000,
+          width: 1728,
+        },
+        {
+          name: 'stats_stats.png',
+          caption:
+            'サッカー試合データ機能。スポーツの試合に関するデータ（選手名、試合のスコアリングなどの状況、その他）を閲覧できる機能です。Web ブラウザや iOS、 Android、 IPTV、Nitendo Switch など多岐にわたるデバイスで同じ体験を提供するため、WebView と iframe を活用してミニアプリとして実装しています。レガシーブラウザの対応もしており、IE11 を公式でサポートしている Preact を使用。eslint-plugin-compat などによる Linter の整備、Karma と Jasmine によるブラウザ上 (WebDriver 使用) でのユニットテスト、Storybook による Visual Regression Testing を行うなどしています。',
+          alt: '',
+          height: 1278,
+          width: 590,
+        },
+        {
+          name: 'stats_formation.png',
+          caption: 'サッカー試合データ機能 フォーメーション',
+          alt: '',
+          height: 1278,
+          width: 590,
+        },
+        {
+          name: 'stats_member.png',
+          caption: 'サッカー試合データ機能 メンバー',
+          alt: '',
+          height: 1278,
+          width: 590,
+        },
+      ],
+    },
+  },
+  {
     title: '大規模ブログ関連サービス開発',
     time: {
       from: 'nov. 2018',
-      to: 'now',
+      to: 'sep. 2020',
     },
     device: ['PC', 'SP'],
     id: '201811-',
     role: 'developing blog and some related services @CyberAgent, inc.',
     description:
-      'コードレビュー、既存サービスの改修・リファクタリング、SEO改善、パフォーマンス改善その他関連作業などを行っています。',
+      '新規機能開発、コードレビュー、既存サービスの改修・リファクタリング、SEO改善、パフォーマンス改善その他関連作業などを行っていました。',
     topic_names: [
       'React',
       'React Redux',
       'NodeJS',
       'PostCSS',
       'Less',
+      'ava',
       'CircleCI',
       'webpack',
       'Gulp',
@@ -60,7 +134,8 @@ export const careerList: CareerList[] = [
       files: [
         {
           name: 'ameblo_pc.png',
-          caption: 'アメブロPC ( https://ameblo.jp/shibuya )',
+          caption:
+            'アメーバブログ（アメブロ） PC 版です ( https://ameblo.jp/shibuya )。エディタなどの管理画面の改修をすることが多かった気がします。',
           alt: '',
           height: 766,
           width: 1402,
@@ -71,6 +146,14 @@ export const careerList: CareerList[] = [
           alt: '',
           height: 1350,
           width: 764,
+        },
+        {
+          name: 'ameba_pick.png',
+          caption:
+            'Ameba Pick という、アメーバブログに元々あったアフィリエイト機能をリニューアルしたサービスです ( https://content.ameba.jp/ameba_pick/start/ )。先に述べたエディタなどの管理画面の改修の延長線上にあった施策で自分に白羽の矢が立ちました。元々アメブロの管理画面のフロントエンドは Java の FreeMarker というテンプレートエンジンと jQuery で構成された、とてもレガシーなものでしたが、この度 React と TypeScript をこのページだけに導入しました。アクセシビリティー向上のためのチーム内での取り組みにも力を入れていました ( https://developers.cyberagent.co.jp/blog/archives/26695/ ) 。',
+          alt: '',
+          height: 968,
+          width: 1311,
         },
         {
           name: 'ameba_pc.png',
@@ -88,7 +171,8 @@ export const careerList: CareerList[] = [
         },
         {
           name: 'amp.png',
-          caption: 'AMP ( https://gamp.ameblo.jp/shibuya )',
+          caption:
+            'AMP ( https://gamp.ameblo.jp/shibuya ) 。対応終了しています ( https://ameblo.jp/staff/entry-12709589996.html ) 。',
           alt: '',
           height: 1348,
           width: 758,
