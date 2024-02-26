@@ -13,13 +13,8 @@ export const etcList: EtcList[] = [
     className: 'hrfmmymt',
   },
   {
-    label: 'new-blog',
+    label: 'blog',
     href: 'https://iiyatsu.hrfmmymt.com/',
-    className: 'blog',
-  },
-  {
-    label: 'old-blog',
-    href: 'https://hrfmmymt.tumblr.com/',
     className: 'blog',
   },
   {
