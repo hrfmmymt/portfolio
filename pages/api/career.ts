@@ -10,8 +10,8 @@ export type Files = {
   name: string;
   height: number;
   width: number;
+  alt: string;
   caption?: string;
-  alt?: string;
 };
 
 export type CareerList = {
@@ -212,7 +212,7 @@ export const careerList: CareerList[] = [
         {
           name: 'skyticket01.jpg',
           caption: 'やっていたやつです。',
-          alt: '画像 skyticket',
+          alt: 'skyticket モバイル、デスクトップの画面',
           height: 782,
           width: 1500,
         },
@@ -220,21 +220,21 @@ export const careerList: CareerList[] = [
           name: 'psi.jpg',
           caption:
             'PageSpeed Insights のスクリーンショット。Web サイトパフォーマンス改善は継続的に取り組んでいます。\nそれとこれはある種のハック情報なんですが、毎日の PageSpeed Insights の計測結果を何も言わず突然チャットで自動で定期投稿し始めてみたら、特に布教せずとも他の開発メンバーもサイトパフォーマンスを勝手に気にし出すようになりました。',
-          alt: '画像 PageSpeed Insights のスクリーンショット',
+          alt: 'PageSpeed Insights のスクリーンショット',
           height: 1245,
           width: 1500,
         },
         {
           name: 'styleguide-ov.jpg',
           caption: '',
-          alt: '画像 スタイルガイド',
+          alt: 'スタイルガイド',
           height: 1021,
           width: 1500,
         },
         {
           name: 'styleguide.jpg',
           caption: 'スタイルガイド。',
-          alt: '画像 スタイルガイド',
+          alt: 'スタイルガイド',
           height: 928,
           width: 1500,
         },
@@ -242,7 +242,7 @@ export const careerList: CareerList[] = [
           name: 'skyticket_hotel.gif',
           caption:
             '当サイト開発時点での最新サービスがホテル予約です。技術的には React による SPA で PWA ( ServiceWorkers によるオフラインキャッシュと Web App Manifest による Add to Homescreen に対応 ) となっています。\nUI 設計は国内競業サービスよりも wego ( https://www.wego.com/ ) や treebo ( https://www.treebo.com/ ) trivago ( https://www.trivago.com/ ) あたりを意識しています。\n自分はコーディングより、主に開発環境整備やコードレビューに回ることになりました。',
-          alt: 'アニメーション画像 スカイチケットホテル',
+          alt: 'skyticket ホテル',
           height: 730,
           width: 410,
         },
@@ -317,6 +317,7 @@ export const careerList: CareerList[] = [
           height: 270,
           name: 'cap.png',
           width: 720,
+          alt: '-5000兆円 生涯収支',
         },
       ],
     },

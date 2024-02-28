@@ -1,13 +1,13 @@
-/** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa');
+const withPWA = require('next-pwa')({
+  dest: 'public',
+});
 
-module.exports = withPWA({
+const nextConfig = withPWA({
   reactStrictMode: true,
-  pwa: {
-    dest: 'public',
-  },
   i18n: {
     locales: ['ja'],
     defaultLocale: 'ja',
   },
 });
+
+module.exports = nextConfig;
