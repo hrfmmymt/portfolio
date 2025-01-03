@@ -42,6 +42,7 @@ export const skillsList: SkillsList[] = [
 ];
 
 export const runtime = 'edge';
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<SkillsList[]>) {
   res.status(200).json(skillsList);
 }

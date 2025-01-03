@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+export const runtime = 'edge';
+
 const Device = {
   PC: 'PC',
   SP: 'SP',
@@ -349,8 +351,6 @@ export const careerList: CareerList[] = [
     topic_names: ['XHTML', 'CSS', 'jQuery', 'Photoshop'],
   },
 ];
-
-export const runtime = 'edge';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<CareerList[]>) {
   res.status(200).json(careerList);

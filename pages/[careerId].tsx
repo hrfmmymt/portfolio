@@ -42,8 +42,6 @@ export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   return { paths, fallback: false };
 };
 
-export const runtime = 'edge';
-
 const Career: NextPage<CareerList> = (props) => {
   const router = useRouter();
   const { title, time, description, topic_names, assets, role, id } = props;
