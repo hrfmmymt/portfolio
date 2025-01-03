@@ -4,7 +4,7 @@ const Device = {
   PC: 'PC',
   SP: 'SP',
 } as const;
-export type Device = typeof Device[keyof typeof Device];
+export type Device = (typeof Device)[keyof typeof Device];
 
 export type Files = {
   name: string;
@@ -349,6 +349,8 @@ export const careerList: CareerList[] = [
     topic_names: ['XHTML', 'CSS', 'jQuery', 'Photoshop'],
   },
 ];
+
+export const runtime = 'edge';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<CareerList[]>) {
   res.status(200).json(careerList);

@@ -39,6 +39,8 @@ export const etcList: EtcList[] = [
   },
 ];
 
+export const runtime = 'edge';
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<EtcList[]>) {
   res.status(200).json(etcList);
 }

@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
-import { NextRouter, useRouter } from 'next/router';
+import { type NextRouter, useRouter } from 'next/router';
 import reactStringReplace from 'react-string-replace';
 
 import { Heady } from '../components/Heady';
@@ -8,7 +8,7 @@ import { META } from '../constants/meta';
 import styles from '../styles/CareerDetail.module.css';
 import { formatDate, synthesizeString } from '../utils';
 
-import { careerList, CareerList, Files } from './api/career';
+import { careerList, type CareerList, type Files } from './api/career';
 
 type PathParams = {
   careerId: CareerList['id'];
@@ -41,6 +41,8 @@ export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   const paths = careerList.map((career) => `/${career.id}`);
   return { paths, fallback: false };
 };
+
+export const runtime = 'edge';
 
 const Career: NextPage<CareerList> = (props) => {
   const router = useRouter();

@@ -104,6 +104,8 @@ export const creditsList: CreditsList = {
   name: 'hirofumi miyamoto',
 };
 
+export const runtime = 'edge';
+
 export default function handler(req: NextApiRequest, res: NextApiResponse<CreditsList>) {
   res.status(200).json(creditsList);
 }
