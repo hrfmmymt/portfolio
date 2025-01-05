@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+export const runtime = 'edge';
+
 const Device = {
   PC: 'PC',
   SP: 'SP',
@@ -351,5 +353,11 @@ export const careerList: CareerList[] = [
 ];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<CareerList[]>) {
-  res.status(200).json(careerList);
+  return new Response(JSON.stringify(careerList), {
+    status: 200,
+    headers: {
+      'content-type': 'application/json',
+      'cache-control': 'public, s-maxage=1200, stale-while-revalidate=600',
+    },
+  });
 }
