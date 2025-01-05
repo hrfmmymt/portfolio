@@ -63,6 +63,10 @@ const Career: NextPage<CareerList> = (props) => {
           className={`${id}-${file.name}`}
           height={file.height ?? '405'}
           src={`${assetsPath}/${id}/${file.name}`}
+          style={{
+            width: 'auto',
+            height: 'auto',
+          }}
           width={file.width ?? '720'}
         />
         <figcaption>
