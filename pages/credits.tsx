@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import React from 'react';
 
 import { Heady } from '../components/Heady';
@@ -13,12 +13,12 @@ type CreditsListProps = {
 };
 
 const stringSplitter = (str: string) =>
-  str.split('').map((char, index) => (
-    <React.Fragment key={`${char}-${index}`}>
+  str.split('').map((char) => (
+    <React.Fragment key={`${str}-${char}-${char.charCodeAt(0)}`}>
       <span>{char}</span>
       <style jsx>{`
         span {
-          animation: rainbow-color-keyframes 0.6s ${((index + 1) / 100) * 5}s linear infinite;
+          animation: rainbow-color-keyframes 0.6s ${(char.charCodeAt(0) / 100) * 5}s linear infinite;
         }
         @keyframes rainbow-color-keyframes {
           0% {

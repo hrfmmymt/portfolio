@@ -47,8 +47,8 @@ const Career: NextPage<CareerList> = (props) => {
   const { title, time, description, topic_names, assets, role, id } = props;
   const employmentPeriod = formatDate({ ...time });
 
-  const tagList = topic_names.map((topicName, i) => (
-    <li key={i} className={styles.tagItem}>
+  const tagList = topic_names.map((topicName) => (
+    <li key={`${id}-${topicName}`} className={styles.tagItem}>
       {topicName}
     </li>
   ));
@@ -68,8 +68,8 @@ const Career: NextPage<CareerList> = (props) => {
         <figcaption>
           <p>
             {file.caption &&
-              reactStringReplace(file.caption, /(https?:\/\/\S+)/g, (match, i) => (
-                <a key={match + i} href={match}>
+              reactStringReplace(file.caption, /(https?:\/\/\S+)/g, (match) => (
+                <a key={`${id}-link-${match}`} href={match}>
                   {match}
                 </a>
               ))}
@@ -87,13 +87,18 @@ const Career: NextPage<CareerList> = (props) => {
       />
       <main className={styles.wrapper}>
         <header className={styles.header}>
-          <a className={styles.backButton} href="" onClick={(e) => handleGoBack(router, e)}>
-            <svg viewBox="0 0 24 24">
+          <button
+            className={styles.backButton}
+            type="button"
+            onClick={(e) => handleGoBack(router, e)}
+          >
+            <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">
+              <title id="backButtonTitle">戻る</title>
               <g>
                 <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a.996.996 0 0 0 1.414 0 1 1 0 0 0 0-1.414L7.414 13H20a1 1 0 1 0 0-2z" />
               </g>
             </svg>
-          </a>
+          </button>
           <h1 className={styles.pageTitle} itemProp="name">
             career
           </h1>
@@ -108,8 +113,8 @@ const Career: NextPage<CareerList> = (props) => {
               <time dateTime={employmentPeriod.to}>{time.to}</time>
             </div>
             <div className={styles.description}>
-              {description.split('\n').map((text, i) => (
-                <p key={i} className={styles.descriptionText}>
+              {description.split('\n').map((text) => (
+                <p key={`${id}-desc-${text.slice(0, 20)}`} className={styles.descriptionText}>
                   {text}
                 </p>
               ))}

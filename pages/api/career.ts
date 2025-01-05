@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export const runtime = 'edge';
-
 const Device = {
   PC: 'PC',
   SP: 'SP',

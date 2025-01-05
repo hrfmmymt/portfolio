@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
+import type React from 'react';
 
-import { SectionId, SectionTitle } from '../constants/section_title';
+import type { SectionId, SectionTitle } from '../constants/section_title';
 
 import styles from './Section.module.css';
 
@@ -14,9 +14,7 @@ type Props = {
 
 const CreditsLink: React.VFC = () => (
   <div className={styles.heart}>
-    <Link href={`/credits`}>
-      <a>💗</a>
-    </Link>
+    <Link href="/credits">💗</Link>
   </div>
 );
 

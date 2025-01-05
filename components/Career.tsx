@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { useCareerSwr } from '../fetch/useCareerSwr';
-import { CareerList } from '../pages/api/career';
+import type { CareerList } from '../pages/api/career';
 import { formatDate } from '../utils';
 
 import styles from './Career.module.css';
@@ -12,8 +12,8 @@ const CareerItem: React.VFC<CareerItemProps> = (props) => {
   const { time, title, role, topic_names, device } = props.career;
   const employmentPeriod = formatDate({ ...time });
 
-  const tagList = topic_names.map((topicName, i) => (
-    <li key={i} className={styles.tagItem}>
+  const tagList = topic_names.map((topicName) => (
+    <li key={`${props.career.id}-${topicName}`} className={styles.tagItem}>
       {topicName}
     </li>
   ));
@@ -50,10 +50,8 @@ export const Career = () => {
     <ul className={styles.timelineList}>
       {careerList.map((career: CareerList) => (
         <li key={career.id} className={styles.timelineItem}>
-          <Link as={`/${career.id}`} href="/[careerId]">
-            <a>
-              <CareerItem career={career} />
-            </a>
+          <Link as={`/${career.id}`} className={styles.link} href="/[careerId]">
+            <CareerItem career={career} />
           </Link>
         </li>
       ))}
