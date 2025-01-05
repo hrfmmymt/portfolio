@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Give+You+Glory|Noto+Sans');
-
 html,
 body {
-  font-family: 'Noto Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   height: 100%;
   margin: 0;

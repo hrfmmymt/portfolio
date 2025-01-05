@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import { Noto_Sans, Give_You_Glory } from 'next/font/google';
 import { Events, Link } from 'react-scroll';
 
 import { Career } from '../components/Career';
@@ -21,14 +22,26 @@ const focusTargetElement = () => {
   });
 };
 
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
+
+const giveYouGlory = Give_You_Glory({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 const Home: NextPage = () => {
   return (
     <>
       <Heady content={META.INDEX_CONTENT} title={META.TITLE} />
-      <main className={styles.main}>
+      <main className={`${styles.main} ${notoSans.className}`}>
         <header className={styles.header}>
           <Nav />
-          <h1 className={styles.title}># hirofumi miyamoto</h1>
+          <h1 className={giveYouGlory.className}># hirofumi miyamoto</h1>
           <div>
             <p>hi everyone! i am hrfmmymt.</p>
             <p>i'm always goofing off on the internet.</p>
