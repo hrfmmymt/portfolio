@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import type React from 'react';
+import { useEffect } from 'react';
 import { Events, Link as Scroll } from 'react-scroll';
 import { useToggle } from 'react-use';
 

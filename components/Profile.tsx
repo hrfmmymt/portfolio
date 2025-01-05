@@ -6,12 +6,14 @@ export const Profile: React.VFC = () => {
   return (
     <>
       <Image
-        alt="my pic"
+        priority
+        alt="profile image"
         height={405}
-        layout="responsive"
-        loading={'lazy'}
-        src={'/img/profile/profile_l.jpg'}
-        unoptimized={false}
+        src="/img/profile/profile_l.jpg"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
         width={720}
       />
       <ul className={styles.list}>

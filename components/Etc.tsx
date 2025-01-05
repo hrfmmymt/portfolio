@@ -15,13 +15,13 @@ const EtcListItem: React.VFC<EtcList> = (etcListItem) => {
         target="_blank"
       >
         <Image
-          alt=""
-          className={styles.linkIcon}
+          alt={etcListItem.label}
           height={26}
-          layout={'fixed'}
-          loading={'lazy'}
           src={`/img/etc/${etcListItem.className}.svg`}
-          unoptimized={false}
+          style={{
+            width: '26px',
+            height: '26px',
+          }}
           width={26}
         />
         <span>{etcListItem.label}</span>
