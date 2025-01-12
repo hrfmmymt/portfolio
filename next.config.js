@@ -11,6 +11,8 @@ const nextConfig = withPWA({
     locales: ['ja'],
     defaultLocale: 'ja',
   },
+  optimizeFonts: false,
+  optimizeCss: true,
 });
 
 module.exports = nextConfig;
