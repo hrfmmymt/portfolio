@@ -37,6 +37,6 @@
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "swr": "^1.1.1",
-    "typescript": "4.5.4"
+    "typescript": "4.9.5"
   }
 }
