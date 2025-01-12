@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { type FC } from 'react';
 
 import { Heady } from '../components/Heady';
 import { META } from '../constants/meta';
@@ -44,7 +44,7 @@ const stringSplitter = (str: string) =>
     </React.Fragment>
   ));
 
-const CreditsList: React.VFC<CreditsListProps> = ({ label, link }) => {
+const CreditsList: FC<CreditsListProps> = ({ label, link }) => {
   return (
     <li key={label} className={styles.creditsListItem}>
       {link === '' ? (

@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import styles from '../styles/Offline.module.css';
 
-const Offline: React.VFC = () => (
+const Offline: React.FC = () => (
   <>
     <Head>
       <title># hirofumi miyamoto | offline</title>

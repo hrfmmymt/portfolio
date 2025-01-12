@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import type React from 'react';
 
 import type { SectionId, SectionTitle } from '../constants/section_title';
 
@@ -12,13 +11,13 @@ type Props = {
   title: SectionTitle;
 };
 
-const CreditsLink: React.VFC = () => (
+const CreditsLink: React.FC = () => (
   <div className={styles.heart}>
     <Link href="/credits">💗</Link>
   </div>
 );
 
-export const Section: React.VFC<Props> = (props) => {
+export const Section: React.FC<Props> = (props) => {
   const { id, title, children, className } = props;
   return (
     <section

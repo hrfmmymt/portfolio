@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import styles from './Profile.module.css';
 
-export const Profile: React.VFC = () => {
+export const Profile: React.FC = () => {
   return (
     <>
       <Image

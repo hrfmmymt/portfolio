@@ -5,7 +5,7 @@ import { type EtcList, etcList } from '../pages/api/etc';
 
 import styles from './Etc.module.css';
 
-const EtcListItem: React.VFC<EtcList> = (etcListItem) => {
+const EtcListItem: React.FC<EtcList> = (etcListItem) => {
   return (
     <li className={styles.etcListItem}>
       <Link

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 
 import { META } from '../constants/meta';
 
@@ -8,7 +7,7 @@ type Props = {
   title: string;
 };
 
-export const Heady: React.VFC<Props> = (props) => {
+export const Heady: React.FC<Props> = (props) => {
   const { content, title } = props;
 
   return (

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
-import { skillsList, SkillsList } from '../pages/api/skills';
+import { skillsList, type SkillsList } from '../pages/api/skills';
 
 import styles from './Skills.module.css';
 
@@ -15,7 +15,7 @@ const shuffledSkillsList = (list: SkillsList[]) => {
   return list;
 };
 
-const SkillsListItem: React.VFC<SkillsList> = (skillsListItem) => {
+const SkillsListItem: FC<SkillsList> = (skillsListItem) => {
   const skillsDetail = { className: '', ariaLabel: '' };
   const [list, setList] = useState<SkillsList>();
 

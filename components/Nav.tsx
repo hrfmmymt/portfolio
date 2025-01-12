@@ -1,4 +1,3 @@
-import type React from 'react';
 import { useEffect } from 'react';
 import { Events, Link as Scroll } from 'react-scroll';
 import { useToggle } from 'react-use';
@@ -31,7 +30,7 @@ const focusTargetElement = () => {
   });
 };
 
-export const Nav: React.VFC = () => {
+export const Nav: React.FC = () => {
   const [isOpen, toggle] = useToggle(false);
 
   useEffect(() => {

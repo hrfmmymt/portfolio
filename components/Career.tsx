@@ -8,7 +8,7 @@ import styles from './Career.module.css';
 
 type CareerItemProps = { career: CareerList };
 
-const CareerItem: React.VFC<CareerItemProps> = (props) => {
+const CareerItem: React.FC<CareerItemProps> = (props) => {
   const { time, title, role, topic_names, device } = props.career;
   const employmentPeriod = formatDate({ ...time });
 
