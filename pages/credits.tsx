@@ -12,9 +12,9 @@ type CreditsListProps = {
   link: string;
 };
 
-const stringSplitter = (str: string) =>
-  str.split('').map((char) => (
-    <React.Fragment key={`${str}-${char}-${char.charCodeAt(0)}`}>
+const stringSplitter = (str: string, parentKey = '') =>
+  str.split('').map((char, index) => (
+    <React.Fragment key={`${parentKey}-${char}-${index}-${char.charCodeAt(0)}`}>
       <span>{char}</span>
       <style jsx>{`
         span {
@@ -48,7 +48,7 @@ const CreditsList: FC<CreditsListProps> = ({ label, link }) => {
   return (
     <li key={label} className={styles.creditsListItem}>
       {link === '' ? (
-        <span>{stringSplitter(label)}</span>
+        <span>{stringSplitter(label, `span-${label}`)}</span>
       ) : (
         <a
           className={styles.creditsListItemLink}
@@ -56,7 +56,7 @@ const CreditsList: FC<CreditsListProps> = ({ label, link }) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span>{stringSplitter(label)}</span>
+          <span>{stringSplitter(label, `link-${label}`)}</span>
         </a>
       )}
     </li>
