@@ -1,8 +1,8 @@
-import { CareerList } from "app/components/CareerList";
+import { CareerList } from '../components/CareerList';
 
 export const metadata = {
-  title: "Career",
-  description: "Read my career.",
+  title: 'Career',
+  description: 'Read my career.',
 };
 
 export default function Page() {

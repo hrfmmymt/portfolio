@@ -1,7 +1,7 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { getCareerPosts, type CareerPost } from "../career/utils";
-import styles from "./Career.module.css";
+import { getCareerPosts, type CareerPost } from '../career/utils';
+import styles from './Career.module.css';
 
 const CareerItem: React.FC<{ post: CareerPost }> = ({ post }) => {
   const tagList = post.metadata.tagList.map((tag) => (
@@ -13,19 +13,14 @@ const CareerItem: React.FC<{ post: CareerPost }> = ({ post }) => {
   return (
     <>
       <div className={styles.time}>
-        <time dateTime={post.metadata.startDate}>
-          {post.metadata.startDate}
-        </time>
+        <time dateTime={post.metadata.startDate}>{post.metadata.startDate}</time>
         <span className={styles.timeHyphen}>-</span>
         <time dateTime={post.metadata.endDate}>{post.metadata.endDate}</time>
       </div>
-      {Array.isArray(post.metadata.device) &&
-      post.metadata.device.length > 1 ? (
+      {Array.isArray(post.metadata.device) && post.metadata.device.length > 1 ? (
         <div className={`${styles.circle} ${styles.PC} ${styles.SP}`} />
       ) : (
-        <div
-          className={`${styles.circle} ${styles[post.metadata.device as string]}`}
-        />
+        <div className={`${styles.circle} ${styles[post.metadata.device as string]}`} />
       )}
 
       <div className={styles.description}>

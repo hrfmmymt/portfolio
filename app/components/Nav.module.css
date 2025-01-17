@@ -28,7 +28,7 @@
 
 .listItemLink::after {
   border: 1px solid #fff;
-  content: "";
+  content: '';
   margin-left: 1rem;
   width: 0;
 }
@@ -114,7 +114,7 @@
   .hamburger::before {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    content: "";
+    content: '';
     height: 100%;
     left: 0;
     position: absolute;
@@ -126,7 +126,7 @@
 
   .hamburger.open::after {
     color: #0057a7;
-    content: "close";
+    content: 'close';
     left: -30%;
     position: absolute;
     top: 35%;

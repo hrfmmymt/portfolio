@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { type FC, useEffect, useState } from "react";
+import { type FC, useEffect, useState } from 'react';
 
-import { skillsList, type SkillsList } from "../api/skills";
+import { skillsList, type SkillsList } from '../api/skills';
 
-import styles from "./Skills.module.css";
+import styles from './Skills.module.css';
 
 const shuffledSkillsList = (list: SkillsList[]) => {
   let i = list.length - 1;
@@ -18,7 +18,7 @@ const shuffledSkillsList = (list: SkillsList[]) => {
 };
 
 const SkillsListItem: FC<SkillsList> = (skillsListItem) => {
-  const skillsDetail = { className: "", ariaLabel: "" };
+  const skillsDetail = { className: '', ariaLabel: '' };
   const [list, setList] = useState<SkillsList>();
 
   useEffect(() => {
@@ -31,15 +31,15 @@ const SkillsListItem: FC<SkillsList> = (skillsListItem) => {
 
   switch (list.value) {
     case 1:
-      skillsDetail.className = "😩";
+      skillsDetail.className = '😩';
       skillsDetail.ariaLabel = `${list.label} is During study`;
       break;
     case 2:
-      skillsDetail.className = "😀";
+      skillsDetail.className = '😀';
       skillsDetail.ariaLabel = `${list.label} is OK`;
       break;
     case 3:
-      skillsDetail.className = "😍";
+      skillsDetail.className = '😍';
       skillsDetail.ariaLabel = `${list.label} is Love`;
       break;
   }

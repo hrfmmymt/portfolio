@@ -1,6 +1,6 @@
-import { getCareerPosts } from "app/career/utils";
+import { getCareerPosts } from 'app/career/utils';
 
-export const baseUrl = "https://hrfmmymt.com";
+export const baseUrl = 'https://hrfmmymt.com';
 
 export default async function sitemap() {
   const posts = getCareerPosts().map((post) => ({
@@ -8,9 +8,9 @@ export default async function sitemap() {
     lastModified: post.metadata.startDate,
   }));
 
-  const routes = ["", "/career"].map((route) => ({
+  const routes = ['', '/career'].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
+    lastModified: new Date().toISOString().split('T')[0],
   }));
 
   return [...routes, ...posts];

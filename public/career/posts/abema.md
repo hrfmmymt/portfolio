@@ -1,10 +1,10 @@
 ---
-title: "動画配信サービス開発"
-startDate: "oct. 2020"
-endDate: "now"
-device: ["PC", "SP"]
-id: "202010-"
-role: "developing video distribution services at AbemaTV inc."
+title: '動画配信サービス開発'
+startDate: 'oct. 2020'
+endDate: 'now'
+device: ['PC', 'SP']
+id: '202010-'
+role: 'developing video distribution services at AbemaTV inc.'
 tagList:
   - React
   - RxJS

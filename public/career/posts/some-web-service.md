@@ -1,10 +1,10 @@
 ---
-title: "web サービスいくつか"
-startDate: "jan. 2014"
-endDate: "jun. 2014"
-device: ["PC", "SP"]
-id: "201401-201406"
-role: "developing a front-end some web services."
+title: 'web サービスいくつか'
+startDate: 'jan. 2014'
+endDate: 'jun. 2014'
+device: ['PC', 'SP']
+id: '201401-201406'
+role: 'developing a front-end some web services.'
 tagList:
   - jQuery
   - D3.js

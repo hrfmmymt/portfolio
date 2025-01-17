@@ -1,10 +1,10 @@
 ---
-title: "ファイナンシャルプランナー向け業務用 Web アプリ"
-startDate: "may. 2013"
-endDate: "dec. 2013"
-device: ["PC", "SP"]
-id: "201305-201312"
-role: "developing a front-end single page application."
+title: 'ファイナンシャルプランナー向け業務用 Web アプリ'
+startDate: 'may. 2013'
+endDate: 'dec. 2013'
+device: ['PC', 'SP']
+id: '201305-201312'
+role: 'developing a front-end single page application.'
 tagList:
   - Yeoman
   - Backbone.js

@@ -1,10 +1,10 @@
 ---
-title: "web ブラウザ用ソーシャルゲーム"
-startDate: "jul. 2014"
-endDate: "sep. 2014"
-device: ["PC", "SP"]
-id: "201407-201409"
-role: "developing a front-end mobile web app."
+title: 'web ブラウザ用ソーシャルゲーム'
+startDate: 'jul. 2014'
+endDate: 'sep. 2014'
+device: ['PC', 'SP']
+id: '201407-201409'
+role: 'developing a front-end mobile web app.'
 tagList:
   - Angular ( v1 )
   - jQuery

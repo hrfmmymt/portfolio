@@ -1,5 +1,5 @@
-import { baseUrl } from "app/sitemap";
-import { getCareerPosts } from "app/career/utils";
+import { baseUrl } from '../sitemap';
+import { getCareerPosts } from '../career/utils';
 
 export async function GET() {
   const allCareers = getCareerPosts();
@@ -16,11 +16,11 @@ export async function GET() {
         `<item>
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/career/${post.slug}</link>
-          <description>${post.metadata.role || ""}</description>
+          <description>${post.metadata.role || ''}</description>
           <pubDate>${new Date(post.metadata.startDate).toUTCString()}</pubDate>
         </item>`,
     )
-    .join("\n");
+    .join('\n');
 
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
@@ -34,7 +34,7 @@ export async function GET() {
 
   return new Response(rssFeed, {
     headers: {
-      "Content-Type": "text/xml",
+      'Content-Type': 'text/xml',
     },
   });
 }

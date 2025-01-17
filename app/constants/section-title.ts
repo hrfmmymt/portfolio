@@ -1,10 +1,10 @@
 export const SECTION_LIST = {
-  PROFILE: "profile" as const,
-  CAREER: "career" as const,
-  SKILLS: "skills" as const,
-  SKILLS_OR: "skills, or" as const,
-  ETC: "etc" as const,
-  ETC_PERIOD: "etc." as const,
+  PROFILE: 'profile' as const,
+  CAREER: 'career' as const,
+  SKILLS: 'skills' as const,
+  SKILLS_OR: 'skills, or' as const,
+  ETC: 'etc' as const,
+  ETC_PERIOD: 'etc.' as const,
 };
 
 export type SectionTitle =

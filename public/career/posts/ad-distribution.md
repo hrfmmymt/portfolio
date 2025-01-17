@@ -1,10 +1,10 @@
 ---
-title: "広告配信システム管理画面"
-startDate: "oct. 2014"
-endDate: "sep. 2015"
-device: ["PC", "SP"]
-id: "201410-201509"
-role: "developing a front-end single page application."
+title: '広告配信システム管理画面'
+startDate: 'oct. 2014'
+endDate: 'sep. 2015'
+device: ['PC', 'SP']
+id: '201410-201509'
+role: 'developing a front-end single page application.'
 tagList:
   - Angular ( v1 )
   - Less

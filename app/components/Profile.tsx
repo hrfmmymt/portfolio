@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import styles from "./Profile.module.css";
+import styles from './Profile.module.css';
 
 export const Profile: React.FC = () => {
   return (
@@ -11,8 +11,8 @@ export const Profile: React.FC = () => {
         height={405}
         src="/img/profile/profile_l.jpg"
         style={{
-          width: "100%",
-          height: "auto",
+          width: '100%',
+          height: 'auto',
         }}
         width={720}
       />
@@ -20,9 +20,7 @@ export const Profile: React.FC = () => {
         <li className={styles.listItem}>
           <h3>### about</h3>
           <ul>
-            <li className={styles.childListItem}>
-              japanese web [ developer | designer ]
-            </li>
+            <li className={styles.childListItem}>japanese web [ developer | designer ]</li>
           </ul>
         </li>
         <li className={styles.listItem}>

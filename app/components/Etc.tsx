@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { type EtcList, etcList } from "../api/etc";
+import { type EtcList, etcList } from '../api/etc';
 
-import styles from "./Etc.module.css";
+import styles from './Etc.module.css';
 
 const EtcListItem: React.FC<EtcList> = (etcListItem) => {
   return (
@@ -15,12 +15,12 @@ const EtcListItem: React.FC<EtcList> = (etcListItem) => {
         target="_blank"
       >
         <Image
-          alt={""}
+          alt={''}
           height={26}
           src={`/img/etc/${etcListItem.className}.svg`}
           style={{
-            width: "26px",
-            height: "26px",
+            width: '26px',
+            height: '26px',
           }}
           width={26}
         />

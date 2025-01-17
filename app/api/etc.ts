@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export type EtcList = {
   label: string;
@@ -8,42 +8,39 @@ export type EtcList = {
 
 export const etcList: EtcList[] = [
   {
-    label: "hrfmmymt.github.io",
-    href: "https://hrfmmymt.github.io/",
-    className: "hrfmmymt",
+    label: 'hrfmmymt.github.io',
+    href: 'https://hrfmmymt.github.io/',
+    className: 'hrfmmymt',
   },
   {
-    label: "blog",
-    href: "https://iiyatsu.hrfmmymt.com/",
-    className: "blog",
+    label: 'blog',
+    href: 'https://iiyatsu.hrfmmymt.com/',
+    className: 'blog',
   },
   {
-    label: "GitHub",
-    href: "https://github.com/hrfmmymt/",
-    className: "github",
+    label: 'GitHub',
+    href: 'https://github.com/hrfmmymt/',
+    className: 'github',
   },
   {
-    label: "CodePen",
-    href: "https://codepen.io/hrfmmymt/",
-    className: "codepen",
+    label: 'CodePen',
+    href: 'https://codepen.io/hrfmmymt/',
+    className: 'codepen',
   },
   {
-    label: "JSFIDDLE",
-    href: "https://jsfiddle.net/user/hrfmmymt/fiddles/",
-    className: "jsfiddle",
+    label: 'JSFIDDLE',
+    href: 'https://jsfiddle.net/user/hrfmmymt/fiddles/',
+    className: 'jsfiddle',
   },
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/hrfmmymt/",
-    className: "linkedin",
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/hrfmmymt/',
+    className: 'linkedin',
   },
 ];
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<EtcList[]>,
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<EtcList[]>) {
   res.status(200).json(etcList);
 }

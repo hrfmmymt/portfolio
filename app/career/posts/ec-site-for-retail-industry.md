@@ -1,10 +1,10 @@
 ---
-title: "小売業向けECサイト保守・運用"
-startDate: "apr. 2012"
-endDate: "jul. 2012"
-device: ["PC", "SP"]
-id: "201204-201207"
-role: "website markup, design."
+title: '小売業向けECサイト保守・運用'
+startDate: 'apr. 2012'
+endDate: 'jul. 2012'
+device: ['PC', 'SP']
+id: '201204-201207'
+role: 'website markup, design.'
 tagList:
   - XHTML
   - CSS

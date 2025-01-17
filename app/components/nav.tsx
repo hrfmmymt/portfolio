@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { Events, Link as Scroll } from "react-scroll";
-import { useToggle } from "react-use";
+import { useEffect } from 'react';
+import { Events, Link as Scroll } from 'react-scroll';
+import { useToggle } from 'react-use';
 
-import { SECTION_LIST } from "../constants/section-title";
+import { SECTION_LIST } from '../constants/section-title';
 
-import styles from "./Nav.module.css";
+import styles from './Nav.module.css';
 
 type ButtonProps = {
   className: string;
@@ -26,8 +26,8 @@ const SECTION_ID_LIST = [
 ];
 
 const focusTargetElement = () => {
-  Events.scrollEvent.register("end", (_, element) => {
-    element.setAttribute("tabindex", "-1");
+  Events.scrollEvent.register('end', (_, element) => {
+    element.setAttribute('tabindex', '-1');
     element.focus();
   });
 };
@@ -40,32 +40,22 @@ export const Nav: React.FC = () => {
   }, []);
 
   return (
-    <div
-      className={isOpen ? `${styles.wrapper} ${styles.open}` : styles.wrapper}
-    >
+    <div className={isOpen ? `${styles.wrapper} ${styles.open}` : styles.wrapper}>
       <Hamburger
-        className={
-          isOpen ? `${styles.hamburger} ${styles.open}` : styles.hamburger
-        }
+        className={isOpen ? `${styles.hamburger} ${styles.open}` : styles.hamburger}
         handleToggle={toggle}
         isOpen={isOpen}
       />
-      <nav
-        className={isOpen ? `${styles.navList} ${styles.open}` : styles.navList}
-      >
+      <nav className={isOpen ? `${styles.navList} ${styles.open}` : styles.navList}>
         <NavList handleClose={() => toggle(false)} />
       </nav>
     </div>
   );
 };
 
-const Hamburger: React.FC<ButtonProps> = ({
-  className,
-  isOpen,
-  handleToggle,
-}) => (
+const Hamburger: React.FC<ButtonProps> = ({ className, isOpen, handleToggle }) => (
   <button
-    aria-label={isOpen ? "Close menu" : "Open menu"}
+    aria-label={isOpen ? 'Close menu' : 'Open menu'}
     className={className}
     type="button"
     onClick={handleToggle}
@@ -88,11 +78,7 @@ const NavList: React.VFC<NavListProps> = ({ handleClose }) => {
         to={`${id}`}
         onClick={handleClose}
       >
-        {id === "skills"
-          ? SECTION_LIST.SKILLS_OR
-          : id === "etc"
-            ? SECTION_LIST.ETC_PERIOD
-            : id}
+        {id === 'skills' ? SECTION_LIST.SKILLS_OR : id === 'etc' ? SECTION_LIST.ETC_PERIOD : id}
       </Scroll>
     </li>
   ));

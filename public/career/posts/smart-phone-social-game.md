@@ -1,10 +1,10 @@
 ---
-title: "スマートフォン用ソーシャルゲーム"
-startDate: "aug. 2012"
-endDate: "apr. 2013"
-device: ["SP"]
-id: "201208-201304"
-role: "designing mobile app ui."
+title: 'スマートフォン用ソーシャルゲーム'
+startDate: 'aug. 2012'
+endDate: 'apr. 2013'
+device: ['SP']
+id: '201208-201304'
+role: 'designing mobile app ui.'
 tagList:
   - HTML
   - CSS

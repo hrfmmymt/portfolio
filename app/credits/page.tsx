@@ -1,30 +1,29 @@
-"use client";
+'use client';
 
-// import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import styles from "../styles/Credits.module.css";
+import styles from '../styles/Credits.module.css';
 
-import { creditsList } from "../api/credits";
-import React, { type FC } from "react";
+import { creditsList } from '../api/credits';
+import React, { type FC } from 'react';
 
-// export const metadata: Metadata = {
-// 	title: "Credits | Hirofumi Miyamoto",
-// 	description: "Credits page",
-// };
+export const metadata: Metadata = {
+  title: 'Credits | Hirofumi Miyamoto',
+  description: 'Credits page',
+};
 
 type CreditsListProps = {
   label: string;
   link: string;
 };
 
-const stringSplitter = (str: string, parentKey = "") =>
-  str.split("").map((char, index) => (
+const stringSplitter = (str: string, parentKey = '') =>
+  str.split('').map((char, index) => (
     <React.Fragment key={`${parentKey}-${char}-${index}-${char.charCodeAt(0)}`}>
       <span>{char}</span>
       <style jsx>{`
         span {
-          animation: rainbow-color-keyframes 0.6s
-            ${(char.charCodeAt(0) / 100) * 5}s linear infinite;
+          animation: rainbow-color-keyframes 0.6s ${(char.charCodeAt(0) / 100) * 5}s linear infinite;
         }
         @keyframes rainbow-color-keyframes {
           0% {
@@ -52,7 +51,7 @@ const stringSplitter = (str: string, parentKey = "") =>
 const CreditsList: FC<CreditsListProps> = ({ label, link }) => {
   return (
     <li key={label} className={styles.creditsListItem}>
-      {link === "" ? (
+      {link === '' ? (
         <span>{stringSplitter(label, `span-${label}`)}</span>
       ) : (
         <a
@@ -87,7 +86,7 @@ export default function CreditsPage() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          {stringSplitter("tomasswood/preact-homepage-generator")}
+          {stringSplitter('tomasswood/preact-homepage-generator')}
         </a>
         <dl className={styles.defList}>
           <dt>work soundtracks</dt>

@@ -1,10 +1,10 @@
 ---
-title: "航空券予約サイト など"
-startDate: "oct. 2015"
-endDate: "oct. 2018"
-device: ["PC", "SP"]
-id: "201510-"
-role: "developing skyticket.jp and some related services @Adventure, inc."
+title: '航空券予約サイト など'
+startDate: 'oct. 2015'
+endDate: 'oct. 2018'
+device: ['PC', 'SP']
+id: '201510-'
+role: 'developing skyticket.jp and some related services @Adventure, inc.'
 tagList:
   - React
   - React Redux

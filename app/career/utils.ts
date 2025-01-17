@@ -1,5 +1,5 @@
-import careerList from "./career-list.json";
-import matter from "gray-matter";
+import careerList from './career-list.json';
+import matter from 'gray-matter';
 
 export type CareerPost = {
   slug: string;
@@ -14,7 +14,7 @@ export type CareerPost = {
   };
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function getCareerList(): Promise<CareerPost[]> {
   return careerList;
@@ -23,7 +23,7 @@ export async function getCareerList(): Promise<CareerPost[]> {
 export async function getCareerData(slug: string) {
   const post = careerList.find((post) => post.slug === slug);
   if (!post) {
-    console.log("Post not found in careerList");
+    console.log('Post not found in careerList');
     return null;
   }
 
@@ -43,7 +43,7 @@ export async function getCareerData(slug: string) {
       content,
     };
   } catch (e) {
-    console.error("Error loading career post:", e);
+    console.error('Error loading career post:', e);
     return null;
   }
 }

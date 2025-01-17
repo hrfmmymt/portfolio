@@ -1,10 +1,10 @@
 ---
-title: "大規模ブログ関連サービス開発"
-startDate: "nov. 2018"
-endDate: "sep. 2020"
-device: ["PC", "SP"]
-id: "201811-"
-role: "developing blog and some related services @CyberAgent, inc."
+title: '大規模ブログ関連サービス開発'
+startDate: 'nov. 2018'
+endDate: 'sep. 2020'
+device: ['PC', 'SP']
+id: '201811-'
+role: 'developing blog and some related services @CyberAgent, inc.'
 tagList:
   - React
   - React Redux

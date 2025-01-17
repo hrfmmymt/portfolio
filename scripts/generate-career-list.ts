@@ -1,6 +1,6 @@
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
 
 type CareerPost = {
   slug: string;
@@ -17,15 +17,15 @@ type CareerPost = {
 
 // キャリアデータを読み込む関数
 async function generateCareerList() {
-  const postsDirectory = path.join(process.cwd(), "app/career/posts");
+  const postsDirectory = path.join(process.cwd(), 'app/career/posts');
   const fileNames = fs.readdirSync(postsDirectory);
-  const mdFiles = fileNames.filter((fileName) => fileName.endsWith(".md"));
+  const mdFiles = fileNames.filter((fileName) => fileName.endsWith('.md'));
 
   const posts = mdFiles.map((fileName) => {
     const filePath = path.join(postsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, "utf8");
+    const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(fileContent);
-    const slug = fileName.replace(/\.md$/, "");
+    const slug = fileName.replace(/\.md$/, '');
 
     return {
       slug,
@@ -49,7 +49,7 @@ async function generateCareerList() {
   });
 
   // 生成されたデータをファイルに書き出し
-  const outputPath = path.join(process.cwd(), "app/career/career-list.json");
+  const outputPath = path.join(process.cwd(), 'app/career/career-list.json');
   fs.writeFileSync(outputPath, JSON.stringify(sortedPosts, null, 2));
 }
 

@@ -1,13 +1,13 @@
-import { getCareerList, getCareerData } from "../utils";
-import { Markdown } from "../../components/markdown";
-import type { Metadata } from "next";
-import Link from "next/link";
+import { getCareerList, getCareerData } from '../utils';
+import { Markdown } from '../../components/markdown';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import styles from "../../styles/CareerDetail.module.css";
+import styles from '../../styles/CareerDetail.module.css';
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://hrfmmymt.com";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hrfmmymt.com';
 
 export async function generateStaticParams() {
   const posts = await getCareerList();
@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   const { title, role } = post.metadata;
-  const description = `${role} - ${post.metadata.tagList.join(", ")}`;
+  const description = `${role} - ${post.metadata.tagList.join(', ')}`;
   const ogImage = `${baseUrl}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
   return {
@@ -37,7 +37,7 @@ export async function generateMetadata({
       images: [ogImage],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
@@ -48,12 +48,12 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getCareerData(params.slug);
   if (!post) {
-    console.log("Post data not found");
+    console.log('Post data not found');
     return <div>記事が見つかりませんでした。</div>;
   }
 
   if (!post.content) {
-    console.log("Post content is missing");
+    console.log('Post content is missing');
     return <div>記事の内容を読み込めませんでした。</div>;
   }
 
@@ -83,13 +83,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h2 className={styles.jobTitle}>{post.metadata.title}</h2>
           <h3>{post.metadata.role}</h3>
           <div className={styles.time}>
-            <time dateTime={post.metadata.startDate}>
-              {post.metadata.startDate}
-            </time>
+            <time dateTime={post.metadata.startDate}>{post.metadata.startDate}</time>
             <span className={styles.timeHyphen}>-</span>
-            <time dateTime={post.metadata.endDate}>
-              {post.metadata.endDate}
-            </time>
+            <time dateTime={post.metadata.endDate}>{post.metadata.endDate}</time>
           </div>
           <ul className={styles.tagList}>{tagList}</ul>
           <article>

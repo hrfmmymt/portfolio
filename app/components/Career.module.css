@@ -9,7 +9,7 @@
 .timelineList::before {
   background: #005999;
   bottom: 0;
-  content: "";
+  content: '';
   left: 20%;
   margin-left: 3px;
   position: absolute;
@@ -50,7 +50,7 @@
 .description::before,
 .description::after {
   border: solid transparent;
-  content: " ";
+  content: ' ';
   height: 0;
   position: absolute;
   right: 100%;
@@ -155,15 +155,15 @@
 }
 
 .circle.PC::after {
-  content: "PC";
+  content: 'PC';
 }
 
 .circle.SP::after {
-  content: "SP";
+  content: 'SP';
 }
 
 .circle.PC.SP::after {
-  content: "PC\ASP";
+  content: 'PC\ASP';
   line-height: 1;
   white-space: pre;
 }
@@ -228,7 +228,7 @@
   .description::after {
     border: solid transparent;
     bottom: 100%;
-    content: " ";
+    content: ' ';
     height: 0;
     left: 10%;
     pointer-events: none;

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { Events, Link } from "react-scroll";
-import styles from "../styles/Index.module.css";
+import { Events, Link } from 'react-scroll';
+import styles from '../styles/Index.module.css';
 
 const focusTargetElement = () => {
-  Events.scrollEvent.register("end", (_, element) => {
-    element.setAttribute("tabindex", "-1");
+  Events.scrollEvent.register('end', (_, element) => {
+    element.setAttribute('tabindex', '-1');
     element.focus();
   });
 };
