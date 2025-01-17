@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { getCareerPosts } from "app/career/utils";
+
+import { getCareerPosts, type CareerPost } from "../career/utils";
 import styles from "./Career.module.css";
-import type { CareerPost } from "app/career/utils";
 
 const CareerItem: React.FC<{ post: CareerPost }> = ({ post }) => {
   const tagList = post.metadata.tagList.map((tag) => (
