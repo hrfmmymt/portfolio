@@ -1,22 +1,9 @@
 import Link from "next/link";
 import { getCareerPosts } from "app/career/utils";
 import styles from "./Career.module.css";
+import type { CareerPost } from "app/career/utils";
 
-type Post = {
-  metadata: {
-    title: string;
-    startDate: string;
-    endDate: string;
-    tagList: string[];
-    role: string;
-    device: string[];
-    id: string;
-  };
-  slug: string;
-  content: string;
-};
-
-const CareerItem: React.FC<{ post: Post }> = ({ post }) => {
+const CareerItem: React.FC<{ post: CareerPost }> = ({ post }) => {
   const tagList = post.metadata.tagList.map((tag) => (
     <li key={`${post.slug}-${tag}`} className={styles.tagItem}>
       {tag}
@@ -32,11 +19,12 @@ const CareerItem: React.FC<{ post: Post }> = ({ post }) => {
         <span className={styles.timeHyphen}>-</span>
         <time dateTime={post.metadata.endDate}>{post.metadata.endDate}</time>
       </div>
-      {post.metadata.device.length > 1 ? (
+      {Array.isArray(post.metadata.device) &&
+      post.metadata.device.length > 1 ? (
         <div className={`${styles.circle} ${styles.PC} ${styles.SP}`} />
       ) : (
         <div
-          className={`${styles.circle} ${styles[post.metadata.device[0]]}`}
+          className={`${styles.circle} ${styles[post.metadata.device as string]}`}
         />
       )}
 

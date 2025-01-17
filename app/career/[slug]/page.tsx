@@ -1,26 +1,30 @@
-import { notFound } from "next/navigation";
-import { CustomMDX } from "app/components/mdx";
-import { getCareerPosts } from "app/career/utils";
-import { baseUrl } from "app/sitemap";
+import { getCareerList, getCareerData } from "../utils";
+import { Markdown } from "../../components/markdown";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import styles from "../../styles/CareerDetail.module.css";
 
-export async function generateStaticParams() {
-  const posts = getCareerPosts();
+export const runtime = "edge";
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://hrfmmymt.com";
+
+export async function generateStaticParams() {
+  const posts = await getCareerList();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const post = getCareerPosts().find((post) => post.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = await getCareerData(params.slug);
   if (!post) {
-    return;
+    return {};
   }
 
-  const { title, startDate, role, device, id } = post.metadata;
+  const { title, role } = post.metadata;
   const description = `${role} - ${post.metadata.tagList.join(", ")}`;
   const ogImage = `${baseUrl}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
@@ -30,17 +34,7 @@ export function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      type: "article",
-      publishedTime: startDate,
-      url: `${baseUrl}/career/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
@@ -51,11 +45,16 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function Career({ params }) {
-  const post = getCareerPosts().find((post) => post.slug === params.slug);
-
+export default async function Page({ params }: { params: { slug: string } }) {
+  const post = await getCareerData(params.slug);
   if (!post) {
-    notFound();
+    console.log("Post data not found");
+    return <div>記事が見つかりませんでした。</div>;
+  }
+
+  if (!post.content) {
+    console.log("Post content is missing");
+    return <div>記事の内容を読み込めませんでした。</div>;
   }
 
   const tagList = post.metadata.tagList.map((item) => (
@@ -66,34 +65,6 @@ export default function Career({ params }) {
 
   return (
     <main className={styles.wrapper}>
-      <script type="application/ld+json" suppressHydrationWarning>
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "JobPosting",
-          title: post.metadata.title,
-          datePosted: post.metadata.startDate,
-          validThrough: post.metadata.endDate,
-          jobLocation: {
-            "@type": "Place",
-            address: {
-              "@type": "PostalAddress",
-              addressCountry: "JP",
-            },
-          },
-          employmentType: "FULL_TIME",
-          description: post.metadata.role,
-          skills: post.metadata.tagList.join(", "),
-          hiringOrganization: {
-            "@type": "Organization",
-            name: post.metadata.title,
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `${baseUrl}/career/${post.slug}`,
-          },
-        })}
-      </script>
-
       <header className={styles.header}>
         <Link href="/" className={styles.backButton}>
           <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">
@@ -122,7 +93,7 @@ export default function Career({ params }) {
           </div>
           <ul className={styles.tagList}>{tagList}</ul>
           <article>
-            <CustomMDX source={post.content} />
+            <Markdown content={post.content} />
           </article>
         </div>
       </div>

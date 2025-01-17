@@ -1,0 +1,157 @@
+[
+  {
+    "slug": "abema",
+    "metadata": {
+      "title": "動画配信サービス開発",
+      "startDate": "oct. 2020",
+      "endDate": "now",
+      "role": "developing video distribution services at AbemaTV inc.",
+      "device": ["PC", "SP"],
+      "id": "202010-",
+      "tagList": [
+        "React",
+        "RxJS",
+        "NodeJS",
+        "PostCSS",
+        "ava",
+        "Jest",
+        "CircleCI",
+        "GitHub Actions",
+        "webpack",
+        "esbuild"
+      ]
+    }
+  },
+  {
+    "slug": "ameba",
+    "metadata": {
+      "title": "大規模ブログ関連サービス開発",
+      "startDate": "nov. 2018",
+      "endDate": "sep. 2020",
+      "role": "developing blog and some related services @CyberAgent, inc.",
+      "device": ["PC", "SP"],
+      "id": "201811-",
+      "tagList": [
+        "React",
+        "React Redux",
+        "NodeJS",
+        "PostCSS",
+        "Less",
+        "ava",
+        "CircleCI",
+        "webpack",
+        "Gulp",
+        "AMP",
+        "PWA"
+      ]
+    }
+  },
+  {
+    "slug": "skyticket",
+    "metadata": {
+      "title": "航空券予約サイト など",
+      "startDate": "oct. 2015",
+      "endDate": "oct. 2018",
+      "role": "developing skyticket.jp and some related services @Adventure, inc.",
+      "device": ["PC", "SP"],
+      "id": "201510-",
+      "tagList": [
+        "React",
+        "React Redux",
+        "React Router",
+        "jQuery",
+        "Vue.js",
+        "CircleCI",
+        "webpack",
+        "Gulp",
+        "PHP",
+        "Sass",
+        "Compass",
+        "AMP",
+        "PWA"
+      ]
+    }
+  },
+  {
+    "slug": "ad-distribution",
+    "metadata": {
+      "title": "広告配信システム管理画面",
+      "startDate": "oct. 2014",
+      "endDate": "sep. 2015",
+      "role": "developing a front-end single page application.",
+      "device": ["PC", "SP"],
+      "id": "201410-201509",
+      "tagList": ["Angular ( v1 )", "Less", "Google Chart Tools", "Gulp"]
+    }
+  },
+  {
+    "slug": "web-browser-social-game",
+    "metadata": {
+      "title": "web ブラウザ用ソーシャルゲーム",
+      "startDate": "jul. 2014",
+      "endDate": "sep. 2014",
+      "role": "developing a front-end mobile web app.",
+      "device": ["PC", "SP"],
+      "id": "201407-201409",
+      "tagList": ["Angular ( v1 )", "jQuery", "Velocity", "Grunt"]
+    }
+  },
+  {
+    "slug": "some-web-service",
+    "metadata": {
+      "title": "web サービスいくつか",
+      "startDate": "jan. 2014",
+      "endDate": "jun. 2014",
+      "role": "developing a front-end some web services.",
+      "device": ["PC", "SP"],
+      "id": "201401-201406",
+      "tagList": ["jQuery", "D3.js", "Bootstrap", "PHP", "MySQL", "Fireworks"]
+    }
+  },
+  {
+    "slug": "web-application-for-financial-planne",
+    "metadata": {
+      "title": "ファイナンシャルプランナー向け業務用 Web アプリ",
+      "startDate": "may. 2013",
+      "endDate": "dec. 2013",
+      "role": "developing a front-end single page application.",
+      "device": ["PC", "SP"],
+      "id": "201305-201312",
+      "tagList": [
+        "Yeoman",
+        "Backbone.js",
+        "CoffeeScript",
+        "Bower",
+        "Grunt",
+        "Bootstrap",
+        "EJS",
+        "Sass",
+        "Compass"
+      ]
+    }
+  },
+  {
+    "slug": "smart-phone-social-game",
+    "metadata": {
+      "title": "スマートフォン用ソーシャルゲーム",
+      "startDate": "aug. 2012",
+      "endDate": "apr. 2013",
+      "role": "designing mobile app ui.",
+      "device": ["SP"],
+      "id": "201208-201304",
+      "tagList": ["HTML", "CSS", "Photoshop", "Photoshop JSX", "Unity"]
+    }
+  },
+  {
+    "slug": "ec-site-for-retail-industry",
+    "metadata": {
+      "title": "小売業向けECサイト保守・運用",
+      "startDate": "apr. 2012",
+      "endDate": "jul. 2012",
+      "role": "website markup, design.",
+      "device": ["PC", "SP"],
+      "id": "201204-201207",
+      "tagList": ["XHTML", "CSS", "jQuery", "Photoshop"]
+    }
+  }
+]
