@@ -2,12 +2,19 @@ import { getCareerList, getCareerData } from '../utils';
 import { Markdown } from '../../components/markdown';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Noto_Sans } from 'next/font/google';
 
 import styles from '../../styles/CareerDetail.module.css';
 
 export const runtime = 'edge';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hrfmmymt.com';
+
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
 
 export async function generateStaticParams() {
   const posts = await getCareerList();
@@ -64,7 +71,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   ));
 
   return (
-    <main className={styles.wrapper}>
+    <main className={`${notoSans.className} ${styles.wrapper}`}>
       <header className={styles.header}>
         <Link href="/" className={styles.backButton}>
           <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">

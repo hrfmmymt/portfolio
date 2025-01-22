@@ -3,11 +3,13 @@
 import React, { type FC } from 'react';
 import styles from '../styles/Credits.module.css';
 import { creditsList } from '../api/credits';
+import { Noto_Sans } from 'next/font/google';
 
-type CreditsListProps = {
-  label: string;
-  link: string;
-};
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
 
 export const CreditsContent: FC = () => {
   type CreditsListProps = {
@@ -68,7 +70,7 @@ export const CreditsContent: FC = () => {
 
   return (
     <>
-      <main className={styles.wrapper}>
+      <main className={`${notoSans.className} ${styles.wrapper}`}>
         <h2 className={styles.title}>{creditsList.title}</h2>
         <p>all words, movies and photos by {creditsList.name}.</p>
         <p>{creditsList.subtitle}</p>
@@ -110,13 +112,31 @@ export const CreditsContent: FC = () => {
         </p>
       </main>
       <style global jsx>{`
+        html,
+        body,
         div#__next {
-          background-color: #0e1e25;
           height: 100%;
+          min-height: 100vh;
+          margin: 0;
+          padding: 0;
+          background-color: #0e1e25;
         }
-        @media (max-width: 414px) {
+
+        @media (max-width: 430px) {
           div#__next {
-            height: auto;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+          }
+
+          main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .${styles.copy} {
+            margin-top: auto;
           }
         }
       `}</style>

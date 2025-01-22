@@ -272,4 +272,21 @@
   .tagItem {
     font-size: initial;
   }
+
+  .timelineItem a > .description {
+    transform: none;
+    transition: none;
+  }
+
+  .timelineItem a:hover > .description,
+  .timelineItem a:focus > .description {
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .timelineItem a:hover .circle,
+  .timelineItem a:focus .circle {
+    animation: none;
+  }
 }
