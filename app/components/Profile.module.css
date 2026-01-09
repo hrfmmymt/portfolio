@@ -1,3 +1,10 @@
+.profileImage {
+  display: block;
+  margin: 0 auto;
+  max-width: 69rem;
+  width: 90%;
+}
+
 .list {
   margin: 5rem auto 0;
   max-width: 69rem;
@@ -24,6 +31,11 @@
 
 /* for tablet ~ mobile */
 @media (max-width: 768px) {
+  .profileImage {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .list {
     margin-top: 2rem;
     padding: 0;

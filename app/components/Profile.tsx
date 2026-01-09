@@ -8,6 +8,7 @@ export const Profile: React.FC = () => {
       <Image
         priority
         alt="profile image"
+        className={styles.profileImage}
         height={405}
         src="/img/profile/profile_l.jpg"
         style={{
