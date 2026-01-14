@@ -6,8 +6,6 @@ import { Noto_Sans } from 'next/font/google';
 
 import styles from '../../styles/CareerDetail.module.css';
 
-export const runtime = 'edge';
-
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hrfmmymt.com';
 
 const notoSans = Noto_Sans({
