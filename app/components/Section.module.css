@@ -25,11 +25,16 @@
 }
 
 .heart {
-  animation: heartbeat 0.25s infinite alternate;
   display: inline-block;
   margin-left: 1rem;
   text-align: center;
   transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .heart {
+    animation: heartbeat 0.25s infinite alternate;
+  }
 }
 
 @keyframes heartbeat {

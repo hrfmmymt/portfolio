@@ -1,3 +1,11 @@
+:root {
+  --z-index-10: 10;
+  --z-index-20: 20;
+  --z-index-30: 30;
+  --z-index-40: 40;
+  --z-index-50: 50;
+}
+
 html,
 body {
   -webkit-font-smoothing: antialiased;
@@ -18,9 +26,4 @@ a {
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-h2,
-h3 {
-  letter-spacing: 1.1px;
 }
