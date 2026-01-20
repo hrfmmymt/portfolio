@@ -4,7 +4,6 @@ import { Noto_Sans, Give_You_Glory } from 'next/font/google';
 import { Profile } from './components/Profile';
 import { CareerList } from './components/CareerList';
 import { Section } from './components/Section';
-import { Skills } from './components/Skills';
 import { SECTION_LIST } from './constants/section-title';
 import { Etc } from './components/Etc';
 
@@ -37,13 +36,6 @@ export default function Page() {
       </Section>
       <Section className={SECTION_LIST.CAREER} id={SECTION_LIST.CAREER} title={SECTION_LIST.CAREER}>
         <CareerList />
-      </Section>
-      <Section
-        className={SECTION_LIST.SKILLS}
-        id={SECTION_LIST.SKILLS}
-        title={SECTION_LIST.SKILLS_OR}
-      >
-        <Skills />
       </Section>
       <Section className={SECTION_LIST.ETC} id={SECTION_LIST.ETC} title={SECTION_LIST.ETC_PERIOD}>
         <Etc />

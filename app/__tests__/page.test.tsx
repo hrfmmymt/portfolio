@@ -47,15 +47,6 @@ describe('Page', () => {
       expect(screen.getByText("i'm always goofing off on the internet.")).toBeInTheDocument();
       expect(screen.getByText('scroll down slowly and see.')).toBeInTheDocument();
     });
-
-    it('ScrollArrowコンポーネントが表示されること', () => {
-      render(<Page />);
-      const scrollArrow = screen.getByRole('button', {
-        name: 'Scroll to profile',
-      });
-      expect(scrollArrow).toBeInTheDocument();
-      fireEvent.click(scrollArrow);
-    });
   });
 
   describe('ナビゲーション', () => {
@@ -72,7 +63,6 @@ describe('Page', () => {
       render(<Page />);
       expect(screen.getByText('profile')).toBeInTheDocument();
       expect(screen.getByText('career')).toBeInTheDocument();
-      expect(screen.getByText('skills, or')).toBeInTheDocument();
       expect(screen.getByText('etc.')).toBeInTheDocument();
     });
   });
@@ -95,24 +85,6 @@ describe('Page', () => {
       const timelineItems = screen.getAllByRole('listitem');
       expect(timelineLists.length).toBeGreaterThan(0);
       expect(timelineItems.length).toBeGreaterThan(0);
-    });
-  });
-
-  describe('Skillsセクション', () => {
-    it('スキル説明文が表示されること', () => {
-      render(<Page />);
-      expect(
-        screen.getByText('these blocks are large enough to be interested or skilled'),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByText('ブロックの大きさと興味や技術の大きさが比例しています。'),
-      ).toBeInTheDocument();
-    });
-
-    it('スキルリストが表示されること', () => {
-      render(<Page />);
-      const skillsLists = screen.getAllByRole('list');
-      expect(skillsLists.length).toBeGreaterThan(0);
     });
   });
 

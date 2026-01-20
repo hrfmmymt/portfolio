@@ -21,7 +21,6 @@ type NavListProps = {
 const SECTION_ID_LIST = [
   SECTION_LIST.PROFILE,
   SECTION_LIST.CAREER,
-  SECTION_LIST.SKILLS,
   SECTION_LIST.ETC,
 ];
 
@@ -78,7 +77,7 @@ const NavList: React.VFC<NavListProps> = ({ handleClose }) => {
         to={`${id}`}
         onClick={handleClose}
       >
-        {id === 'skills' ? SECTION_LIST.SKILLS_OR : id === 'etc' ? SECTION_LIST.ETC_PERIOD : id}
+        {id === 'etc' ? SECTION_LIST.ETC_PERIOD : id}
       </Scroll>
     </li>
   ));
