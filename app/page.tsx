@@ -1,4 +1,3 @@
-import { ScrollArrow } from './components/ScrollArrow';
 import { Nav } from './components/nav';
 import styles from './styles/Index.module.css';
 import { Noto_Sans, Give_You_Glory } from 'next/font/google';
@@ -32,7 +31,6 @@ export default function Page() {
           <p>i'm always goofing off on the internet.</p>
           <p>scroll down slowly and see.</p>
         </div>
-        <ScrollArrow />
       </header>
       <Section id={SECTION_LIST.PROFILE} title={SECTION_LIST.PROFILE}>
         <Profile />
