@@ -41,6 +41,8 @@ const fullTitle = title === '# hirofumi miyamoto' ? title : `${title} | # hirofu
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Give+You+Glory&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <slot name="head" />
   </head>
   <body>
     <slot />

@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCareerList } from '../../../app/career/utils';
+import { Markdown } from '../../../app/components/markdown';
+import Link from '../../shims/next/link';
+import styles from '../../../app/styles/CareerDetail.module.css';
+import careerList from '../../../app/career/career-list.json';
+import matter from 'gray-matter';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+export async function getStaticPaths() {
+  const posts = await getCareerList();
+
+  return posts.map((post) => {
+    // Read markdown file at build time
+    const filePath = join(process.cwd(), 'public', 'career', 'posts', `${post.slug}.md`);
+    const fileContent = readFileSync(filePath, 'utf-8');
+    const { content } = matter(fileContent);
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        post: {
+          ...post,
+          content
+        }
+      },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+if (!post || !post.content) {
+  return Astro.redirect('/404');
+}
+
+const baseUrl = 'https://hrfmmymt.com';
+const { title, role } = post.metadata;
+const description = `${role} - ${post.metadata.tagList.join(', ')}`;
+const ogImage = `${baseUrl}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
+
+const tagList = post.metadata.tagList;
+---
+
+<BaseLayout title={title} description={description}>
+  <meta slot="head" property="og:image" content={ogImage} />
+  <meta slot="head" name="twitter:card" content="summary_large_image" />
+  <meta slot="head" name="twitter:image" content={ogImage} />
+
+  <main class={styles.wrapper} style="font-family: 'Noto Sans', sans-serif;">
+    <header class={styles.header}>
+      <Link href="/" className={styles.backButton}>
+        <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">
+          <title id="backButtonTitle">戻る</title>
+          <g>
+            <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a.996.996 0 0 0 1.414 0 1 1 0 0 0 0-1.414L7.414 13H20a1 1 0 1 0 0-2z" />
+          </g>
+        </svg>
+      </Link>
+      <h1 class={styles.pageTitle} itemprop="name">
+        career
+      </h1>
+    </header>
+    <div class={styles.contents}>
+      <div class={styles.section}>
+        <h2 class={styles.jobTitle}>{post.metadata.title}</h2>
+        <h3>{post.metadata.role}</h3>
+        <div class={styles.time}>
+          <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
+          <span class={styles.timeHyphen}>-</span>
+          <time datetime={post.metadata.endDate}>{post.metadata.endDate}</time>
+        </div>
+        <ul class={styles.tagList}>
+          {tagList.map((item) => (
+            <li key={`${post.metadata.id}-${item}`} class={styles.tagItem}>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <article>
+          <Markdown client:load content={post.content} />
+        </article>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
