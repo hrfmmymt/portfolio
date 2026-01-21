@@ -1,12 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Nav } from '../../app/components/nav';
+import { Profile } from '../../app/components/Profile';
+import { CareerList } from '../../app/components/CareerList';
+import { Section } from '../../app/components/Section';
+import { Etc } from '../../app/components/Etc';
+import { SECTION_LIST } from '../../app/constants/section-title';
+import styles from '../../app/styles/Index.module.css';
 ---
 
-<BaseLayout title="Astro Test Page">
-  <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="text-center p-8 bg-white rounded-lg shadow-lg">
-      <h1 class="text-4xl font-bold text-blue-600 mb-4">Astro Test Page</h1>
-      <p class="text-gray-700">If you can see this styled page, Astro + Tailwind CSS + BaseLayout is working correctly!</p>
-    </div>
-  </div>
+<BaseLayout>
+  <main class={styles.main} style="font-family: 'Noto Sans', sans-serif;">
+    <header class={styles.header}>
+      <Nav client:load />
+      <h1 style="font-family: 'Give You Glory', cursive;"># hirofumi miyamoto</h1>
+      <div>
+        <p>hi everyone! i am hrfmmymt.</p>
+        <p>i'm always goofing off on the internet.</p>
+        <p>scroll down slowly and see.</p>
+      </div>
+    </header>
+    <Section client:load id={SECTION_LIST.PROFILE} title={SECTION_LIST.PROFILE}>
+      <Profile client:load />
+    </Section>
+    <Section client:load className={SECTION_LIST.CAREER} id={SECTION_LIST.CAREER} title={SECTION_LIST.CAREER}>
+      <CareerList client:load />
+    </Section>
+    <Section client:load className={SECTION_LIST.ETC} id={SECTION_LIST.ETC} title={SECTION_LIST.ETC_PERIOD}>
+      <Etc client:load />
+    </Section>
+  </main>
 </BaseLayout>
