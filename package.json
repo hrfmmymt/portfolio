@@ -11,6 +11,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -29,6 +31,7 @@
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
+    "@playwright/test": "^1.57.0",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
     "@tailwindcss/vite": "4.0.0-alpha.25",
     "@testing-library/jest-dom": "^6.6.3",
