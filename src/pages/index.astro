@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Nav } from '../../app/components/nav';
-import { Profile } from '../../app/components/Profile';
-import { CareerList } from '../../app/components/CareerList';
-import { Section } from '../../app/components/Section';
-import { Etc } from '../../app/components/Etc';
+import Nav from '../components/Nav.astro';
+import Profile from '../components/Profile.astro';
+import CareerList from '../components/CareerList.astro';
+import Section from '../components/Section.astro';
+import Etc from '../components/Etc.astro';
 import { SECTION_LIST } from '../../app/constants/section-title';
 import styles from '../../app/styles/Index.module.css';
 ---
@@ -12,7 +12,7 @@ import styles from '../../app/styles/Index.module.css';
 <BaseLayout>
   <main class={styles.main} style="font-family: 'Noto Sans', sans-serif;">
     <header class={styles.header}>
-      <Nav client:load />
+      <Nav />
       <h1 style="font-family: 'Give You Glory', cursive;"># hirofumi miyamoto</h1>
       <div>
         <p>hi everyone! i am hrfmmymt.</p>
@@ -20,14 +20,14 @@ import styles from '../../app/styles/Index.module.css';
         <p>scroll down slowly and see.</p>
       </div>
     </header>
-    <Section client:load id={SECTION_LIST.PROFILE} title={SECTION_LIST.PROFILE}>
-      <Profile client:load />
+    <Section id={SECTION_LIST.PROFILE} title={SECTION_LIST.PROFILE}>
+      <Profile />
     </Section>
-    <Section client:load className={SECTION_LIST.CAREER} id={SECTION_LIST.CAREER} title={SECTION_LIST.CAREER}>
-      <CareerList client:load />
+    <Section className={SECTION_LIST.CAREER} id={SECTION_LIST.CAREER} title={SECTION_LIST.CAREER}>
+      <CareerList />
     </Section>
-    <Section client:load className={SECTION_LIST.ETC} id={SECTION_LIST.ETC} title={SECTION_LIST.ETC_PERIOD}>
-      <Etc client:load />
+    <Section className={SECTION_LIST.ETC} id={SECTION_LIST.ETC} title={SECTION_LIST.ETC_PERIOD}>
+      <Etc />
     </Section>
   </main>
 </BaseLayout>

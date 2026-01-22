@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCareerList } from '../../../app/career/utils';
-import { Markdown } from '../../../app/components/markdown';
+import Markdown from '../../components/Markdown.astro';
 import Link from '../../shims/next/link';
 import styles from '../../../app/styles/CareerDetail.module.css';
-import careerList from '../../../app/career/career-list.json';
 import matter from 'gray-matter';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -80,7 +79,7 @@ const tagList = post.metadata.tagList;
           ))}
         </ul>
         <article>
-          <Markdown client:load content={post.content} />
+          <Markdown content={post.content} />
         </article>
       </div>
     </div>

@@ -1,0 +1,153 @@
+---
+import { SECTION_LIST } from '../../app/constants/section-title';
+import styles from '../../app/components/Nav.module.css';
+
+const SECTION_ID_LIST = [
+  SECTION_LIST.PROFILE,
+  SECTION_LIST.CAREER,
+  SECTION_LIST.ETC,
+];
+---
+
+<div class={styles.wrapper} id="nav-wrapper" data-menu-open="false">
+  <button
+    aria-label="Open menu"
+    class={styles.hamburger}
+    type="button"
+    id="nav-hamburger"
+  >
+    <div class={styles.ham}></div>
+    <div class={styles.bur}></div>
+    <div class={styles.ger}></div>
+  </button>
+  <nav class={styles.navList} id="nav-list">
+    <ul class={styles.list}>
+      {SECTION_ID_LIST.map((id) => (
+        <li class={styles.listItem}>
+          <a
+            class={styles.listItemLink}
+            href={`#${id}`}
+            data-scroll-to={id}
+          >
+            {id === 'etc' ? SECTION_LIST.ETC_PERIOD : id}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
+
+<style is:global>
+  @media (max-width: 414px) {
+    [data-menu-open="true"] {
+      background: #f2f2f2 !important;
+      height: 100% !important;
+      left: 0 !important;
+      overflow: auto !important;
+      padding: 0 !important;
+      position: fixed !important;
+      text-align: center !important;
+      top: 0 !important;
+      transform: translateZ(0) !important;
+      transition: opacity 250ms ease, transform 250ms ease !important;
+      width: 100% !important;
+      z-index: var(--z-index-10) !important;
+    }
+
+    [data-menu-open="true"] nav {
+      display: block !important;
+    }
+
+    [data-menu-open="true"] button[id="nav-hamburger"]::after {
+      color: #0057a7;
+      content: 'close';
+      left: -30%;
+      position: absolute;
+      top: 35%;
+    }
+
+    [data-menu-open="true"] button[id="nav-hamburger"] > div:nth-child(1) {
+      background: #0057a7 !important;
+      transform: translate(4px, -1px) rotate(45deg) !important;
+    }
+
+    [data-menu-open="true"] button[id="nav-hamburger"] > div:nth-child(2) {
+      background: #0057a7 !important;
+      opacity: 0 !important;
+    }
+
+    [data-menu-open="true"] button[id="nav-hamburger"] > div:nth-child(3) {
+      background: #0057a7 !important;
+      transform: translate(2px, 1px) rotate(-45deg) !important;
+    }
+  }
+</style>
+
+<script>
+  const wrapper = document.getElementById('nav-wrapper');
+  const hamburger = document.getElementById('nav-hamburger');
+  const navList = document.getElementById('nav-list');
+  const links = document.querySelectorAll('[data-scroll-to]');
+
+  if (hamburger && wrapper && navList) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = wrapper.getAttribute('data-menu-open') === 'true';
+      const newState = !isOpen;
+
+      wrapper.setAttribute('data-menu-open', String(newState));
+      hamburger.setAttribute('aria-label', newState ? 'Close menu' : 'Open menu');
+    });
+
+    // Smooth scroll
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = (e.currentTarget as HTMLElement).getAttribute('data-scroll-to');
+        if (target) {
+          const element = document.getElementById(target);
+          if (element) {
+            // Close menu on mobile first
+            const isOpen = wrapper.getAttribute('data-menu-open') === 'true';
+            if (isOpen) {
+              wrapper.setAttribute('data-menu-open', 'false');
+              hamburger.setAttribute('aria-label', 'Open menu');
+            }
+
+            // Calculate position with offset for fixed header
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - 60;
+
+            // Use requestAnimationFrame for smooth scroll
+            const startPosition = window.scrollY;
+            const distance = offsetPosition - startPosition;
+            const duration = 200;
+            let start: number | null = null;
+
+            const animation = (currentTime: number) => {
+              if (start === null) start = currentTime;
+              const timeElapsed = currentTime - start;
+              const progress = Math.min(timeElapsed / duration, 1);
+
+              // Easing function
+              const ease = progress < 0.5
+                ? 2 * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+              window.scrollTo(0, startPosition + distance * ease);
+
+              if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+              } else {
+                // Set focus after scroll
+                element.setAttribute('tabindex', '-1');
+                element.focus();
+              }
+            };
+
+            requestAnimationFrame(animation);
+          }
+        }
+      });
+    });
+  }
+</script>

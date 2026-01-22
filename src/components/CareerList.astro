@@ -1,0 +1,44 @@
+---
+import Link from '../shims/next/link';
+import { getCareerPosts } from '../../app/career/utils';
+import styles from '../../app/components/Career.module.css';
+
+const posts = getCareerPosts();
+const sortedPosts = posts.sort((a, b) => {
+  if (new Date(a.metadata.startDate) > new Date(b.metadata.startDate)) {
+    return -1;
+  }
+  return 1;
+});
+---
+
+<ul class={styles.timelineList}>
+  {sortedPosts.map((post) => {
+    const isMultiDevice = Array.isArray(post.metadata.device) && post.metadata.device.length > 1;
+    const circleClass = isMultiDevice
+      ? `${styles.circle} ${styles.PC} ${styles.SP}`
+      : `${styles.circle} ${styles[post.metadata.device as string]}`;
+
+    return (
+      <li class={styles.timelineItem}>
+        <Link className={styles.link} href={`/career/${post.slug}`}>
+          <div class={styles.time}>
+            <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
+            <span class={styles.timeHyphen}>-</span>
+            <time datetime={post.metadata.endDate}>{post.metadata.endDate}</time>
+          </div>
+          <div class={circleClass} />
+          <div class={styles.description}>
+            <h3 class={styles.jobTitle}>{post.metadata.title}</h3>
+            <p>{post.metadata.role}</p>
+            <ul class={styles.tagList}>
+              {post.metadata.tagList.map((tag) => (
+                <li class={styles.tagItem}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </Link>
+      </li>
+    );
+  })}
+</ul>
