@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCareerList } from '../../../app/career/utils';
 import Markdown from '../../components/Markdown.astro';
 import Link from '../../shims/next/link';
-import styles from '../../../app/styles/CareerDetail.module.css';
 import matter from 'gray-matter';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -48,9 +47,9 @@ const tagList = post.metadata.tagList;
   <meta slot="head" name="twitter:card" content="summary_large_image" />
   <meta slot="head" name="twitter:image" content={ogImage} />
 
-  <main class={styles.wrapper} style="font-family: 'Noto Sans', sans-serif;">
-    <header class={styles.header}>
-      <Link href="/" className={styles.backButton}>
+  <main class="bg-white left-0 relative top-0 w-full" style="font-family: 'Noto Sans', sans-serif;">
+    <header class="bg-white border-b border-[#999] left-0 py-4 pl-32 fixed top-0 w-full z-[2] flex items-center max-tablet:px-4">
+      <Link href="/" className="bg-none border-0 text-[#005999] cursor-pointer inline-flex items-center font-[inherit] leading-normal mr-6 overflow-visible p-0 underline select-none hover:no-underline [&_svg]:fill-current [&_svg]:h-7">
         <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">
           <title id="backButtonTitle">戻る</title>
           <g>
@@ -58,22 +57,22 @@ const tagList = post.metadata.tagList;
           </g>
         </svg>
       </Link>
-      <h1 class={styles.pageTitle} itemprop="name">
+      <h1 class="text-2xl font-bold tracking-[1.1px] leading-[1] m-0 max-tablet:text-[1.2rem]" itemprop="name">
         career
       </h1>
     </header>
-    <div class={styles.contents}>
-      <div class={styles.section}>
-        <h2 class={styles.jobTitle}>{post.metadata.title}</h2>
+    <div class="p-0 px-8 pb-8 absolute top-16 w-full max-tablet:h-auto max-tablet:mt-20 max-tablet:p-0 max-tablet:px-4 max-tablet:pb-8 max-tablet:relative max-tablet:top-0">
+      <div class="mx-24 max-tablet:mx-0">
+        <h2 class="tracking-[1.2px]">{post.metadata.title}</h2>
         <h3>{post.metadata.role}</h3>
-        <div class={styles.time}>
+        <div class="mb-4">
           <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
-          <span class={styles.timeHyphen}>-</span>
+          <span class="mx-[0.2em]">-</span>
           <time datetime={post.metadata.endDate}>{post.metadata.endDate}</time>
         </div>
-        <ul class={styles.tagList}>
+        <ul class="flex flex-row flex-wrap">
           {tagList.map((item) => (
-            <li key={`${post.metadata.id}-${item}`} class={styles.tagItem}>
+            <li class="bg-[#f1f8ff] rounded-[5px] text-[#0366d6] text-sm mr-2 mb-2 py-2 px-4">
               {item}
             </li>
           ))}

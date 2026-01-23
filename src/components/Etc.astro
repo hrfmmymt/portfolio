@@ -2,16 +2,15 @@
 import Image from '../shims/next/image';
 import Link from '../shims/next/link';
 import { etcList } from '../../app/constants/etc-list';
-import styles from '../../app/components/Etc.module.css';
 
 const currentYear = new Date().getFullYear();
 ---
 
-<ul class={styles.list}>
+<ul class="flex justify-around mx-auto my-16 mb-24 max-w-[69rem] px-8 w-[90%] max-tablet:flex-col max-tablet:mb-16 max-tablet:w-full max-mobile:mt-8">
   {etcList.map((item) => (
     <li>
       <Link
-        className={`${styles.link} ${styles[item.className]}`}
+        className="text-[#005999] flex items-center gap-2 max-tablet:py-4"
         href={item.href}
         rel="noopener noreferrer"
         target="_blank"
@@ -32,9 +31,9 @@ const currentYear = new Date().getFullYear();
   ))}
 </ul>
 <footer>
-  <p class={styles.copyright}>
+  <p class="text-center">
     © {currentYear} <Link
-      className={styles.copyrightLink}
+      className="text-[#005999]"
       href="https://hrfmmymt.github.io"
       rel="noopener noreferrer"
       target="_blank"

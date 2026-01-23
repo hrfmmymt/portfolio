@@ -1,12 +1,11 @@
 ---
 import Image from '../shims/next/image';
-import styles from '../../app/components/Profile.module.css';
 ---
 
 <Image
   priority
   alt="profile image"
-  className={styles.profileImage}
+  className="block mx-auto max-w-[69rem] w-[90%] max-tablet:max-w-full max-tablet:w-full"
   height={405}
   src="/img/profile/profile_l.jpg"
   style={{
@@ -15,26 +14,26 @@ import styles from '../../app/components/Profile.module.css';
   }}
   width={720}
 />
-<ul class={styles.list}>
-  <li class={styles.listItem}>
+<ul class="mt-20 mx-auto max-w-[69rem] px-4 w-[90%] max-tablet:mt-8 max-tablet:p-0 max-tablet:w-full">
+  <li class="first:mb-16">
     <h3>### about</h3>
     <ul>
-      <li class={styles.childListItem}>japanese web [ developer | designer ]</li>
+      <li class="ml-10">japanese web [ developer | designer ]</li>
     </ul>
   </li>
-  <li class={styles.listItem}>
+  <li class="first:mb-16">
     <h3>### bio</h3>
-    <ul class={styles.childList}>
+    <ul class="ml-10">
       <li>
         <h4>#### id</h4>
         <ul>
-          <li class={styles.childListItem}>hrfmmymt</li>
+          <li class="ml-10">hrfmmymt</li>
         </ul>
       </li>
       <li>
         <h4>#### location</h4>
         <ul>
-          <li class={styles.childListItem}>tokyo, jp</li>
+          <li class="ml-10">tokyo, jp</li>
         </ul>
       </li>
     </ul>
