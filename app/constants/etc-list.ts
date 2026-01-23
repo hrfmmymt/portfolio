@@ -1,5 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
 export type EtcList = {
   label: string;
   href: string;
@@ -38,9 +36,3 @@ export const etcList: EtcList[] = [
     className: 'linkedin',
   },
 ];
-
-export const runtime = 'edge';
-
-export default function handler(req: NextApiRequest, res: NextApiResponse<EtcList[]>) {
-  res.status(200).json(etcList);
-}
