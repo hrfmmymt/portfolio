@@ -15,9 +15,6 @@ export default defineConfig({
   adapter: cloudflare(),
   vite: {
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      include: ['react-use'],
-    },
     resolve: {
       alias: {
         'next/image': '/src/shims/next/image.tsx',
@@ -26,7 +23,6 @@ export default defineConfig({
     },
     ssr: {
       external: ['node:path', 'node:fs', 'node:url'],
-      noExternal: ['react-use'],
     },
   },
 });
