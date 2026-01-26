@@ -10,7 +10,7 @@ interface Props {
 const { id, title, className } = Astro.props;
 
 // Base section classes
-const baseClasses = 'border-b border-[#aaa] min-h-full p-16 px-8 w-full max-tablet:p-8 max-tablet:px-4';
+const baseClasses = 'border-b border-[#aaa] min-h-full p-8 px-4 w-full md:p-16 md:px-8';
 
 // Dynamic classes based on className prop
 const dynamicClasses = className === 'career'
@@ -23,6 +23,6 @@ const sectionClass = `${baseClasses} ${dynamicClasses}`.trim();
 ---
 
 <section class={sectionClass} id={id}>
-  <h2 class="tracking-[1.1px] m-0 mb-20 p-0 max-tablet:mb-8">## {title}</h2>
+  <h2 class="tracking-[1.1px] m-0 mb-8 p-0 md:mb-20">## {title}</h2>
   <slot />
 </section>

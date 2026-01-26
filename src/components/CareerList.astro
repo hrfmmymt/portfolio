@@ -11,28 +11,28 @@ const sortedPosts = posts.sort((a, b) => {
 });
 ---
 
-<ul class="mt-20 mx-auto max-w-[69rem] px-4 relative w-[90%] before:bg-[#005999] before:bottom-0 before:content-[''] before:left-[20%] before:ml-[3px] before:absolute before:top-0 before:w-1 max-tablet:mt-8 max-tablet:p-0 max-tablet:w-full max-tablet:before:hidden">
+<ul class="mt-8 mx-auto max-w-[69rem] p-0 relative w-full before:hidden md:mt-20 md:px-4 md:w-[90%] md:before:block md:before:bg-[#005999] md:before:bottom-0 md:before:content-[''] md:before:left-[20%] md:before:ml-[3px] md:before:absolute md:before:top-0 md:before:w-1">
   {sortedPosts.map((post) => {
     const isMultiDevice = Array.isArray(post.metadata.device) && post.metadata.device.length > 1;
     const deviceLabel = isMultiDevice ? 'PC\nSP' : post.metadata.device;
 
     return (
-      <li class="relative">
+      <li class="relative mb-10 last:mb-0 md:mb-24">
         <Link className="text-black transition-all duration-300 hover:transition-all hover:duration-100" href={`/career/${post.slug}`}>
-          <div class="pr-[100px] absolute w-1/4 max-tablet:pb-5 max-tablet:relative max-tablet:w-full">
+          <div class="pb-5 relative w-full md:pr-[100px] md:absolute md:w-1/4 md:pb-0">
             <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
             <span class="mx-[0.2rem]">-</span>
             <time datetime={post.metadata.endDate}>{post.metadata.endDate}</time>
           </div>
-          <div class={`flex items-center justify-center bg-[#005999] rounded-full text-white h-14 w-14 left-[20%] -ml-8 absolute -top-2 z-[2] ${isMultiDevice ? 'leading-[1] whitespace-pre' : ''} max-tablet:float-right max-tablet:left-auto max-tablet:-mt-[55px] max-tablet:mr-[5px] max-tablet:mb-0 max-tablet:relative`}>
+          <div class={`flex items-center justify-center bg-[#005999] rounded-full text-white h-14 w-14 float-right left-auto -mt-[64px] mr-[5px] mb-0 relative z-[2] ${isMultiDevice ? 'leading-[1] whitespace-pre' : ''} md:float-none md:left-[20%] md:-ml-8 md:absolute md:-top-2 md:mt-0 md:mr-0`}>
             <span class="text-center">{deviceLabel}</span>
           </div>
-          <div class="career-card bg-white border border-[#888] rounded-[5px] text-[1.2rem] leading-[1.4] my-0 mb-16 ml-[25%] p-8 relative scale-100 transition-all duration-300 ease-in-out before:border-[solid_transparent] before:content-[' '] before:h-0 before:absolute before:right-full before:w-0 before:border-[rgba(136,136,136,0)] before:border-r-[#888] before:border-[11px] before:top-[9px] after:border-[solid_transparent] after:content-[' '] after:h-0 after:absolute after:right-full after:w-0 after:border-[rgba(255,255,255,0)] after:border-r-white after:border-[10px] after:top-[10px] max-tablet:m-0 max-tablet:mb-12 max-tablet:p-4 max-tablet:scale-100 max-tablet:transition-none max-tablet:before:border-[solid_transparent] max-tablet:before:bottom-full max-tablet:before:content-[' '] max-tablet:before:h-0 max-tablet:before:left-[10%] max-tablet:before:pointer-events-none max-tablet:before:absolute max-tablet:before:right-auto max-tablet:before:top-auto max-tablet:before:w-0 max-tablet:before:border-[rgba(136,136,136,0)] max-tablet:before:border-b-[#888] max-tablet:before:border-[11px] max-tablet:before:-ml-[11px] max-tablet:after:border-[solid_transparent] max-tablet:after:bottom-full max-tablet:after:content-[' '] max-tablet:after:h-0 max-tablet:after:left-[10%] max-tablet:after:pointer-events-none max-tablet:after:absolute max-tablet:after:right-auto max-tablet:after:top-auto max-tablet:after:w-0 max-tablet:after:border-[rgba(255,255,255,0)] max-tablet:after:border-b-white max-tablet:after:border-[10px] max-tablet:after:-ml-[10px] last:max-tablet:mb-4">
-            <h3 class="career-title mt-0 border-b border-[rgba(0,0,0,0.4)] mx-auto mb-4 pb-[10px] max-tablet:mb-2">{post.metadata.title}</h3>
+          <div class="career-card bg-white border border-[#888] rounded-[5px] text-[1.2rem] leading-[1.4] m-0 p-4 relative scale-100 transition-none before:border-solid before:border-transparent before:bottom-full before:content-[' '] before:h-0 before:left-[10%] before:pointer-events-none before:absolute before:right-auto before:top-auto before:w-0 before:border-b-[#888] before:border-[11px] before:-ml-[11px] after:border-solid after:border-transparent after:bottom-full after:content-[' '] after:h-0 after:left-[10%] after:pointer-events-none after:absolute after:right-auto after:top-auto after:w-0 after:border-b-white after:border-[10px] after:-ml-[10px] md:my-0 md:ml-[25%] md:p-8 md:transition-all md:duration-300 md:ease-in-out md:before:border-solid md:before:border-transparent md:before:content-[' '] md:before:h-0 md:before:absolute md:before:right-full md:before:left-auto md:before:bottom-auto md:before:top-[9px] md:before:pointer-events-none md:before:w-0 md:before:border-r-[#888] md:before:border-t-transparent md:before:border-b-transparent md:before:border-l-0 md:before:border-[11px] md:before:ml-0 md:after:border-solid md:after:border-transparent md:after:content-[' '] md:after:h-0 md:after:absolute md:after:right-full md:after:left-auto md:after:bottom-auto md:after:top-[10px] md:after:pointer-events-none md:after:w-0 md:after:border-r-white md:after:border-t-transparent md:after:border-b-transparent md:after:border-l-0 md:after:border-[10px] md:after:ml-0">
+            <h3 class="career-title mt-0 border-b border-[rgba(0,0,0,0.4)] mx-auto mb-2 pb-[10px] md:mb-4">{post.metadata.title}</h3>
             <p class="block mb-6">{post.metadata.role}</p>
             <ul class="flex flex-row flex-wrap">
               {post.metadata.tagList.map((tag) => (
-                <li class="bg-[#f1f8ff] rounded-[5px] text-[#0366d6] text-sm mr-2 mb-2 py-2 px-4 max-tablet:text-base">{tag}</li>
+                <li class="bg-[#f1f8ff] rounded-[5px] text-[#0366d6] text-base mr-2 mb-2 py-2 px-4 md:text-sm">{tag}</li>
               ))}
             </ul>
           </div>

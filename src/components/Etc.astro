@@ -6,11 +6,11 @@ import { etcList } from '../../app/constants/etc-list';
 const currentYear = new Date().getFullYear();
 ---
 
-<ul class="flex justify-around mx-auto my-16 mb-24 max-w-[69rem] px-8 w-[90%] max-tablet:flex-col max-tablet:mb-16 max-tablet:w-full max-mobile:mt-8">
+<ul class="flex flex-col justify-around mx-auto mt-8 mb-16 max-w-[69rem] px-8 w-full sm:mt-16 md:flex-row md:mb-24 md:w-[90%]">
   {etcList.map((item) => (
     <li>
       <Link
-        className="text-[#005999] flex items-center gap-2 max-tablet:py-4"
+        className="text-[#005999] flex items-center gap-2 py-4 md:py-0"
         href={item.href}
         rel="noopener noreferrer"
         target="_blank"
