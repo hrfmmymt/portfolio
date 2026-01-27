@@ -1,0 +1,28 @@
+---
+import type { SectionId, SectionTitle } from '../../app/constants/section-title';
+
+interface Props {
+  className?: string;
+  id: SectionId;
+  title: SectionTitle;
+}
+
+const { id, title, className } = Astro.props;
+
+// Base section classes
+const baseClasses = 'border-b border-[#aaa] min-h-full p-8 px-4 w-full md:p-16 md:px-8';
+
+// Dynamic classes based on className prop
+const dynamicClasses = className === 'career'
+  ? 'bg-[#f2f2f2]'
+  : (className === 'skills' || className === 'etc')
+    ? 'border-b-0 bg-white'
+    : '';
+
+const sectionClass = `${baseClasses} ${dynamicClasses}`.trim();
+---
+
+<section class={sectionClass} id={id}>
+  <h2 class="tracking-[1.1px] m-0 mb-8 p-0 md:mb-20">## {title}</h2>
+  <slot />
+</section>

@@ -6,7 +6,10 @@
       "startDate": "oct. 2020",
       "endDate": "now",
       "role": "developing video distribution services at AbemaTV inc.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "202010-",
       "tagList": [
         "React",
@@ -29,7 +32,10 @@
       "startDate": "nov. 2018",
       "endDate": "sep. 2020",
       "role": "developing blog and some related services @CyberAgent, inc.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201811-",
       "tagList": [
         "React",
@@ -53,7 +59,10 @@
       "startDate": "oct. 2015",
       "endDate": "oct. 2018",
       "role": "developing skyticket.jp and some related services @Adventure, inc.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201510-",
       "tagList": [
         "React",
@@ -79,9 +88,17 @@
       "startDate": "oct. 2014",
       "endDate": "sep. 2015",
       "role": "developing a front-end single page application.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201410-201509",
-      "tagList": ["Angular ( v1 )", "Less", "Google Chart Tools", "Gulp"]
+      "tagList": [
+        "Angular ( v1 )",
+        "Less",
+        "Google Chart Tools",
+        "Gulp"
+      ]
     }
   },
   {
@@ -91,9 +108,17 @@
       "startDate": "jul. 2014",
       "endDate": "sep. 2014",
       "role": "developing a front-end mobile web app.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201407-201409",
-      "tagList": ["Angular ( v1 )", "jQuery", "Velocity", "Grunt"]
+      "tagList": [
+        "Angular ( v1 )",
+        "jQuery",
+        "Velocity",
+        "Grunt"
+      ]
     }
   },
   {
@@ -103,9 +128,19 @@
       "startDate": "jan. 2014",
       "endDate": "jun. 2014",
       "role": "developing a front-end some web services.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201401-201406",
-      "tagList": ["jQuery", "D3.js", "Bootstrap", "PHP", "MySQL", "Fireworks"]
+      "tagList": [
+        "jQuery",
+        "D3.js",
+        "Bootstrap",
+        "PHP",
+        "MySQL",
+        "Fireworks"
+      ]
     }
   },
   {
@@ -115,7 +150,10 @@
       "startDate": "may. 2013",
       "endDate": "dec. 2013",
       "role": "developing a front-end single page application.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201305-201312",
       "tagList": [
         "Yeoman",
@@ -137,9 +175,17 @@
       "startDate": "aug. 2012",
       "endDate": "apr. 2013",
       "role": "designing mobile app ui.",
-      "device": ["SP"],
+      "device": [
+        "SP"
+      ],
       "id": "201208-201304",
-      "tagList": ["HTML", "CSS", "Photoshop", "Photoshop JSX", "Unity"]
+      "tagList": [
+        "HTML",
+        "CSS",
+        "Photoshop",
+        "Photoshop JSX",
+        "Unity"
+      ]
     }
   },
   {
@@ -149,9 +195,17 @@
       "startDate": "apr. 2012",
       "endDate": "jul. 2012",
       "role": "website markup, design.",
-      "device": ["PC", "SP"],
+      "device": [
+        "PC",
+        "SP"
+      ],
       "id": "201204-201207",
-      "tagList": ["XHTML", "CSS", "jQuery", "Photoshop"]
+      "tagList": [
+        "XHTML",
+        "CSS",
+        "jQuery",
+        "Photoshop"
+      ]
     }
   }
 ]

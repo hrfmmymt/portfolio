@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --z-index-10: 10;
+  --z-index-20: 20;
+  --z-index-30: 30;
+  --z-index-40: 40;
+  --z-index-50: 50;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Heading styles */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1.33em 0;
+}

@@ -1,0 +1,11 @@
+---
+import { Markdown as MarkdownReact } from '../../app/components/markdown';
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<MarkdownReact client:load content={content} />

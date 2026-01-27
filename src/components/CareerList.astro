@@ -1,0 +1,127 @@
+---
+import Link from '../shims/next/link';
+import { getCareerPosts } from '../../app/career/utils';
+
+const posts = getCareerPosts();
+const sortedPosts = posts.sort((a, b) => {
+  if (new Date(a.metadata.startDate) > new Date(b.metadata.startDate)) {
+    return -1;
+  }
+  return 1;
+});
+---
+
+<ul class="mt-8 mx-auto max-w-[69rem] p-0 relative w-full before:hidden md:mt-20 md:px-4 md:w-[90%] md:before:block md:before:bg-[#005999] md:before:bottom-0 md:before:content-[''] md:before:left-[20%] md:before:ml-[3px] md:before:absolute md:before:top-0 md:before:w-1">
+  {sortedPosts.map((post) => {
+    const isMultiDevice = Array.isArray(post.metadata.device) && post.metadata.device.length > 1;
+    const deviceLabel = isMultiDevice ? 'PC\nSP' : post.metadata.device;
+
+    return (
+      <li class="relative mb-10 last:mb-0 md:mb-24">
+        <Link className="text-black transition-all duration-300 hover:transition-all hover:duration-100" href={`/career/${post.slug}`}>
+          <div class="pb-5 relative w-full md:pr-[100px] md:absolute md:w-1/4 md:pb-0">
+            <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
+            <span class="mx-[0.2rem]">-</span>
+            <time datetime={post.metadata.endDate}>{post.metadata.endDate}</time>
+          </div>
+          <div class={`flex items-center justify-center bg-[#005999] rounded-full text-white h-14 w-14 float-right left-auto -mt-[64px] mr-[5px] mb-0 relative z-[2] ${isMultiDevice ? 'leading-[1] whitespace-pre' : ''} md:float-none md:left-[20%] md:-ml-8 md:absolute md:-top-2 md:mt-0 md:mr-0`}>
+            <span class="text-center">{deviceLabel}</span>
+          </div>
+          <div class="career-card bg-white border border-[#888] rounded-[5px] text-[1.2rem] leading-[1.4] m-0 p-4 relative scale-100 transition-none before:border-solid before:border-transparent before:bottom-full before:content-[' '] before:h-0 before:left-[10%] before:pointer-events-none before:absolute before:right-auto before:top-auto before:w-0 before:border-b-[#888] before:border-[11px] before:-ml-[11px] after:border-solid after:border-transparent after:bottom-full after:content-[' '] after:h-0 after:left-[10%] after:pointer-events-none after:absolute after:right-auto after:top-auto after:w-0 after:border-b-white after:border-[10px] after:-ml-[10px] md:my-0 md:ml-[25%] md:p-8 md:transition-all md:duration-300 md:ease-in-out md:before:border-solid md:before:border-transparent md:before:content-[' '] md:before:h-0 md:before:absolute md:before:right-full md:before:left-auto md:before:bottom-auto md:before:top-[9px] md:before:pointer-events-none md:before:w-0 md:before:border-r-[#888] md:before:border-t-transparent md:before:border-b-transparent md:before:border-l-0 md:before:border-[11px] md:before:ml-0 md:after:border-solid md:after:border-transparent md:after:content-[' '] md:after:h-0 md:after:absolute md:after:right-full md:after:left-auto md:after:bottom-auto md:after:top-[10px] md:after:pointer-events-none md:after:w-0 md:after:border-r-white md:after:border-t-transparent md:after:border-b-transparent md:after:border-l-0 md:after:border-[10px] md:after:ml-0">
+            <h3 class="career-title mt-0 border-b border-[rgba(0,0,0,0.4)] mx-auto mb-2 pb-[10px] md:mb-4">{post.metadata.title}</h3>
+            <p class="block mb-6">{post.metadata.role}</p>
+            <ul class="flex flex-row flex-wrap">
+              {post.metadata.tagList.map((tag) => (
+                <li class="bg-[#f1f8ff] rounded-[5px] text-[#0366d6] text-base mr-2 mb-2 py-2 px-4 md:text-sm">{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </Link>
+      </li>
+    );
+  })}
+</ul>
+
+<style is:global>
+  /* Override h3 margin-top for career list items */
+  ul h3 {
+    margin-top: 0;
+  }
+
+  /* Hover and focus animations for timeline circles */
+  .relative a:hover > div[class*="rounded-full"],
+  .relative a:focus > div[class*="rounded-full"] {
+    animation: bounceIn 1s both;
+  }
+
+  /* Hover and focus animations for career cards */
+  .relative a:hover .career-card,
+  .relative a:focus .career-card {
+    backface-visibility: hidden;
+    box-shadow: 0 0 3px #005999;
+    transform: scale(1.22);
+    transition: 0.1s all;
+  }
+
+  .relative a:hover .career-card::before,
+  .relative a:focus .career-card::before,
+  .relative a:hover .career-card::after,
+  .relative a:focus .career-card::after {
+    display: none;
+  }
+
+  /* Hover and focus animations for career titles */
+  .relative a:hover .career-title,
+  .relative a:focus .career-title {
+    margin-left: 1rem;
+  }
+
+  @keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+
+    60% {
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .relative a:hover > div[class*="rounded-full"],
+    .relative a:focus > div[class*="rounded-full"] {
+      animation: none;
+    }
+
+    .relative a:hover .career-card,
+    .relative a:focus .career-card {
+      transform: scale(1);
+      box-shadow: none;
+      transition: none;
+    }
+  }
+</style>

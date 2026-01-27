@@ -15,14 +15,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "strictNullChecks": true,
-    "types": ["jest", "@testing-library/jest-dom"]
+    "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".astro/types.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
