@@ -1,5 +1,5 @@
 {
-  "extends": ["next", "next/core-web-vitals"],
+  "extends": ["eslint:recommended"],
   "plugins": ["import"],
   "rules": {
     "import/order": [
@@ -10,19 +10,6 @@
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ],
-    "import/newline-after-import": "error",
-    "react/no-unescaped-entities": 0,
-    "react-hooks/exhaustive-deps": "error",
-    "react/jsx-sort-props": [
-      "error",
-      {
-        "callbacksLast": true,
-        "shorthandFirst": true,
-        "shorthandLast": false,
-        "ignoreCase": false,
-        "noSortAlphabetically": false,
-        "reservedFirst": true
-      }
-    ]
+    "import/newline-after-import": "error"
   }
 }

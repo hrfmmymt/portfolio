@@ -1,5 +1,4 @@
 ---
-import Link from '../shims/next/link';
 import { getCareerPosts } from '../../app/career/utils';
 
 const posts = getCareerPosts();
@@ -18,7 +17,7 @@ const sortedPosts = posts.sort((a, b) => {
 
     return (
       <li class="relative mb-10 last:mb-0 md:mb-24">
-        <Link className="text-black transition-all duration-300 hover:transition-all hover:duration-100" href={`/career/${post.slug}`}>
+        <a class="text-black transition-all duration-300 hover:transition-all hover:duration-100" href={`/career/${post.slug}`}>
           <div class="pb-5 relative w-full md:pr-[100px] md:absolute md:w-1/4 md:pb-0">
             <time datetime={post.metadata.startDate}>{post.metadata.startDate}</time>
             <span class="mx-[0.2rem]">-</span>
@@ -36,7 +35,7 @@ const sortedPosts = posts.sort((a, b) => {
               ))}
             </ul>
           </div>
-        </Link>
+        </a>
       </li>
     );
   })}

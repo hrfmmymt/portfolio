@@ -1,17 +1,13 @@
 ---
-import Image from '../shims/next/image';
 ---
 
-<Image
-  priority
+<img
   alt="profile image"
-  className="block mx-auto max-w-full w-full md:max-w-[69rem] md:w-[90%]"
+  class="block mx-auto max-w-full w-full md:max-w-[69rem] md:w-[90%]"
   height={405}
+  loading="eager"
   src="/img/profile/profile_l.jpg"
-  style={{
-    width: '100%',
-    height: 'auto',
-  }}
+  style="width: 100%; height: auto;"
   width={720}
 />
 <ul class="mt-8 mx-auto max-w-[69rem] p-0 w-full md:mt-20 md:px-4 md:w-[90%]">
