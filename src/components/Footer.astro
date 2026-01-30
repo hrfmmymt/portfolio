@@ -1,5 +1,5 @@
 ---
-import { etcList } from '../../app/constants/etc-list';
+import { linksList } from '../../app/constants/links-list';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 <footer class="border-b-0 bg-white w-full p-8 px-4 md:p-16 md:px-8">
   <div class="max-w-[69rem] md:w-[90%] mx-auto">
     <ul class="flex flex-col justify-around mt-8 mb-16 px-8 w-full sm:mt-16 md:flex-row md:mb-24">
-      {etcList.map((item) => (
+      {linksList.map((item) => (
         <li>
           <a
             class="text-[#005999] flex items-center gap-2 py-4 md:py-0"
@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear();
             <img
               alt=""
               height={26}
-              src={`/img/etc/${item.className}.svg`}
+              src={`/img/links/${item.className}.svg`}
               style="width: 26px; height: 26px;"
               width={26}
             />

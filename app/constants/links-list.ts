@@ -1,10 +1,10 @@
-export type EtcList = {
+export type LinksList = {
   label: string;
   href: string;
   className: string;
 };
 
-export const etcList: EtcList[] = [
+export const linksList: LinksList[] = [
   {
     label: 'hrfmmymt.github.io',
     href: 'https://hrfmmymt.github.io/',
