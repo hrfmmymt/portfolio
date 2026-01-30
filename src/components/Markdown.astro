@@ -1,11 +1,23 @@
 ---
-import { Markdown as MarkdownReact } from '../../app/components/markdown';
+import { marked } from 'marked';
 
 interface Props {
   content: string;
 }
 
 const { content } = Astro.props;
+let html = marked.parse(content, { async: false }) as string;
+// add loading="lazy" to img tags (marked does not set it)
+html = html.replace(/<img /g, '<img loading="lazy" ');
 ---
 
-<MarkdownReact client:load content={content} />
+<div class="markdown-content" set:html={html} />
+
+<style>
+  .markdown-content :global(img) {
+    background-color: #ddd;
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+</style>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCareerList } from '../../../app/career/utils';
 import Markdown from '../../components/Markdown.astro';
-import Link from '../../shims/next/link';
 import matter from 'gray-matter';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -49,14 +48,14 @@ const tagList = post.metadata.tagList;
 
   <main class="bg-white left-0 relative top-0 w-full" style="font-family: 'Noto Sans', sans-serif;">
     <header class="bg-white border-b border-[#999] left-0 py-4 px-4 fixed top-0 w-full z-[2] flex items-center md:pl-32 md:pr-0">
-      <Link href="/" className="bg-none border-0 text-[#005999] cursor-pointer inline-flex items-center font-[inherit] leading-normal mr-6 overflow-visible p-0 underline select-none hover:no-underline [&_svg]:fill-current [&_svg]:h-7">
+      <a href="/" class="bg-none border-0 text-[#005999] cursor-pointer inline-flex items-center font-[inherit] leading-normal mr-6 overflow-visible p-0 underline select-none hover:no-underline [&_svg]:fill-current [&_svg]:h-7">
         <svg aria-labelledby="backButtonTitle" viewBox="0 0 24 24">
           <title id="backButtonTitle">戻る</title>
           <g>
             <path d="M20 11H7.414l4.293-4.293a1 1 0 0 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a.996.996 0 0 0 1.414 0 1 1 0 0 0 0-1.414L7.414 13H20a1 1 0 1 0 0-2z" />
           </g>
         </svg>
-      </Link>
+      </a>
       <h1 class="text-[1.2rem] font-bold tracking-[1.1px] leading-[1] m-0 md:text-2xl" itemprop="name">
         career
       </h1>
