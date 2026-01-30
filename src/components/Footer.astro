@@ -1,0 +1,41 @@
+---
+import { etcList } from '../../app/constants/etc-list';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-b-0 bg-white w-full p-8 px-4 md:p-16 md:px-8">
+  <div class="max-w-[69rem] md:w-[90%] mx-auto">
+    <ul class="flex flex-col justify-around mt-8 mb-16 px-8 w-full sm:mt-16 md:flex-row md:mb-24">
+      {etcList.map((item) => (
+        <li>
+          <a
+            class="text-[#005999] flex items-center gap-2 py-4 md:py-0"
+            href={item.href}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt=""
+              height={26}
+              src={`/img/etc/${item.className}.svg`}
+              style="width: 26px; height: 26px;"
+              width={26}
+            />
+            <span>{item.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="text-center">
+      © {currentYear} <a
+        class="text-[#005999]"
+        href="https://hrfmmymt.github.io"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        hirofumi miyamoto
+      </a>. All rights reserved.
+    </p>
+  </div>
+</footer>

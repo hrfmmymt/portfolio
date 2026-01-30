@@ -10,7 +10,7 @@ const sortedPosts = posts.sort((a, b) => {
 });
 ---
 
-<ul class="mt-8 mx-auto max-w-[69rem] p-0 relative w-full before:hidden md:mt-20 md:px-4 md:w-[90%] md:before:block md:before:bg-[#005999] md:before:bottom-0 md:before:content-[''] md:before:left-[20%] md:before:ml-[3px] md:before:absolute md:before:top-0 md:before:w-1">
+<ul class="mt-8 p-0 relative w-full before:hidden md:mt-20 md:px-4 md:before:block md:before:bg-[#005999] md:before:bottom-0 md:before:content-[''] md:before:left-[20%] md:before:ml-[3px] md:before:absolute md:before:top-0 md:before:w-1">
   {sortedPosts.map((post) => {
     const isMultiDevice = Array.isArray(post.metadata.device) && post.metadata.device.length > 1;
     const deviceLabel = isMultiDevice ? 'PC\nSP' : post.metadata.device;
