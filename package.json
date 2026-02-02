@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "astro dev",
     "prepare-assets": "tsx scripts/generate-career-list.ts && tsx scripts/copy-markdown.ts",
+    "generate-og": "tsx scripts/generate-og-images.ts",
     "build": "npm run prepare-assets && astro build",
     "start": "astro preview",
     "test": "playwright test",

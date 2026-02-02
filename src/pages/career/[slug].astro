@@ -36,15 +36,12 @@ if (!post || !post.content) {
 const baseUrl = 'https://hrfmmymt.com';
 const { title, role } = post.metadata;
 const description = `${role} - ${post.metadata.tagList.join(', ')}`;
-const ogImage = `${baseUrl}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
+const ogImage = `${baseUrl}/og/${post.slug}.png`;
 
 const tagList = post.metadata.tagList;
 ---
 
-<BaseLayout title={title} description={description}>
-  <meta slot="head" property="og:image" content={ogImage} />
-  <meta slot="head" name="twitter:card" content="summary_large_image" />
-  <meta slot="head" name="twitter:image" content={ogImage} />
+<BaseLayout title={title} description={description} ogImage={ogImage}>
 
   <main class="bg-white left-0 relative top-0 w-full" style="font-family: 'Noto Sans', sans-serif;">
     <header class="bg-white border-b border-[#999] left-0 py-4 px-4 fixed top-0 w-full z-[2] flex items-center md:pl-32 md:pr-0">

@@ -5,14 +5,16 @@ import '../styles/tailwind.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
+
+const baseUrl = 'https://hrfmmymt.com';
 
 const {
   title = '# hirofumi miyamoto',
-  description = "hi everyone! i am hrfmmymt. i'm always goofing off on the internet."
+  description = "hi everyone! i am hrfmmymt. i'm always goofing off on the internet.",
+  ogImage = `${baseUrl}/og/home.png`
 } = Astro.props;
-
-const baseUrl = 'https://hrfmmymt.com';
 const fullTitle = title === '# hirofumi miyamoto' ? title : `${title} | # hirofumi miyamoto`;
 ---
 
@@ -31,6 +33,9 @@ const fullTitle = title === '# hirofumi miyamoto' ? title : `${title} | # hirofu
     <meta property="og:site_name" content="# hirofumi miyamoto" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Robots -->
     <meta name="robots" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
