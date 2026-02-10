@@ -10,8 +10,9 @@ const SOBER_COUNTER_ORIGIN = 'https://sober-counter.pages.dev';
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  // /sober-counter/xxx → /sober-counter/xxx としてそのまま転送
-  const targetUrl = new URL(url.pathname + url.search, SOBER_COUNTER_ORIGIN);
+  // /sober-counter/xxx → /xxx としてプロキシ
+  const path = url.pathname.replace(/^\/sober-counter/, '') || '/';
+  const targetUrl = new URL(path + url.search, SOBER_COUNTER_ORIGIN);
 
   const response = await fetch(targetUrl, {
     method: context.request.method,
