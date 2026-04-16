@@ -10,8 +10,8 @@ export async function getStaticPaths() {
   const posts = await getCareerList();
 
   return posts.map((post) => {
-    // Read markdown file at build time
-    const filePath = join(process.cwd(), 'public', 'career', 'posts', `${post.slug}.md`);
+    // Read markdown file at build time from source (not public)
+    const filePath = join(process.cwd(), 'app', 'career', 'posts', `${post.slug}.md`);
     const fileContent = readFileSync(filePath, 'utf-8');
     const { content } = matter(fileContent);
 

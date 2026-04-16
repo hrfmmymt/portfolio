@@ -7,6 +7,24 @@
 
 const SOBER_COUNTER_ORIGIN = 'https://sober-counter.pages.dev';
 
+const FORWARDED_HEADERS = [
+  'accept',
+  'accept-encoding',
+  'accept-language',
+  'content-type',
+  'content-length',
+];
+
+function filterHeaders(headers) {
+  const filtered = new Headers();
+  for (const key of FORWARDED_HEADERS) {
+    if (headers.has(key)) {
+      filtered.set(key, headers.get(key));
+    }
+  }
+  return filtered;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
@@ -15,7 +33,7 @@ export async function onRequest(context) {
 
   const response = await fetch(targetUrl, {
     method: context.request.method,
-    headers: context.request.headers,
+    headers: filterHeaders(context.request.headers),
     body: context.request.body,
   });
 

@@ -3,6 +3,15 @@ import { getCareerPosts } from '../../app/career/utils';
 
 const baseUrl = 'https://hrfmmymt.com';
 
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 export const GET: APIRoute = async () => {
   const allCareers = getCareerPosts();
 
@@ -16,9 +25,9 @@ export const GET: APIRoute = async () => {
     .map(
       (post) =>
         `<item>
-          <title>${post.metadata.title}</title>
+          <title>${escapeXml(post.metadata.title)}</title>
           <link>${baseUrl}/career/${post.slug}</link>
-          <description>${post.metadata.role || ''}</description>
+          <description>${escapeXml(post.metadata.role || '')}</description>
           <pubDate>${new Date(post.metadata.startDate).toUTCString()}</pubDate>
         </item>`,
     )
